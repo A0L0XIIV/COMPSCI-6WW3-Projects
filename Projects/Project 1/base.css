@@ -1,19 +1,27 @@
 body{
     margin: 0;
-    font-size: 20px;
+    font-size: 1.2vw;
 }
 
 header{
     background: rgba(3, 184, 3, 1);
+    background-image: url("https://www.nycgovparks.org/pagefiles/140/Prospect-Park__5ceef73c283b4.jpg");
+    background-repeat: no-repeat;   
+    background-position: center;
+    background-size: cover;
     padding: 1%;
+    height: 8em;
+    margin: 0px;
 }
 
 nav{
     text-align: center;
+    margin: auto;
+    margin-top: 10%;
 }
 
 footer{
-    background: rgba(3, 184, 3, 1);
+    background: rgba(5, 185, 5, 1);
     color: gray;
     padding: 0.5%;
 }
@@ -23,59 +31,134 @@ a{
 }
 
 button{
-    margin: 10px;
-    background: yellow;
+    background: rgba(25, 205, 25, 0.85);
     color: black;
-    border-radius: 10px;
+    border: none;    
+    margin: 0;
+    padding: 2%;  
+    font-size: 1.2vw;
+}
+
+.navButton:hover{
+    background: rgba(5, 155, 5, 0.95);
+    color: red;
 }
 
 input{
     border-radius: 10px;
+    border: solid 1px black;
+    width: 18vw;
+    height: 2vw;
+    font-size: 1.2vw;
 }
 
 .submitButton{
     background: blue;
     color: white;
-    border-radius: 5px;
 }
 
 #searchButton{
     background: lightgray;
     color: black;
     border-radius: 5px;
+    padding: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#searchBox{
+    width: 12vw;
+    height: 1.5vw;
 }
 
 .centerDiv{
     text-align: center;
     width: 70%;
-    background: lightgray;
+    margin: auto;
+    background: rgba(200, 200, 200, 0.3);
 }
 
-.dropdownDiv{
+#userIcon{
     float: right;
-}
-
-.dropdownButton{
-    background: darkgray;
-    color: white;
+    width: 3vw;
+    height: 3vw;
+    background: yellow;
+    border: solid 0.1em black;
     border-radius: 50%;
-    padding: 10px;
-    border: 1px solid white;
 }
 
-.dropdownButton:hover{
+#userIcon:hover{
     background: red;
-    color: black;
 }
 
 .dropdownSelection{
     display: none;
     position: absolute;
+    background: rgba(25, 205, 25, 1);
 }
 
-.dropdownDiv:hover .dropdownSelection {display: block;}
+#headerDivDropdown{
+    height: 50%;
+    float: right;
+    margin-top: 20%;
+}
+
+.headerDivDropdown:hover .dropdownSelection {display: block;}
+
+#headerDivLogo{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+#headerDivNav{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#headerDivSearchAndDropdown{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+#headerDivSearch{
+    height: 50%;
+    float: left;
+    margin-top: 25%;
+    margin-left: 10%;
+}
 
 #siteLogo{
     border-radius: 50%;
-    position: absolute;
+    float: right;
+    width: 10vw;
+    height: 10vw;
 }
+
+
+
+
+
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+      background-color: #F09A9D; /* Red */
+    }
+  }
+  
+  /* Tablet Styles */
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    body {
+      background-color: #F5CF8E; /* Yellow */
+    }
+  }
+  
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    body {
+    }
+  }

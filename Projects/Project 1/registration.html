@@ -11,36 +11,46 @@
 
 <body>
     <header>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8C4r18JoraIL5qyaRuzh8DFKQrnAEMszI_nHq7Nk3rohuz4QeQ" alt="Site icon" id="siteLogo">
+        <div class="column" id="headerDivLogo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8C4r18JoraIL5qyaRuzh8DFKQrnAEMszI_nHq7Nk3rohuz4QeQ" alt="Site icon" id="siteLogo">
+        </div>      
 
-        <div class="dropdownDiv">
-            <button class="dropdownButton">User</button>
-            <div class="dropdownSelection">
-                <a href="#">My profile</a>
-                <a href="#">My reviews</a>
-                <a href="#">Logout</a>
-            </div>
-        </div>
+        <div class="column" id="headerDivNav">
+            <nav>
+                <button class="navButton">
+                    <a href="./result_sample.html">Results Page</a>
+                </button>
+                <button class="navButton">
+                    <a href="./individual_sample.html">Individual Sample</a>
+                </button>
+                <button class="navButton">
+                    <a href="./search.html">Search Page</a>
+                </button>
+                <button class="navButton">
+                    <a href="./submission.html">Submission</a>
+                </button>
+                <button class="navButton">
+                    <a href="./registration.html">Registration</a>
+                </button>
+            </nav>
+        </div>  
 
-        <nav>
-            <button>
-                <a href="./result_sample.html">Results Page</a>
-            </button>
-            <button>
-                <a href="./individual_sample.html">Individual Sample</a>
-            </button>
-            <button>
-                <a href="./search.html">Search Page</a>
-            </button>
-            <button>
-                <a href="./submission.html">Submission</a>
-            </button>
-            <div id="searchDiv">
+        <div class="column" id="headerDivSearchAndDropdown">
+            <div class="column" id="headerDivSearch">
                 <input type="search" name="searchBox" id="searchBox">
                 <button id="searchButton">Search</button>
             </div>
-        </nav>
 
+            <div class="column" id="headerDivDropdown">
+                <!-- <button class="dropdownButton">Us</button> -->
+                <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon" id="userIcon">
+                <div class="dropdownSelection">
+                    <a href="#">My profile</a>
+                    <a href="#">My reviews</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
         
     </header>
 
