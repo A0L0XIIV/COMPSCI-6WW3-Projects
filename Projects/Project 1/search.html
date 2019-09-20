@@ -15,6 +15,9 @@
         </div>      
 
         <div class="column" id="headerDivNav">
+            <div id="siteName">
+                <h2>Park-Rater</h2>
+            </div>
             <nav>
                 <button class="navButton">
                     <a href="./result_sample.html">Results Page</a>
@@ -54,12 +57,26 @@
     </header>
 
     <div class="centerDiv">
+        <h4>Search with park name</h4>
         <input type="search" name="searchBox" id="searchBox">
+        <br>
         <button id="searchButton">Search by name</button>
 
+        <hr>
+
+        <h4>Search with rating</h4>
         <p>dropdown menu for rating selection</p>
-        <button id="searchButton">Search by rating</button>
-    </div>
+        <div class="dropdown">
+            <button class="dropdownButton">Select rating</button>
+            <div class="dropdownSelection">
+                <a href="#">My profile</a>
+                <a href="#">My reviews</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    <br>
+    <button id="searchButton">Search by rating</button>
+</div>
 
     <footer>
         Copyright Baran Kaya

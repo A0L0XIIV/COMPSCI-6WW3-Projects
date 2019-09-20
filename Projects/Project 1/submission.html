@@ -17,6 +17,9 @@
         </div>      
 
         <div class="column" id="headerDivNav">
+            <div id="siteName">
+                <h2>Park-Rater</h2>
+            </div>
             <nav>
                 <button class="navButton">
                     <a href="./result_sample.html">Results Page</a>
@@ -30,11 +33,11 @@
                 <button class="navButton">
                     <a href="./submission.html">Submission</a>
                 </button>
-                <button class="navButton"></button>
+                <button class="navButton">
                     <a href="./registration.html">Registration</a>
                 </button>
             </nav>
-        </div>  
+        </div> 
 
         <div class="column" id="headerDivSearchAndDropdown">
             <div class="column" id="headerDivSearch">
@@ -56,16 +59,19 @@
     </header>
 
     <div class="centerDiv">
-        <p>Name of the object: </p>
+        <p>Name of the park:</p>
         <input type="text" name="object_name" id="object_name">
 
-        <p>Description: </p>
+        <p>Description:</p>
         <input type="text" name="object_description" id="object_description">
 
-        <p>Coordinates: </p>
+        <h4>Coordinates of the park</h4>
+        <p>Latitude:</p>
         <input type="text" name="coordinates_latitude" id="coordinates_latitude">
+        <br>
+        <p>Longtude:</p>
         <input type="text" name="coordinates_longtude" id="coordinates_longtude">
-
+        <br>
         <button>Submit</button>
     </div>
 

@@ -17,7 +17,7 @@ header{
 nav{
     text-align: center;
     margin: auto;
-    margin-top: 10%;
+    height: 49%;
 }
 
 footer{
@@ -97,13 +97,18 @@ input{
     background: rgba(25, 205, 25, 1);
 }
 
+.dropdownSelection a{
+    text-decoration: none;
+    color: black;
+}
+
 #headerDivDropdown{
     height: 50%;
     float: right;
     margin-top: 20%;
 }
 
-.headerDivDropdown:hover .dropdownSelection {display: block;}
+#headerDivDropdown:hover .dropdownSelection {display: block;}
 
 #headerDivLogo{
     width: 25%;
@@ -137,7 +142,15 @@ input{
     height: 10vw;
 }
 
-
+#siteName{
+    text-align: center;
+    color: rgba(5, 185, 5, 1);
+    text-shadow: 3px 3px black;
+    height: 49%;
+    font-size: 2vw;
+    margin: 0;
+    margin-top: -1em;
+}
 
 
 
