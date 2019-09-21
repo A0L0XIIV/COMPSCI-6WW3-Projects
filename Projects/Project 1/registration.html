@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "./base.css" />
-    <title>New User</title>
+    <title>Sign Up to Park-Rater</title>
 </head>
 
 <body>
+    
     <header>
         <div class="column" id="headerDivLogo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8C4r18JoraIL5qyaRuzh8DFKQrnAEMszI_nHq7Nk3rohuz4QeQ" alt="Site icon" id="siteLogo">
-        </div>      
+            <a href="./index.html">
+                <img src="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png" 
+                alt="Site icon" id="siteLogo">
+            </a>
+        </div>    
 
         <div class="column" id="headerDivNav">
             <div id="siteName">
@@ -58,14 +62,14 @@
     </header>
 
     <div class="centerDiv">
-        <p>Username: </p>
-        <input type="text" name="userName" id="userName">
+        <p>*Username: </p>
+        <input type="text" name="userName" id="userName" required>
 
-        <p>Email: </p>
-        <input type="email" name="userMail" id="userMail">
+        <p>*Email: </p>
+        <input type="email" name="userMail" id="userMail" required>
 
-        <p>Password:</p>
-        <input type="password" name="userPassword" id="userPassword">
+        <p>*Password:</p>
+        <input type="password" name="userPassword" id="userPassword" required>
 
         <p>Current City: </p>
         <input type="text" name="userCity" id="userCity">
@@ -73,11 +77,27 @@
         <p>Would you like to get mails from us?</p>
         <input type="checkbox" name="mailSubscribe" id="mailSubscribe">
 
-        <p>Would you like to get mails from us?</p>
-        <p>Yes<input type="radio" name="mailSubscribe" id="mailSubscribe"></p>
-        <p>No<input type="radio" name="mailSubscribe" id="mailSubscribe"></p>
+        <p>How often do you visit parks?</p>
+        <p>1-2<input type="radio" name="days" id="1to2"></p>
+        <p>3-4<input type="radio" name="days" id="3to4"></p>
+        <p>5-6<input type="radio" name="days" id="5to6"></p>
+        <p>7+<input type="radio" name="days" id="7plus"></p>
+        
+        <p>in a</p>
 
-        <button class="submitButton">Submit</button>
+        <p>week<input type="radio" name="period" id="week"></p>
+        <p>month<input type="radio" name="period" id="month"></p>
+        <p>session<input type="radio" name="period" id="session"></p>
+        <p>year<input type="radio" name="period" id="year"></p>
+
+        <p>Phone:</p>
+        <input type="tel" name="x" id="x">
+
+        <br>
+
+        <!-- <button class="submitButton">Submit</button> -->
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" class="submitButton">
     </div>
 
     <footer>

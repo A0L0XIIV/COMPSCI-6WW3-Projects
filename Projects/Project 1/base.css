@@ -41,7 +41,6 @@ button{
 
 .navButton:hover{
     background: rgba(5, 155, 5, 0.95);
-    color: red;
 }
 
 input{
@@ -50,6 +49,23 @@ input{
     width: 18vw;
     height: 2vw;
     font-size: 1.2vw;
+}
+
+select{
+    border: solid 1px black;
+    border-radius: 10px;
+    background: rgba(25, 205, 25, 1);
+    width: 4em;
+    height: 3em;
+    font-size: 1.2vw;
+}
+
+select:hover{
+    background: rgba(5, 185, 5, 1);
+}
+
+option{
+    background: white;
 }
 
 .submitButton{
@@ -156,22 +172,17 @@ input{
 
 
 
+
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 800px) {
     body {
-      background-color: #F09A9D; /* Red */
+        background-color: #F09A9D; /* Red */
     }
-  }
-  
-  /* Tablet Styles */
-  @media only screen and (min-width: 401px) and (max-width: 960px) {
-    body {
-      background-color: #F5CF8E; /* Yellow */
-    }
-  }
-  
-  /* Desktop Styles */
-  @media only screen and (min-width: 961px) {
+}
+
+
+/* Desktop Styles */
+@media only screen and (min-width: 801px) {
     body {
     }
-  }
+}
