@@ -12,17 +12,22 @@
 <body>
 
     <header>
-        <div class="column" id="headerDivLogo">
+        <!-- Site Logo w/ index.html link-->
+        <div class="column" id="headerLogoDiv">
             <a href="./index.html">
                 <img src="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png" 
-                alt="Site icon" id="siteLogo">
+                alt="Site icon" id="websiteLogo">
             </a>
         </div>    
 
-        <div class="column" id="headerDivNav">      
-            <div id="siteName">
+        <!-- Center div of the header: Name of the website and navbar -->
+        <div class="column" id="headerNavDiv">    
+            <!-- Website name -->
+            <div id="websiteName">
                 <h2>Park-Rater</h2>
             </div>
+
+            <!-- Navbar and its linked buttons -->
             <nav>
                 <button class="navButton">
                     <a href="./result_sample.html">Results Page</a>
@@ -42,14 +47,16 @@
             </nav>
         </div>  
 
-        <div class="column" id="headerDivSearchAndDropdown">
-            <div class="column" id="headerDivSearch">
+        <!-- Search bar and user setting dropdown -->
+        <div class="column" id="headerSearchAndDropdownDiv">
+            <!-- Search bar and its button -->
+            <div class="column" id="headerSearchDiv">
                 <input type="search" name="searchBox" id="searchBox">
                 <button id="searchButton">Search</button>
             </div>
 
-            <div class="column" id="headerDivDropdown">
-                <!-- <button class="dropdownButton">Us</button> -->
+            <!-- User dropdown: profile page, logout -->
+            <div class="column" id="headerDropdownDiv">
                 <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon" id="userIcon">
                 <div class="dropdownSelection">
                     <a href="#">My profile</a>
@@ -61,22 +68,31 @@
         
     </header>
 
+    <!-- Main center div-->
     <div class="centerDiv">
+
+        <!-- Results table -->
         <table>
+            <!-- Result 1 -->
             <tr>
+                <!-- Name of the park -->
                 <th>Park 1</th>
             </tr>
             <tr>
+                <!-- Main image of the park -->
                 <td>
                     <img src="https://images.idgesg.net/images/article/2019/01/apple-maps-duckduckgo-100785363-large.jpg" 
                         alt="Park's location on map" width="300em" height="300em">
                 </td>
+                <!-- Basic information of the park -->
                 <td>Park 1</td>
                 <td>
+                    <!-- Link to park's individual page -->
                     <a href="./individual_sample.html">Detailed info</a>
                 </td>
             </tr>
 
+            <!-- Result 2 -->
             <tr>
                 <th>Park 2</th>
             </tr>
@@ -91,6 +107,7 @@
                 </td>
             </tr>
 
+            <!-- Result 3 -->
             <tr>
                 <th>Park 3</th>
             </tr>
@@ -105,6 +122,7 @@
                 </td>
             </tr>
 
+            <!-- Result 4 -->
             <tr>
                 <th>Park 4</th>
             </tr>
@@ -121,6 +139,7 @@
         </table>
     </div>
 
+    <!-- footer of the page -->
     <footer>
         Copyright Baran Kaya
     </footer>

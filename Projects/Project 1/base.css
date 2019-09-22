@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    font-size: 1.2vw;
+    font-size: 1.5rem;
 }
 
 header{
@@ -15,8 +15,6 @@ header{
 }
 
 nav{
-    text-align: center;
-    margin: auto;
     height: 49%;
 }
 
@@ -30,6 +28,13 @@ a{
     text-decoration: none;
 }
 
+img{
+    width: 90%;
+    height: 90%;
+}
+
+
+/* --- Buttons --- */
 button{
     background: rgba(25, 205, 25, 0.85);
     color: black;
@@ -43,6 +48,13 @@ button{
     background: rgba(5, 155, 5, 0.95);
 }
 
+.submitButton{
+    background: blue;
+    color: white;
+}
+/* --- Buttons --- */
+
+
 input{
     border-radius: 10px;
     border: solid 1px black;
@@ -51,6 +63,8 @@ input{
     font-size: 1.2vw;
 }
 
+
+/* --- Select-option --- */
 select{
     border: solid 1px black;
     border-radius: 10px;
@@ -67,12 +81,10 @@ select:hover{
 option{
     background: white;
 }
+/* --- Select-option --- */
 
-.submitButton{
-    background: blue;
-    color: white;
-}
 
+/* --- Search bar  --- */
 #searchButton{
     background: lightgray;
     color: black;
@@ -86,6 +98,8 @@ option{
     width: 12vw;
     height: 1.5vw;
 }
+/* --- Search bar  --- */
+
 
 .centerDiv{
     text-align: center;
@@ -93,6 +107,7 @@ option{
     margin: auto;
     background: rgba(200, 200, 200, 0.3);
 }
+
 
 #userIcon{
     float: right;
@@ -107,6 +122,7 @@ option{
     background: red;
 }
 
+
 .dropdownSelection{
     display: none;
     position: absolute;
@@ -118,47 +134,50 @@ option{
     color: black;
 }
 
-#headerDivDropdown{
+#headerDropdownDiv{
     height: 50%;
     float: right;
     margin-top: 20%;
 }
 
-#headerDivDropdown:hover .dropdownSelection {display: block;}
+#headerDropdownDiv:hover .dropdownSelection {display: block;}
 
-#headerDivLogo{
+
+#headerLogoDiv{
     width: 25%;
     height: 100%;
     float: left;
 }
 
-#headerDivNav{
+#headerNavDiv{
     width: 50%;
     height: 100%;
     float: left;
+    text-align: center;
 }
 
-#headerDivSearchAndDropdown{
+#headerSearchAndDropdownDiv{
     width: 25%;
     height: 100%;
     float: left;
 }
 
-#headerDivSearch{
+#headerSearchDiv{
     height: 50%;
     float: left;
     margin-top: 25%;
     margin-left: 10%;
 }
 
-#siteLogo{
+
+#websiteLogo{
     border-radius: 50%;
     float: right;
     width: 10vw;
     height: 10vw;
 }
 
-#siteName{
+#websiteName{
     text-align: center;
     color: rgba(5, 185, 5, 1);
     text-shadow: 3px 3px black;
@@ -167,7 +186,6 @@ option{
     margin: 0;
     margin-top: -1em;
 }
-
 
 
 

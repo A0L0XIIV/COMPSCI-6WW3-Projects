@@ -6,23 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" type = "text/css" href = "./base.css" />
-    <title>Park page</title>
+    <title>Highland Garden's Park</title>
+   
+    <!-- Twitter Cards Metadata-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@parkrater" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Highland Garden's Park" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.parkrater.com/park/abc123/" /><!--unique ID for every park--> 
+    <!--Open Graph image properties -->
+    <meta property="og:image" content="http://www.parkrater.com/park/abc123/images/abc123img123.jpg" />  
+    <meta property="og:image:secure_url" content="https://www.parkrater.com/park/abc123/images/abc123img123.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Picture of the park" />
+    <!-- Open Grah other properties -->
+    <meta property="og:description" content="Highland Garden's Park, Hamilton, ON, Canada" />
+    <meta property="og:determiner" content="" />
+    <meta property="og:site_name" content="ParkRater" />
 </head>
 
 <body>
 
     <header>
-        <div class="column" id="headerDivLogo">
+        <!-- Site Logo w/ index.html link-->
+        <div class="column" id="headerLogoDiv">
             <a href="./index.html">
-                <img src="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png" 
-                alt="Site icon" id="siteLogo">
+                <picture id="websiteLogo">
+                    <source media="(min-width: 800px)" id="websiteLogoBig"
+                        srcset="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png">
+                    <img src="http://icons.iconarchive.com/icons/sonya/swarm/256/Park-icon.png" 
+                        alt="Site icon" id="websiteLogoSmall"> -->
+                </picture>
             </a>
         </div>    
 
-        <div class="column" id="headerDivNav">    
-            <div id="siteName">
+        <!-- Center div of the header: Name of the website and navbar -->
+        <div class="column" id="headerNavDiv">    
+            <!-- Website name -->
+            <div id="websiteName">
                 <h2>Park-Rater</h2>
             </div>
+
+            <!-- Navbar and its linked buttons -->
             <nav>
                 <button class="navButton">
                     <a href="./result_sample.html">Results Page</a>
@@ -42,14 +71,16 @@
             </nav>
         </div>  
 
-        <div class="column" id="headerDivSearchAndDropdown">
-            <div class="column" id="headerDivSearch">
+        <!-- Search bar and user setting dropdown -->
+        <div class="column" id="headerSearchAndDropdownDiv">
+            <!-- Search bar and its button -->
+            <div class="column" id="headerSearchDiv">
                 <input type="search" name="searchBox" id="searchBox">
                 <button id="searchButton">Search</button>
             </div>
 
-            <div class="column" id="headerDivDropdown">
-                <!-- <button class="dropdownButton">Us</button> -->
+            <!-- User dropdown: profile page, logout -->
+            <div class="column" id="headerDropdownDiv">
                 <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon" id="userIcon">
                 <div class="dropdownSelection">
                     <a href="#">My profile</a>
@@ -61,39 +92,61 @@
         
     </header>
 
+    <!-- Main center div-->
     <div class="centerDiv">
-        <h1>First Test Object</h1>
-        <img src="https://images.idgesg.net/images/article/2019/01/apple-maps-duckduckgo-100785363-large.jpg"
-            alt="Object's location on a map">
-        <table>
-            <thead>
-                <th>Reviews</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>User 1</td>
-                    <td>Review 1</td>
-                    <td>Rating 1</td>
-                </tr>
-                <tr>
-                    <td>User 2</td>
-                    <td>Review 2</td>
-                    <td>Rating 2</td>
-                </tr>
-                <tr>
-                    <td>User 3</td>
-                    <td>Review 3</td>
-                    <td>Rating 3</td>
-                </tr>
-                <tr>
-                    <td>User 4</td>
-                    <td>Review 4</td>
-                    <td>Rating 4</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <!-- Park with Place scheme -->
+        <div itemscope itemtype="http://schema.org/Place">
+            <!-- Name of the park -->
+            <h1>Highland Garden's Park</h1>
+
+            <!-- Images of the park -->
+            <img src="https://images.idgesg.net/images/article/2019/01/apple-maps-duckduckgo-100785363-large.jpg"
+                alt="Park's location on map">
+
+            <!-- Video of the park -->
+            <video src="https://www.youtube.com/watch?v=AoilcbV-thg">Cannot play the video</video>
+            
+            <!-- Coordinates of the park -->
+            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                <p>Latitude: 43.245557</p>
+                <p>Longitude: -79.8922284</p>
+                <meta itemprop="latitude" content="43.245557" />
+                <meta itemprop="longitude" content="-79.8922284" />
+            </div>  
+
+            <!-- Reviews -->
+            <table>
+                <thead>
+                    <th>Reviews</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User 1</td>
+                        <td>Review 1</td>
+                        <td>Rating 1</td>
+                    </tr>
+                    <tr>
+                        <td>User 2</td>
+                        <td>Review 2</td>
+                        <td>Rating 2</td>
+                    </tr>
+                    <tr>
+                        <td>User 3</td>
+                        <td>Review 3</td>
+                        <td>Rating 3</td>
+                    </tr>
+                    <tr>
+                        <td>User 4</td>
+                        <td>Review 4</td>
+                        <td>Rating 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
+    <!-- footer of the page -->
     <footer>
         Copyright Baran Kaya
     </footer>

@@ -12,17 +12,22 @@
 <body>
 
     <header>
-        <div class="column" id="headerDivLogo">
+        <!-- Site Logo w/ index.html link-->
+        <div class="column" id="headerLogoDiv">
             <a href="./index.html">
                 <img src="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png" 
-                alt="Site icon" id="siteLogo">
+                alt="Site icon" id="websiteLogo">
             </a>
-        </div>      
+        </div>    
 
-        <div class="column" id="headerDivNav">
-            <div id="siteName">
+        <!-- Center div of the header: Name of the website and navbar -->
+        <div class="column" id="headerNavDiv">    
+            <!-- Website name -->
+            <div id="websiteName">
                 <h2>Park-Rater</h2>
             </div>
+
+            <!-- Navbar and its linked buttons -->
             <nav>
                 <button class="navButton">
                     <a href="./result_sample.html">Results Page</a>
@@ -40,16 +45,18 @@
                     <a href="./registration.html">Registration</a>
                 </button>
             </nav>
-        </div> 
+        </div>  
 
-        <div class="column" id="headerDivSearchAndDropdown">
-            <div class="column" id="headerDivSearch">
+        <!-- Search bar and user setting dropdown -->
+        <div class="column" id="headerSearchAndDropdownDiv">
+            <!-- Search bar and its button -->
+            <div class="column" id="headerSearchDiv">
                 <input type="search" name="searchBox" id="searchBox">
                 <button id="searchButton">Search</button>
             </div>
 
-            <div class="column" id="headerDivDropdown">
-                <!-- <button class="dropdownButton">Us</button> -->
+            <!-- User dropdown: profile page, logout -->
+            <div class="column" id="headerDropdownDiv">
                 <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon" id="userIcon">
                 <div class="dropdownSelection">
                     <a href="#">My profile</a>
@@ -61,23 +68,37 @@
         
     </header>
 
+    <!-- Main center div-->
     <div class="centerDiv">
+
         <p>Name of the park:</p>
-        <input type="text" name="object_name" id="object_name">
+        <input type="text" name="parkName" id="parkName">
 
         <p>Description:</p>
-        <input type="text" name="object_description" id="object_description">
+        <input type="text" name="parkDescription" id="parkDescription">
 
         <h4>Coordinates of the park</h4>
         <p>Latitude:</p>
-        <input type="text" name="coordinates_latitude" id="coordinates_latitude">
+        <input type="number" name="parkLatitude" id="parkLatitude">
         <br>
         <p>Longtude:</p>
-        <input type="text" name="coordinates_longtude" id="coordinates_longtude">
+        <input type="number" name="parkLongtude" id="parkLongtude">
+        <br>
+
+        <p>Image:</p>
+        <input type="file" name="parkImage" id="parkImage">
+        <br>
+
+        <p>Video:</p>
+        <input type="file" name="parkVideo" id="parkVideo">
+        <br>
+
         <br>
         <button>Submit</button>
+
     </div>
 
+    <!-- footer of the page -->    
     <footer>
         Copyright Baran Kaya
     </footer>
