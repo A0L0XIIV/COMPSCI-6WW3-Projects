@@ -1,0 +1,102 @@
+/* --- HTML tags --- */
+img{
+    width: 50%;
+    height: 50%;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li{
+    margin-bottom: 2em;
+}
+/* --- HTML tags --- */
+
+
+/* --- Park map & images --- */
+.parkMapAndImages{
+    margin: 0 auto;
+    width: 90%;
+    display: inline-block;
+}
+
+.parkMap{
+    width: 50%;
+    float: left;
+}
+
+.parkImages{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#parkMap{
+    height: 100%;
+    width: 98%;
+    float: left;
+}
+
+#parkImage{
+    height: 100%;
+    width: 98%;
+    float: right;
+}
+/* --- Park map & images --- */
+
+
+/* --- Park properties & description --- */
+.parkPropertiesAndDescription{
+    display: inline-block;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 1.5em;
+}
+
+.parkProperties{
+    text-align: left;
+    width: 33%;
+    float: left;
+}
+
+.parkDescription{
+    text-align: justify;
+    width: 66%;
+    float: left;
+}
+
+.parkProperties ul li{
+    margin-bottom: 0.5em;
+}
+/* --- Park properties & description --- */
+
+
+/* --- User reviews --- */
+.username{
+    float: left;
+}
+
+
+.userRating{
+    float: right;
+}
+
+.usernameAndRating{
+    display: inline-block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.userReview{
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.reviewDiv{
+    margin: 0 auto;
+}
+/* --- User reviews --- */

@@ -1,3 +1,4 @@
+/* --- HTML tags --- */
 body{
     margin: 0;
     font-size: 1.5rem;
@@ -11,7 +12,7 @@ header{
     background-size: cover;
     padding: 1%;
     height: 8em;
-    margin: 0px;
+    margin: 0;
 }
 
 nav{
@@ -32,6 +33,11 @@ img{
     width: 90%;
     height: 90%;
 }
+
+meta{
+    display: none;
+}
+/* --- HTML tags --- */
 
 
 /* --- Buttons --- */
@@ -55,6 +61,7 @@ button{
 /* --- Buttons --- */
 
 
+/* --- Inputs --- */
 input{
     border-radius: 10px;
     border: solid 1px black;
@@ -62,6 +69,7 @@ input{
     height: 2vw;
     font-size: 1.2vw;
 }
+/* --- Inputs --- */
 
 
 /* --- Select-option --- */
@@ -101,39 +109,15 @@ option{
 /* --- Search bar  --- */
 
 
+/* --- Divs  --- */
 .centerDiv{
     text-align: center;
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
     background: rgba(200, 200, 200, 0.3);
 }
 
-
-#userIcon{
-    float: right;
-    width: 3vw;
-    height: 3vw;
-    background: yellow;
-    border: solid 0.1em black;
-    border-radius: 50%;
-}
-
-#userIcon:hover{
-    background: red;
-}
-
-
-.dropdownSelection{
-    display: none;
-    position: absolute;
-    background: rgba(25, 205, 25, 1);
-}
-
-.dropdownSelection a{
-    text-decoration: none;
-    color: black;
-}
-
+    /*Header Divs*/
 #headerDropdownDiv{
     height: 50%;
     float: right;
@@ -168,7 +152,22 @@ option{
     margin-top: 25%;
     margin-left: 10%;
 }
+/* --- Divs  --- */
 
+
+/* --- IDs  --- */
+#userIcon{
+    float: right;
+    width: 3vw;
+    height: 3vw;
+    background: yellow;
+    border: solid 0.1em black;
+    border-radius: 50%;
+}
+
+#userIcon:hover{
+    background: red;
+}
 
 #websiteLogo{
     border-radius: 50%;
@@ -186,21 +185,66 @@ option{
     margin: 0;
     margin-top: -1em;
 }
+/* --- IDs  --- */
+
+
+/* --- Classes  --- */
+.dropdownSelection{
+    display: none;
+    position: absolute;
+    background: rgba(25, 205, 25, 1);
+}
+
+.dropdownSelection a{
+    text-decoration: none;
+    color: black;
+}
+/* --- Classes  --- */
+
+
 
 
 
 
 
 /* Mobile Styles */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 500px) {
     body {
-        background-color: #F09A9D; /* Red */
+        background-color: red;
+        font-size: 1rem;
+    }
+
+    .centerDiv{
+        width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    body {
+        background-color: blue;
+        font-size: 1rem;
+    }
+
+    .centerDiv{
+        width: 100%;
     }
 }
 
 
+/* Lower Res Desktop Styles */
+@media only screen and (min-width: 1001px) and (max-width: 1250px) {
+    body{
+        font-size: 1.5rem;
+    }
+
+    .centerDiv{
+        width: 90%;
+    }
+}
+
 /* Desktop Styles */
-@media only screen and (min-width: 801px) {
-    body {
+@media only screen and (min-width: 1251px) {
+    body{
     }
 }

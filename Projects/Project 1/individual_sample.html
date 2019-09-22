@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "stylesheet" type = "text/css" href = "./base.css" />
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./base.css" />
+    <link rel="stylesheet" type="text/css" href="./individual_sample.css" />
+    <!-- Title of the page -->
     <title>Highland Garden's Park</title>
-   
+
     <!-- Twitter Cards Metadata-->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@parkrater" />
@@ -15,9 +18,9 @@
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="Highland Garden's Park" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.parkrater.com/park/abc123/" /><!--unique ID for every park--> 
+    <meta property="og:url" content="http://www.parkrater.com/park/abc123/" />
     <!--Open Graph image properties -->
-    <meta property="og:image" content="http://www.parkrater.com/park/abc123/images/abc123img123.jpg" />  
+    <meta property="og:image" content="http://www.parkrater.com/park/abc123/images/abc123img123.jpg" />
     <meta property="og:image:secure_url" content="https://www.parkrater.com/park/abc123/images/abc123img123.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="400" />
@@ -38,14 +41,14 @@
                 <picture id="websiteLogo">
                     <source media="(min-width: 800px)" id="websiteLogoBig"
                         srcset="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png">
-                    <img src="http://icons.iconarchive.com/icons/sonya/swarm/256/Park-icon.png" 
-                        alt="Site icon" id="websiteLogoSmall"> -->
+                    <img src="http://icons.iconarchive.com/icons/sonya/swarm/256/Park-icon.png" alt="Site icon"
+                        id="websiteLogoSmall"> -->
                 </picture>
             </a>
-        </div>    
+        </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="column" id="headerNavDiv">    
+        <div class="column" id="headerNavDiv">
             <!-- Website name -->
             <div id="websiteName">
                 <h2>Park-Rater</h2>
@@ -69,7 +72,7 @@
                     <a href="./registration.html">Registration</a>
                 </button>
             </nav>
-        </div>  
+        </div>
 
         <!-- Search bar and user setting dropdown -->
         <div class="column" id="headerSearchAndDropdownDiv">
@@ -81,7 +84,8 @@
 
             <!-- User dropdown: profile page, logout -->
             <div class="column" id="headerDropdownDiv">
-                <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon" id="userIcon">
+                <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon"
+                    id="userIcon">
                 <div class="dropdownSelection">
                     <a href="#">My profile</a>
                     <a href="#">My reviews</a>
@@ -89,7 +93,7 @@
                 </div>
             </div>
         </div>
-        
+
     </header>
 
     <!-- Main center div-->
@@ -98,51 +102,193 @@
         <!-- Park with Place scheme -->
         <div itemscope itemtype="http://schema.org/Place">
             <!-- Name of the park -->
-            <h1>Highland Garden's Park</h1>
+            <h1 itemprop="name">Highland Garden's Park</h1>
 
-            <!-- Images of the park -->
-            <img src="https://images.idgesg.net/images/article/2019/01/apple-maps-duckduckgo-100785363-large.jpg"
-                alt="Park's location on map">
+            <div class="parkMapAndImages">
+                <!-- Map of the park -->
+                <div class="parkMap">
+                    <img src="https://images.idgesg.net/images/article/2019/01/apple-maps-duckduckgo-100785363-large.jpg"
+                        alt="Park's location on map" id="parkMap">
+                </div>
 
-            <!-- Video of the park -->
-            <video src="https://www.youtube.com/watch?v=AoilcbV-thg">Cannot play the video</video>
-            
-            <!-- Coordinates of the park -->
+                <!-- Images of the park -->
+                <div class="parkImages">
+                    <img src="https://www.raisethehammer.org/static/images/street_view_highland_gardens_park_stairs.jpg"
+                        alt="Park's location on map" id="parkImage" itemprop="image">
+                </div>
+            </div>
+
+            <div>
+                <!-- Video of the park -->
+                <video width="480" height="360" controls>
+                    <source src="./Videos/aFewMomentsLater.mp4" type="video/mp4">
+                    Cannot play the video
+                </video>
+            </div>
+
+            <!-- Coordinates of the park with schema geo coordinates microdata -->
             <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                 <p>Latitude: 43.245557</p>
                 <p>Longitude: -79.8922284</p>
                 <meta itemprop="latitude" content="43.245557" />
                 <meta itemprop="longitude" content="-79.8922284" />
-            </div>  
+            </div>
+
+            <hr>
+
+            <div class="parkPropertiesAndDescription">
+                <h2>Park Properties</h2>
+                <!-- Park properties -->
+                <div class="parkProperties">
+                    <ul itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <li>
+                            <b>Country:</b> 
+                            <span itemprop="addressCountry">Canada</span>
+                        </li>
+                        <li>
+                            <b>State/Region:</b> 
+                            <span itemprop="addressRegion">ON</span>
+                        </li>
+                        <li>
+                            <b>City:</b> 
+                            <span itemprop="addressLocality">Hamilton</span>
+                        </li>
+                        <li>
+                            <b>Address:</b> 
+                            <span itemprop="streetAddress">1 Hillcrest Avenue</span>
+                        </li>
+                        <li>
+                            <b>Code:</b> 
+                            <span itemprop="postalCode">L8P 2X3</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Description of the park -->
+                <div class="parkDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec orci augue. In at quam
+                    lacus. Proin in erat a neque tempus pharetra. In ante nibh, luctus quis risus vitae, molestie 
+                    porta justo. Fusce leo neque, tincidunt nec justo in, egestas mollis arcu. Aliquam erat 
+                    volutpat. In pharetra commodo augue non commodo. Nullam ultrices, tortor ac imperdiet tempor, 
+                    quam mi placerat enim, viverra porta erat urna nec arcu. Maecenas auctor nulla nec maximus
+                    convallis. Nunc lacinia risus in diam interdum feugiat. Vivamus vehicula nisi ut ornare semper.
+                </div>
+            </div>
+
+            <hr>
+            <h2>Reviews</h2>
+            <hr>
 
             <!-- Reviews -->
-            <table>
-                <thead>
-                    <th>Reviews</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>User 1</td>
-                        <td>Review 1</td>
-                        <td>Rating 1</td>
-                    </tr>
-                    <tr>
-                        <td>User 2</td>
-                        <td>Review 2</td>
-                        <td>Rating 2</td>
-                    </tr>
-                    <tr>
-                        <td>User 3</td>
-                        <td>Review 3</td>
-                        <td>Rating 3</td>
-                    </tr>
-                    <tr>
-                        <td>User 4</td>
-                        <td>Review 4</td>
-                        <td>Rating 4</td>
-                    </tr>
-                </tbody>
-            </table>
+            <ul>
+                <!-- Review 1 -->
+                <li>
+                    <div class="reviewDiv" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="itemreviewed" itemscope itemtype="http://schema.org/Place" content="Park">
+                        <meta itemprop="name" content="Highland Garden's Park"/>
+                        <div class="usernameAndRating">
+                            <h3 class="username" itemprop="author">User 1</h3>
+                            <h3 class="userRating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Rating:
+                                <span itemprop="ratingValue">8</span>
+                                <meta itemprop="bestRating" content="10">
+                                <meta itemprop="worstRating" content="1">
+                            </h3>
+                        </div>
+                        <div class="userReview" itemprop="reviewBody">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec orci augue. In at quam
+                            lacus. Proin in erat a neque tempus pharetra. In ante nibh, luctus quis risus vitae, molestie 
+                            porta justo. Fusce leo neque, tincidunt nec justo in, egestas mollis arcu. Aliquam erat 
+                            volutpat. In pharetra commodo augue non commodo. Nullam ultrices, tortor ac imperdiet tempor, 
+                            quam mi placerat enim, viverra porta erat urna nec arcu. Maecenas auctor nulla nec maximus
+                            convallis. Nunc lacinia risus in diam interdum feugiat. Vivamus vehicula nisi ut ornare semper.
+                        </div>
+                    </div>
+                </li>
+                <hr>
+
+                <!-- Review 2 -->
+                <li>
+                    <div class="reviewDiv" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="itemreviewed" itemscope itemtype="http://schema.org/Place" content="Park">
+                        <meta itemprop="name" content="Highland Garden's Park"/>
+                        <div class="usernameAndRating">
+                            <h3 class="username" itemprop="author">User 2</h3>
+                            <h3 class="userRating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Rating:
+                                <span itemprop="ratingValue">10</span>
+                                <meta itemprop="bestRating" content="10">
+                                <meta itemprop="worstRating" content="1">
+                            </h3>
+                        </div>
+                        <div class="userReview">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec orci augue. In at quam
+                            lacus. Proin in erat a neque tempus pharetra. In ante nibh, luctus quis risus vitae,
+                            molestie porta justo. Fusce leo neque, tincidunt nec justo in, egestas mollis arcu. Aliquam
+                            erat volutpat. In pharetra commodo augue non commodo. Nullam ultrices, tortor ac imperdiet
+                            tempor, quam mi placerat enim, viverra porta erat urna nec arcu. Maecenas auctor nulla nec
+                            maximus convallis. Nunc lacinia risus in diam interdum feugiat. Vivamus vehicula nisi ut
+                            ornare semper.
+                            <br>
+                            Sed eget elit congue, tincidunt sem eget, viverra ipsum. In lacus turpis, consectetur non
+                            odio ut, hendrerit mattis dolor. Nam viverra orci non enim rhoncus, non commodo lacus
+                            feugiat. Curabitur eu sollicitudin urna. Duis semper turpis at hendrerit pellentesque. Class
+                            aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla
+                            non porttitor nisi. Duis consectetur ante nunc, quis euismod erat facilisis at. Nam diam
+                            nisl, porta sit amet magna at, fermentum consequat nunc. Pellentesque ultricies laoreet
+                            massa ultrices feugiat. Donec pharetra purus vel purus vulputate maximus. Aliquam id mi a
+                            ligula placerat ultrices.
+                        </div>
+                    </div>
+                </li>
+                <hr>
+
+                <!-- Review 3 -->
+                <li>
+                    <div class="reviewDiv" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="itemreviewed" itemscope itemtype="http://schema.org/Place" content="Park">
+                        <meta itemprop="name" content="Highland Garden's Park"/>
+                        <div class="usernameAndRating">
+                            <h3 class="username" itemprop="author">User 3</h3>
+                            <h3 class="userRating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Rating:
+                                <span itemprop="ratingValue">9</span>
+                                <meta itemprop="bestRating" content="10">
+                                <meta itemprop="worstRating" content="1">
+                            </h3>
+                        </div>
+                        <div class="userReview">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec orci augue. In at quam
+                            lacus. Proin in erat a neque tempus pharetra. In ante nibh, luctus quis risus vitae, molestie 
+                            porta justo. Fusce leo neque, tincidunt nec justo in, egestas mollis arcu. Aliquam erat 
+                            volutpat.
+                        </div>
+                    </div>
+                </li>
+                <hr>
+
+                <!-- Review 4 -->
+                <li>
+                    <div class="reviewDiv" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="itemreviewed" itemscope itemtype="http://schema.org/Place" content="Park">
+                        <meta itemprop="name" content="Highland Garden's Park"/>
+                        <div class="usernameAndRating">
+                            <h3 class="username" itemprop="author">User 4</h3>
+                            <h3 class="userRating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Rating:
+                                <span itemprop="ratingValue">6</span>
+                                <meta itemprop="bestRating" content="10">
+                                <meta itemprop="worstRating" content="1">
+                            </h3>
+                        </div>
+                        <div class="userReview">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec orci augue. In at quam
+                            lacus. Proin in erat a neque tempus pharetra. In ante nibh, luctus quis risus vitae, molestie 
+                            porta justo. Fusce leo neque, tincidunt nec justo in, egestas mollis arcu. Aliquam erat 
+                            volutpat. In pharetra commodo augue non commodo. Nullam ultrices, tortor ac imperdiet tempor, 
+                            quam mi placerat enim, viverra porta erat urna nec arcu. Maecenas auctor nulla nec maximus
+                            convallis. Nunc lacinia risus in diam interdum feugiat. Vivamus vehicula nisi ut ornare semper.
+                        </div>
+                    </div>
+                </li>
+                <hr>
+            </ul>
         </div>
     </div>
 
