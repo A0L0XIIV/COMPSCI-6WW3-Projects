@@ -1,0 +1,42 @@
+nav{
+    text-align: center;
+}
+
+#websiteLogo{
+    display: block;
+    max-width:200px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+}
+
+header .col-3{
+    height: 100%;
+}
+
+#headerSearchAndDropdownDiv2 .row{
+    height: 50%;
+}
+
+#searchButton{
+    height: 1.5em;
+}
+
+#headerDiv2 .row {
+    height: 50%;
+}
+
+.breadcrumb > ul{
+    list-style-type: none;
+}
+
+.breadcrumb > ul > li{
+    display: inline;
+}
+
+.breadcrumb{
+    margin: 0;
+    margin-bottom: 0.5em; 
+    padding: 0;
+    padding-top: 0.8em;
+}

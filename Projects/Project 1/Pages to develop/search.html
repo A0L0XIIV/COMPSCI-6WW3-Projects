@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/search.css" />
+    <!-- Title of the page -->
+    <title>Search for parks</title>
+    <!-- IPhone adding to home screen -->
+    <link rel="apple-touch-icon" href="../Images/LogoSmall.png" />
+    <link rel="apple-touch-startup-image" href="../Images/Logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width = device-width, initial-scale = 2.3, minimum-scale = 1, maximum-scale = 5" />
+
+</head>
+
+<body>
+
+    <header class="row">
+        <!-- Site Logo w/ index.html link-->
+        <div class="col-3" id="headerLogoDiv2">
+            <a href="./index.html">
+                <picture id="websiteLogo">
+                    <source media="(min-width: 800px)" id="websiteLogoBig"
+                        srcset="../Images/Logo.png">
+                    <img src="../Images/LogoSmall.png" alt="ParkRater Logo"
+                        id="websiteLogoSmall">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Center div of the header: Name of the website and navbar -->
+        <div class="col-6" id="headerNavDiv2">
+            <!-- Website name -->
+            <div class="row justify-content-md-center align-items-end" id="websiteName">
+                <h2>ParkRater</h2>
+            </div>
+
+            <!-- Navbar and its linked buttons -->
+            <nav class="row justify-content-md-center align-items-end">
+                <button class="navButton">
+                    <a href="../Pages to develop/result_sample.html">Results</a>
+                </button>
+                <button class="navButton">
+                    <a href="../Pages to develop/individual_sample.html">Individual</a>
+                </button>
+                <button class="navButton">
+                    <a href="../Pages to develop/search.html">Search Parks</a>
+                </button>
+                <button class="navButton">
+                    <a href="../Pages to develop/submission.html">New Park</a>
+                </button>
+                <button class="navButton">
+                    <a href="../Pages to develop/registration.html">Sign Up</a>
+                    <!-- User dropdown: profile page, logout -->
+                    <!-- <div class="col-2" id="headerDropdownDiv2">
+                        <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon"
+                            id="userIcon">
+                        <div class="dropdownSelection">
+                            <a href="#">My profile</a>
+                            <a href="#">My reviews</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div> -->
+                </button>
+            </nav>
+        </div>
+
+        <!-- Search bar and user setting dropdown -->
+        <div class="col-3" id="headerSearchAndDropdownDiv2">
+            <!-- Search bar and its button -->
+            <div class="row">
+                <input type="search" name="searchBox" id="searchBox" placeholder="Enter park name">
+                <button id="searchButton">Search</button>
+            </div>
+            <!-- Search w/ rating dropdown and its button -->
+            <div class="row">
+                <select>
+                    <option value="" hidden selected>Select rating</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+                <button id="searchButton">Search</button>
+            </div>    
+        </div>
+
+    </header>
+
+    <!-- Centered main-->
+    <main class="main">
+
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    <a href="../Pages to develop/index.html">Home</a>
+                </li>
+                <li>></li>
+                <li>
+                    <a href="../Pages to develop/search.html">Search Parks</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Search with park name part -->
+        <h4>Search with park name</h4>
+        <input type="search" name="searchBox" id="searchBox" placeholder="Name of the park">
+        <br>
+        <br>
+        <button id="searchButton">Search by name</button>
+
+        <hr>
+
+        <!-- Search with rating part -->
+        <h4>Search with rating</h4>
+        <select>
+            <option value="" hidden selected>Rating</option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+        </select>
+        <br>
+        <br>
+        <button id="searchButton">Search by rating</button>
+        <br>
+        <br>
+    </main>
+
+    <!-- footer of the page -->
+    <footer>
+        &copy; ParkRater, Baran Kaya, 2019
+    </footer>
+
+</body>
+
+</html>
