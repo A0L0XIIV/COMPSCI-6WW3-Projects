@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/submission.css" />
+    <!-- Title of the page -->
+    <title>Add a new park</title>
+    <!-- IPhone adding to home screen -->
+    <link rel="apple-touch-icon" href="../Images/LogoSmall.png" />
+    <link rel="apple-touch-startup-image" href="../Images/Logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width = device-width, initial-scale = 2.3, minimum-scale = 1, maximum-scale = 5" />
+    <!-- Favicon for homescreens -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2fa22b">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <header class="row">
+        <!-- Site Logo w/ index.html link-->
+        <div class="col-3" id="headerLogoDiv">
+            <a href="./index.html">
+                <picture id="websiteLogo">
+                    <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logo.png">
+                    <img src="../Images/LogoSmall.png" alt="ParkRater Logo" id="websiteLogoSmall">
+                </picture>
+            </a>
+        </div>
+
+        <!-- Center div of the header: Name of the website and navbar -->
+        <div class="col-6" id="headerNavDiv">
+            <!-- Website name -->
+            <div class="row justify-content-md-center align-items-end" id="websiteName">
+                <h2>ParkRater</h2>
+            </div>
+
+            <!-- Navbar and its linked buttons -->
+            <nav class="row justify-content-md-center align-items-end">      
+                <form action="../PagesToDevelop/result_sample.html" class="navButton">
+                    <input type="submit" value="Results" />
+                </form>
+                <form action="../PagesToDevelop/individual_sample.html" class="navButton">
+                    <input type="submit" value="Individual" />
+                </form>
+                <form action="../PagesToDevelop/search.html" class="navButton">
+                    <input type="submit" value="Search Parks" />
+                </form>
+                <form action="../PagesToDevelop/submission.html" class="navButton">
+                    <input type="submit" value="New Park" />
+                </form>
+                <form action="../PagesToDevelop/registration.html" class="navButton">
+                    <input type="submit" value="Sign Up" />
+                </form>             
+            </nav>
+        </div>
+
+        <!-- Search bar and user setting dropdown -->
+        <div class="col-3" id="headerSearchDiv">
+            <!-- Search bar and its button -->
+            <div class="row">
+                <input type="search" name="searchBox" class="searchBox" placeholder="Enter park name">
+                <button class="searchButton">Search</button>
+            </div>
+            <!-- Search w/ rating dropdown and its button -->
+            <div class="row">
+                <select>
+                    <option value="" hidden selected>Select rating</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+                <button class="searchButton">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Centered main-->
+    <main class="main">
+
+        <!-- Breadcrum: Navigation -->
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    <a href="../PagesToDevelop/index.html">Home</a>
+                </li>
+                <li>></li>
+                <li>
+                    <a href="../PagesToDevelop/submission.html">Add a Park</a>
+                </li>
+            </ul>
+        </div>
+
+        <p>Name of the park:</p>
+        <input type="text" name="parkName" id="parkName">
+
+        <p>Description:</p>
+        <input type="text" name="parkDescription" id="parkDescription">
+
+        <h4>Coordinates of the park</h4>
+        <p>Latitude:</p>
+        <input type="number" name="parkLatitude" id="parkLatitude">
+        <br>
+        <p>Longtude:</p>
+        <input type="number" name="parkLongtude" id="parkLongtude">
+        <br>
+
+        <p>Image:</p>
+        <input type="file" name="parkImage" id="parkImage">
+        <br>
+
+        <p>Video:</p>
+        <input type="file" name="parkVideo" id="parkVideo">
+        <br>
+
+        <br>
+        <button>Submit</button>
+
+    </main>
+
+    <!-- footer of the page -->
+    <footer>
+        &copy; ParkRater, Baran Kaya, 2019
+    </footer>
+
+</body>
+
+</html>

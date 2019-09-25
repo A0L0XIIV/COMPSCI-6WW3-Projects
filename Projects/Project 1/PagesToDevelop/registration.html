@@ -18,71 +18,98 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="viewport" content="width = device-width, initial-scale = 2.3, minimum-scale = 1, maximum-scale = 5" />
-
+    <!-- Favicon for homescreens -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2fa22b">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
 
-    <header>
+    <header class="row">
         <!-- Site Logo w/ index.html link-->
-        <div class="column" id="headerLogoDiv">
+        <div class="col-3" id="headerLogoDiv">
             <a href="./index.html">
-                <img src="https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png"
-                    alt="Site icon" id="websiteLogo">
+                <picture id="websiteLogo">
+                    <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logo.png">
+                    <img src="../Images/LogoSmall.png" alt="ParkRater Logo" id="websiteLogoSmall">
+                </picture>
             </a>
         </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="column" id="headerNavDiv">
+        <div class="col-6" id="headerNavDiv">
             <!-- Website name -->
-            <div id="websiteName">
+            <div class="row justify-content-md-center align-items-end" id="websiteName">
                 <h2>ParkRater</h2>
             </div>
 
             <!-- Navbar and its linked buttons -->
-            <nav>
-                <button class="navButton">
-                    <a href="../Pages to develop/result_sample.html">Results Page</a>
-                </button>
-                <button class="navButton">
-                    <a href="../Pages to develop/individual_sample.html">Individual Sample</a>
-                </button>
-                <button class="navButton">
-                    <a href="../Pages to develop/search.html">Search Parks</a>
-                </button>
-                <button class="navButton">
-                    <a href="../Pages to develop/submission.html">New Park</a>
-                </button>
-                <button class="navButton">
-                    <a href="../Pages to develop/registration.html">Sign Up</a>
-                </button>
+            <nav class="row justify-content-md-center align-items-end">      
+                <form action="../PagesToDevelop/result_sample.html" class="navButton">
+                    <input type="submit" value="Results" />
+                </form>
+                <form action="../PagesToDevelop/individual_sample.html" class="navButton">
+                    <input type="submit" value="Individual" />
+                </form>
+                <form action="../PagesToDevelop/search.html" class="navButton">
+                    <input type="submit" value="Search Parks" />
+                </form>
+                <form action="../PagesToDevelop/submission.html" class="navButton">
+                    <input type="submit" value="New Park" />
+                </form>
+                <form action="../PagesToDevelop/registration.html" class="navButton">
+                    <input type="submit" value="Sign Up" />
+                </form>             
             </nav>
         </div>
 
         <!-- Search bar and user setting dropdown -->
-        <div class="column" id="headerSearchAndDropdownDiv">
+        <div class="col-3" id="headerSearchDiv">
             <!-- Search bar and its button -->
-            <div class="column" id="headerSearchDiv">
-                <input type="search" name="searchBox" id="searchBox">
-                <button id="searchButton">Search</button>
+            <div class="row">
+                <input type="search" name="searchBox" class="searchBox" placeholder="Enter park name">
+                <button class="searchButton">Search</button>
             </div>
-
-            <!-- User dropdown: profile page, logout -->
-            <div class="column" id="headerDropdownDiv">
-                <input type="image" src="https://image.flaticon.com/icons/png/512/55/55089.png" alt="User Icon"
-                    id="userIcon">
-                <div class="dropdownSelection">
-                    <a href="#">My profile</a>
-                    <a href="#">My reviews</a>
-                    <a href="#">Logout</a>
-                </div>
+            <!-- Search w/ rating dropdown and its button -->
+            <div class="row">
+                <select>
+                    <option value="" hidden selected>Select rating</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+                <button class="searchButton">Search</button>
             </div>
         </div>
-
     </header>
 
     <!-- Centered main-->
     <main class="main">
+
+        <!-- Breadcrum: Navigation -->
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    <a href="../PagesToDevelop/index.html">Home</a>
+                </li>
+                <li>></li>
+                <li>
+                    <a href="../PagesToDevelop/registration.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
 
         <p>*Username: </p>
         <input type="text" name="userName" id="userName" required>

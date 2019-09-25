@@ -1,4 +1,33 @@
-img{
-    width: 20%;
-    height: 20%;
+/*Map image size*/
+.parkData img{
+    width: 90%;
+    height: auto;
 }
+/*Park info paragraf justify*/
+.parkData p{
+    text-align: justify;
+}
+/*Table with only horizontal lines*/
+tr {
+    border-bottom: 0.3em solid rgb(54, 40, 0);
+    border-top: 0.3em solid rgb(54, 40, 0);
+    border-collapse: collapse;
+}​
+
+
+/* --- Table adjustments --- */
+.resultTableMap{
+    width: 35%;
+    height: 20rem;
+}
+
+.resultTableInfo{
+    width: 55%;
+    height: 20rem;
+}
+
+.resultTableLink{
+    width: 10%;
+    height: 20rem;
+}
+/* --- Table adjustments --- */
