@@ -78,6 +78,31 @@ button:hover{
     background: blue;
     color: white;
 }
+/*Submit&Reset buttons colors, border and sizes*/
+input[type="submit"], input[type="reset"]{
+    background: rgba(5, 155, 5, 0.95);
+    color: white;
+    border: none;    
+    margin: 0;
+    padding: 2%;  
+    font-size: 1.2vw;
+    width: 6em;
+    height: auto;
+}
+/*Submit button hover colors and text decorations*/
+input[type="submit"]:hover{
+    background: #ff7b00;
+    color: rgb(54, 40, 0); 
+    font-weight: bold;
+    text-shadow: 0 0 2px white;
+}
+/*Reset button hover colors and text decorations*/
+input[type="reset"]:hover{
+    background: rgb(54, 40, 0);
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff7b00;
+}
 /* --- Buttons --- */
 
 

@@ -111,30 +111,37 @@
             </ul>
         </div>
 
-        <p>Name of the park:</p>
-        <input type="text" name="parkName" id="parkName">
+        <!--Input for park name, type=text-->
+        <p>*Name of the park:</p>
+        <input type="text" name="parkName" id="parkName" placeholder="Park name" required>
 
+        <!--Input/textarea for park description, type=textarea-->
         <p>Description:</p>
-        <input type="text" name="parkDescription" id="parkDescription">
+        <textarea rows="3" cols="30" name="parkDescription" id="parkDescription" placeholder="Description (max 500 words)"></textarea>
 
-        <h4>Coordinates of the park</h4>
-        <p>Latitude:</p>
-        <input type="number" name="parkLatitude" id="parkLatitude">
+        <!--Input for park coordinates, type=number-->
+        <p>*Coordinate - Latitude:</p>
+        <input type="number" name="parkLatitude" id="parkLatitude" placeholder="Latitude (00.0000000)" required>
         <br>
-        <p>Longtude:</p>
-        <input type="number" name="parkLongtude" id="parkLongtude">
+        <p>*Coordinate - Longitude:</p>
+        <input type="number" name="parkLongitude" id="parkLongitude" placeholder="Longitude (00.0000000)" required>
         <br>
 
+        <!--Input for park image, type=file, accept=image-->
         <p>Image:</p>
-        <input type="file" name="parkImage" id="parkImage">
+        <input type="file" accept="image/*" name="parkImage" id="parkImage">
         <br>
 
+        <!--Input for park video, type=file, accept=video-->
         <p>Video:</p>
-        <input type="file" name="parkVideo" id="parkVideo">
+        <input type="file" accept="video/*" name="parkVideo" id="parkVideo">
         <br>
 
         <br>
-        <button>Submit</button>
+        <!--Input for submitting the form, type=submit-->
+        <input type="submit" value="Submit" class="submissionButton">
+        <br>
+        <br>
 
     </main>
 

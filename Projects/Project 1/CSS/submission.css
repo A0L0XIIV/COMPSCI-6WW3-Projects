@@ -1,0 +1,11 @@
+/*Empty space between inputs*/
+input{
+    margin-bottom: 1rem;
+}
+
+/*Textarea decoration like input tags*/
+textarea{  
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 1.2vw;
+}

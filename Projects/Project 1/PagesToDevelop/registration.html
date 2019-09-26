@@ -111,23 +111,30 @@
             </ul>
         </div>
 
+        <!--Input for username, type=text-->
         <p>*Username: </p>
         <input type="text" name="userName" id="userName" required>
 
+        <!--Input for email address, type=email-->
         <p>*Email: </p>
         <input type="email" name="userMail" id="userMail" required>
 
+        <!--Input for user password, type=password-->
         <p>*Password:</p>
         <input type="password" name="userPassword" id="userPassword" required>
 
+        <!--Input for user city, type=text-->
         <p>Current City: </p>
         <input type="text" name="userCity" id="userCity">
 
+        <!--Input for mail subscription, type=checkbox-->
         <p>Would you like to get mails from us?</p>
         <input type="checkbox" name="mailSubscribe" id="mailSubscribe">
 
+        <!--Input for frequency, type=radio-->
         <p>How often do you visit parks?</p>
 
+        <!--First div for # of days-->
         <div style="float: left; width: 40%">
             <p>1-2<input type="radio" name="days" id="1to2"></p>
             <p>3-4<input type="radio" name="days" id="3to4"></p>
@@ -137,6 +144,7 @@
         <div style="float: left; width: 20%">
             <p>in a</p>
         </div>
+        <!--Third div for period-->
         <div style="float: left; width: 40%">
             <p>week<input type="radio" name="period" id="week"></p>
             <p>month<input type="radio" name="period" id="month"></p>
@@ -144,13 +152,15 @@
             <p>year<input type="radio" name="period" id="year"></p>
         </div>
 
+        <!--Input for user phone number, type=tel-->
         <p>Phone:</p>
-        <input type="tel" name="x" id="x">
+        <input type="tel" name="userPhone" id="userPhone">
 
         <br>
 
-        <!-- <button class="submitButton">Submit</button> -->
-        <input type="reset" value="Reset">
+        <!--Input for form reset, type=reset-->
+        <input type="reset" value="Reset" class="resetButton">
+        <!--Input for submitting the form, type=submit-->
         <input type="submit" value="Submit" class="submitButton">
     </main>
 
