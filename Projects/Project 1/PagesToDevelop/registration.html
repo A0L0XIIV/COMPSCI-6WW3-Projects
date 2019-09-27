@@ -13,8 +13,8 @@
     <!-- Title of the page -->
     <title>Sign Up to ParkRater</title>
     <!-- IPhone adding to home screen -->
-    <link rel="apple-touch-icon" href="../Images/LogoSmall.png" />
-    <link rel="apple-touch-startup-image" href="../Images/Logo.png" />
+    <link rel="apple-touch-icon" href="../Images/Logos/LogoSmall.png" />
+    <link rel="apple-touch-startup-image" href="../Images/Logos/Logo.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="viewport" content="width = device-width, initial-scale = 2.3, minimum-scale = 1, maximum-scale = 5" />
@@ -35,8 +35,8 @@
         <div class="col-3" id="headerLogoDiv">
             <a href="./index.html">
                 <picture id="websiteLogo">
-                    <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logo.png">
-                    <img src="../Images/LogoSmall.png" alt="ParkRater Logo" id="websiteLogoSmall">
+                    <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logos/Logo.png">
+                    <img src="../Images/Logos/LogoSmall.png" alt="ParkRater Logo" id="websiteLogoSmall">
                 </picture>
             </a>
         </div>
@@ -127,41 +127,66 @@
         <p>Current City: </p>
         <input type="text" name="userCity" id="userCity">
 
-        <!--Input for mail subscription, type=checkbox-->
-        <p>Would you like to get mails from us?</p>
-        <input type="checkbox" name="mailSubscribe" id="mailSubscribe">
-
-        <!--Input for frequency, type=radio-->
-        <p>How often do you visit parks?</p>
-
-        <!--First div for # of days-->
-        <div style="float: left; width: 40%">
-            <p>1-2<input type="radio" name="days" id="1to2"></p>
-            <p>3-4<input type="radio" name="days" id="3to4"></p>
-            <p>5-6<input type="radio" name="days" id="5to6"></p>
-            <p>7+<input type="radio" name="days" id="7plus"></p>
-        </div>
-        <div style="float: left; width: 20%">
-            <p>in a</p>
-        </div>
-        <!--Third div for period-->
-        <div style="float: left; width: 40%">
-            <p>week<input type="radio" name="period" id="week"></p>
-            <p>month<input type="radio" name="period" id="month"></p>
-            <p>session<input type="radio" name="period" id="session"></p>
-            <p>year<input type="radio" name="period" id="year"></p>
-        </div>
-
         <!--Input for user phone number, type=tel-->
         <p>Phone:</p>
         <input type="tel" name="userPhone" id="userPhone">
 
-        <br>
+        <hr>
+
+        <!--Input for frequency, type=radio-->
+        <p>How often do you visit parks?</p>
+
+        <!--Flex box for 3 rows-->
+        <div class="flexContainer">
+            <!--First grid div for # of days-->
+            <div class="gridContainer flexDiv1">
+                <p class="daysValues">1-2</p>
+                <input type="radio" name="days" id="1to2">
+                <p>3-4</p>
+                <input type="radio" name="days" id="3to4">
+                <p>5-6</p>
+                <input type="radio" name="days" id="5to6">
+                <p>7+</p>
+                <input type="radio" name="days" id="7plus">
+            </div>
+            <!--Second grid div for "in a"-->
+            <div class="flexDiv2">
+                <p>in a</p>
+            </div>
+            <!--Third grid div for period-->
+            <div class="gridContainer flexDiv3">
+                <p>week</p>
+                <input type="radio" name="period" id="week">
+                <p>month</p>
+                <input type="radio" name="period" id="month">
+                <p>session</p>
+                <input type="radio" name="period" id="session">
+                <p>year</p>
+                <input type="radio" name="period" id="year">
+            </div>
+        </div>
+
+        <hr>
+
+        <!--Input for terms&conditions, type=checkbox-->
+        <div class="flexContainer checkBox">
+            <input type="checkbox" name="termsAndPrivacy" id="termsAndPrivacy" required>
+            <p class="termsAndPrivacyText">
+                I read and acceptted
+                <a href="https://www.google.com/search?q=terms+%26+conditions">Terms&Conditions</a>
+                and
+                <a href="https://www.google.com/search?q=privacy+policy">Privacy Policy</a>
+                of ParkRater.
+            </p>
+        </div>
+
+        <hr>
 
         <!--Input for form reset, type=reset-->
         <input type="reset" value="Reset" class="resetButton">
         <!--Input for submitting the form, type=submit-->
         <input type="submit" value="Submit" class="submitButton">
+        <br><br>
     </main>
 
     <!-- Footer of the page -->

@@ -4,7 +4,7 @@ body{
     font-size: 1.5rem;
     font-family: Helvetica, sans-serif;
     background: rgba(200, 200, 200, 0.3);
-    background-image: url("../Images/mainBackground.jpg");
+    background-image: url("../Images/Backgrounds/bgBig.jpg");
     background-repeat: no-repeat;   
     background-position: center;
     background-size: cover;
@@ -12,8 +12,8 @@ body{
 }
 
 header{
-    background: rgba(5, 185, 5, 1);
-    background-image: url("../Images/woodBig.jpg");
+    background: rgb(5, 185, 5);
+    background-image: url("../Images/Headers/woodBig.jpg");
     background-repeat: no-repeat;   
     background-position: center;
     background-size: cover;
@@ -32,7 +32,7 @@ nav{
 }
 
 footer{
-    background: rgba(5, 185, 5, 1);
+    background: rgb(5, 185, 5);
     color: rgba(54, 40, 0, 0.95);
     text-align: center;
     padding: 0.5%;
@@ -61,7 +61,7 @@ meta{
 
 /* --- Buttons --- */
 button{ 
-    background: rgba(5, 155, 5, 0.95);
+    background: rgb(5, 155, 5);
     color: white;
     border: none;    
     margin: 0;
@@ -74,13 +74,9 @@ button:hover{
     color: rgb(54, 40, 0); 
 }
 
-.submitButton{
-    background: blue;
-    color: white;
-}
 /*Submit&Reset buttons colors, border and sizes*/
 input[type="submit"], input[type="reset"]{
-    background: rgba(5, 155, 5, 0.95);
+    background: rgb(5, 155, 5);
     color: white;
     border: none;    
     margin: 0;
@@ -164,16 +160,18 @@ option{
 
 
 /* --- Search bar  --- */
+/*Search buttons on navbar size&shape*/
 .searchButton{
-    background: lightgray;
-    color: black;
     border-radius: 5px;
-    padding: 0;
-    padding-left: 1%;
-    padding-right: 1%;
-    height: 1.5em;
+    padding: 0 !important;
+    padding-left: 0.2em !important;
+    padding-right: 0.2em !important;
+    margin: 0 !important;
+    height: 2em !important;
+    width: auto !important;
 }
 
+/*Search input tag size*/
 .searchBox{
     width: 12vw;
     height: 1.5vw;
@@ -182,65 +180,17 @@ option{
 
 
 /* --- Divs  --- */
+/*Main tag: centered and width adjustment*/
 .main{
     text-align: center;
     width: 70%;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 1);
+    background:#ffffff;
 }
-
-    /*Header Divs*/
-/* #headerDropdownDiv{
-    height: 50%;
-    float: right;
-    margin-top: 20%;
-}
-
-#headerDropdownDiv:hover .dropdownSelection {display: block;}
-
-
-#headerLogoDiv{
-    width: 25%;
-    height: 100%;
-    float: left;
-}
-
-#headerNavDiv{
-    width: 50%;
-    height: 100%;
-    float: left;
-    text-align: center;
-}
-
-#headerSearchAndDropdownDiv{
-    width: 25%;
-    height: 100%;
-    float: left;
-}
-
-#headerSearchDiv{
-    height: 50%;
-    float: left;
-    margin-top: 25%;
-    margin-left: 10%;
-} */
 /* --- Divs  --- */
 
 
 /* --- IDs  --- */
-#userIcon{
-    float: right;
-    width: 3vw;
-    height: 3vw;
-    background: yellow;
-    border: solid 0.1em black;
-    border-radius: 50%;
-}
-
-#userIcon:hover{
-    background: red;
-}
-
 #websiteLogo{
     border-radius: 50%;
     float: right;
@@ -250,7 +200,7 @@ option{
 
 #websiteName{
     text-align: center;
-    color: rgba(5, 185, 5, 1);
+    color: rgb(5, 185, 5);
     text-shadow: 3px 3px black;
     height: 49%;
     font-size: 2vw;
@@ -264,7 +214,7 @@ option{
 .dropdownSelection{
     display: none;
     position: absolute;
-    background: rgba(25, 205, 25, 1);
+    background: rgb(25, 205, 25);
 }
 
 .dropdownSelection a{
@@ -302,62 +252,80 @@ option{
 }
 /* --- Logo  --- */
 
+.flexContainer{
+  display: flex;
+  align-items: stretch;
+}
+
+.gridContainer{
+    display: grid;
+}
 
 
-
-
-
+/* ----- SCREEN SIZE BASED OPERATIONS  ----- */
 
 
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
     body {
-        background-color: red;
         font-size: 1rem;
+        /* background-image: url("../Images/Backgrounds/bgSmall.jpg"); */
+        /*No need to background image because main width 100%*/
+        background: #ffffff;
     }
 
     header{
         height: 4em;
-        background-image: url("../Images/woodSmall.jpg");
+        /*Smaller header background*/
+        background-image: url("../Images/Headers/woodSmall.jpg");
     }
 
     .main{
+        /*Use all screen space width*/
         width: 100%;
     }
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 501px) and (max-width: 1000px) {
+@media only screen and (min-width: 501px) and (max-width: 1025px) {
     body {
-        background-color: blue;
         font-size: 1rem;
+        /* background-image: url("../Images/Backgrounds/bgSmall.jpg"); */
+        /*No need to background image because main width 100%*/
+        background: #ffffff;
     }
 
     header{
         height: 6em;  
-        background-image: url("../Images/woodSmall.jpg");
+        /*Smaller header background*/
+        background-image: url("../Images/Headers/woodSmall.jpg");
     }
 
     .main{
+        /*Use all screen space width*/
         width: 100%;
     }
 }
 
 
-/* Lower Res Desktop Styles */
-@media only screen and (min-width: 1001px) and (max-width: 1250px) {
+/* Lower Res Desktop Styles - HD*/
+@media only screen and (min-width: 1026px) and (max-width: 1300px) {
     body{
         font-size: 1.5rem;
+        /*Medium background image*/
+        background-image: url("../Images/Backgrounds/bgMedium.jpg");
     }
     header{
-        background-image: url("../Images/woodMedium.jpg");
+        /*Medium header background*/
+        background-image: url("../Images/Headers/woodMedium.jpg");
     }
 
     .main{
+        /*Little bit background image*/
         width: 90%;
     }
 }
 
-/* Desktop Styles */
-@media only screen and (min-width: 1251px) {
+/* Desktop Styles - FullHD+*/
+@media only screen and (min-width: 1301px) {
 }

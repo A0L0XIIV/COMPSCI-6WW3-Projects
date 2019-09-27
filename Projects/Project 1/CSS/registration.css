@@ -2,3 +2,55 @@
 input{
     margin-bottom: 1em;
 }
+
+
+/* --- Radios  --- */
+/*Flex container's width and its centered*/
+.flexContainer{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*Grid for 2 radio divs*/
+.gridContainer{
+    grid-template-columns: auto auto;
+}
+
+/*Input radios' width and sizes*/
+input[type="radio"]{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*Middle flex div's grow, margin and boldness*/
+.flexDiv2{
+    flex-grow: 2;
+    margin-top: 15%;
+    font-weight: bold;
+}
+
+/*First and third divs' flex-grow*/
+.flexDiv1, .flexDiv3{
+    flex-grow: 7;
+}
+/* --- Radios  --- */
+
+
+/* --- CheckBox  --- */
+/*Checkbox flexbox's width*/
+.checkBox{
+    width: 50%;
+}
+
+/*Checkbox input tag's witdh and flex-grow*/
+#termsAndPrivacy{
+    width: 10%;
+    flex-grow: 1;
+}
+
+/*Checkbox text's flex-grow*/
+.termsAndPrivacyText{
+    flex-grow: 9;
+}
+/* --- CheckBox  --- */
