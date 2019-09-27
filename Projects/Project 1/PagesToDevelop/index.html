@@ -17,7 +17,7 @@
     <link rel="apple-touch-startup-image" href="../Images/Logos/Logo.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="viewport" content="width = device-width, initial-scale = 2.3, minimum-scale = 1, maximum-scale = 5" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1" />
     <!-- Favicon for homescreens -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,9 +30,9 @@
 
 <body>
 
-    <header class="row">
+    <header class="flexContainer">
         <!-- Site Logo w/ index.html link-->
-        <div class="col-3" id="headerLogoDiv">
+        <div class="headerFlexItemLogo" id="headerLogoDiv">
             <a href="./index.html">
                 <picture id="websiteLogo">
                     <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logos/Logo.png">
@@ -42,14 +42,14 @@
         </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="col-6" id="headerNavDiv">
+        <div class="headerFlexItemNav" id="headerNavDiv">
             <!-- Website name -->
-            <div class="row justify-content-md-center align-items-end" id="websiteName">
-                <h2>ParkRater</h2>
+            <div class="headerSiteName" id="websiteName">
+                <a href="../PagesToDevelop/index.html">ParkRater</a>
             </div>
 
             <!-- Navbar and its linked buttons -->
-            <nav class="row justify-content-md-center align-items-end">      
+            <nav class="gridContainer">      
                 <form action="../PagesToDevelop/result_sample.html" class="navButton">
                     <input type="submit" value="Results" />
                 </form>
@@ -69,10 +69,10 @@
         </div>
 
         <!-- Search bar and user setting dropdown -->
-        <div class="col-3" id="headerSearchDiv">
+        <div class="headerFlexItemSearch" id="headerSearchDiv">
             <!-- Search bar and its button -->
             <div class="row">
-                <input type="search" name="searchBox" class="searchBox" placeholder="Enter park name">
+                <input type="search" name="searchBox" class="searchBox" placeholder=" Enter park name">
                 <button class="searchButton">Search</button>
             </div>
             <!-- Search w/ rating dropdown and its button -->

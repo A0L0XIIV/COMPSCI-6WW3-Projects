@@ -22,10 +22,6 @@ header{
     margin: 0;
 }
 
-header .col-3{
-    height: 100%;
-}
-
 nav{
     height: 49%;
     text-align: center;
@@ -200,10 +196,13 @@ option{
 
 #websiteName{
     text-align: center;
+}
+
+#websiteName a{
     color: rgb(5, 185, 5);
     text-shadow: 3px 3px black;
     height: 49%;
-    font-size: 2vw;
+    font-size: 100%;
     margin: 0;
     margin-top: -1em;
 }
@@ -225,14 +224,18 @@ option{
 
 
 /* --- Breadcrumb navigation  --- */
+/*Breadcrumb list w/o dot and padding adjustment*/
 .breadcrumb > ul{
     list-style-type: none;
+    padding-left: 5%;
 }
 
+/*Horizontal list*/
 .breadcrumb > ul > li{
     display: inline;
 }
 
+/*Margin&padding adjustments*/
 .breadcrumb{
     margin: 0;
     margin-bottom: 0.5em; 
@@ -243,6 +246,7 @@ option{
 
 
 /* --- Logo  --- */
+/*Image size adjustments*/
 #websiteLogo{
     display: block;
     max-width:200px;
@@ -252,6 +256,8 @@ option{
 }
 /* --- Logo  --- */
 
+
+/* --- Base flexbox and grid  --- */
 .flexContainer{
   display: flex;
   align-items: stretch;
@@ -261,8 +267,26 @@ option{
     display: grid;
 }
 
+/*Navigation bar 5 button grid layout*/
+nav.gridContainer{
+    grid-template-columns: auto auto auto auto auto;
+}
+
+/*header 3 segment flexbox: first, last*/
+.headerFlexItemLogo, .headerFlexItemSearch{
+    flex-grow: 2;
+}
+
+/*header 3 segment flexbox: middle*/
+.headerFlexItemNav{
+    flex-grow: 4;
+}
+/* --- Base flexbox and grid  --- */
+
+
 
 /* ----- SCREEN SIZE BASED OPERATIONS  ----- */
+
 
 
 /* Mobile Styles */
@@ -272,6 +296,7 @@ option{
         /* background-image: url("../Images/Backgrounds/bgSmall.jpg"); */
         /*No need to background image because main width 100%*/
         background: #ffffff;
+        max-width: 100% !important;
     }
 
     header{
@@ -283,6 +308,26 @@ option{
     .main{
         /*Use all screen space width*/
         width: 100%;
+    }
+    
+    /*Mobile device, don't show logo and search bars*/
+    .headerFlexItemLogo, .headerFlexItemSearch{
+        flex-grow: 0;
+        display: none;
+    }
+
+    /*For full width navbar*/
+    .flexContainer{
+        padding: 0;
+    }
+
+    .navButton input{
+        font-size: 3vw;
+        padding: 0;
+    }
+
+    .headerSiteName, nav.gridContainer{
+        height: 50%;
     }
 }
 
