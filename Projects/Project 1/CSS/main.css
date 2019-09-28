@@ -77,7 +77,7 @@ input[type="submit"], input[type="reset"]{
     border: none;    
     margin: 0;
     padding: 2%;  
-    font-size: 1.2vw;
+    font-size: 0.95em;
     width: 6em;
     height: auto;
 }
@@ -335,6 +335,28 @@ nav.gridContainer{
     #websiteName a{
         font-size: 1.5em;
     }
+
+    /*Input and select tags font and box sizes*/
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"],
+    input[type="search"],
+    select{
+        width: 20rem !important;
+        height: 2rem !important;
+        font-size: 1.2rem !important;
+    }
+
+    /*Checkbox and radio sizes*/
+    input[type="checkbox"],
+    input[type="radio"]{
+        width: 5rem !important;
+        height: auto !important;
+        font-size: 1.2rem !important;
+    }
 }
 
 /* Tablets */
@@ -355,6 +377,28 @@ nav.gridContainer{
     .main{
         /*Use all screen space width*/
         width: 100%;
+    }
+
+    /*Input and select tags font and box sizes*/
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"],
+    input[type="search"],
+    select{
+        width: 20rem !important;
+        height: 2rem !important;
+        font-size: 1.2rem !important;
+    }
+
+    /*Checkbox and radio sizes*/
+    input[type="checkbox"],
+    input[type="radio"]{
+        width: 10rem !important;
+        height: auto !important;
+        font-size: 1.5rem !important;
     }
 }
 

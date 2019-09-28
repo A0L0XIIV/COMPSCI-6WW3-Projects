@@ -6,6 +6,8 @@ COMPSCI 6WW3
 
 GitHub Repository: https://github.com/A0L0XIIV/COMPSCI-6WW3-Projects
 
+Note: I tried to add (doq4@mcmaster.ca) as a collaborator but; when I searched with email, it couldn't find the user.
+
 -----------------------------------
 Project 1 Add-on task 2 questions:
 
