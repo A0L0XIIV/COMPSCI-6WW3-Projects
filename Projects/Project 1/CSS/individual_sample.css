@@ -13,6 +13,7 @@
 /* --- Review List --- */
 
 
+
 /* --- Park map & images --- */
 /*Width of main div*/
 .parkMapAndImages{
@@ -50,6 +51,7 @@
 /* --- Park map & images --- */
 
 
+
 /* --- Park video --- */
 /*Video size*/
 video{
@@ -57,6 +59,7 @@ video{
     height: 100%;
 }
 /* --- Park video --- */
+
 
 
 /* --- Park properties & description --- */
@@ -87,6 +90,7 @@ video{
     margin-bottom: 0.5em;
 }
 /* --- Park properties & description --- */
+
 
 
 /* --- User reviews --- */

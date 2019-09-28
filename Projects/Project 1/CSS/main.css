@@ -1,4 +1,5 @@
 /* --- HTML tags --- */
+/*Body sizes, font decorations, background image*/
 body{
     margin: 0;
     font-size: 1.5rem;
@@ -11,6 +12,7 @@ body{
     background-attachment: fixed;
 }
 
+/*Header background image and sizes*/
 header{
     background: rgb(5, 185, 5);
     background-image: url("../Images/Headers/woodBig.jpg");
@@ -22,49 +24,47 @@ header{
     margin: 0;
 }
 
+/*Nav bar contains half of middle grid and centered*/
 nav{
-    height: 49%;
+    height: 50%;
     text-align: center;
 }
 
+/*Footer colors and size*/
 footer{
     background: rgb(5, 185, 5);
-    color: rgba(54, 40, 0, 0.95);
+    color: rgb(54, 40, 0);
     text-align: center;
     padding: 0.5%;
     clear: both;
 }
 
+/*Link decoration: no underline*/
 a{
     text-decoration: none;
     color: rgb(100, 100, 255);
 }
 
-nav a{
-    color: rgba(255, 255 ,255, 1);
-}
-
-img{
-    width: 90%;
-    height: 90%;
-}
-
+/*Hide meta tags*/
 meta{
     display: none;
 }
 /* --- HTML tags --- */
 
 
+
 /* --- Buttons --- */
+/*Button colors and sizes*/
 button{ 
     background: rgb(5, 155, 5);
-    color: white;
+    color: #ffffff;
     border: none;    
     margin: 0;
     padding: 2%;  
     font-size: 1.2vw;
 }
 
+/*Button on hover operations*/
 button:hover{
     background: #ff7b00;
     color: rgb(54, 40, 0); 
@@ -98,7 +98,9 @@ input[type="reset"]:hover{
 /* --- Buttons --- */
 
 
+
 /* --- Inputs --- */
+/*Input font decoration and sizes*/
 input{
     border-radius: 10px;
     border: solid 1px black;
@@ -109,35 +111,37 @@ input{
 /* --- Inputs --- */
 
 
+
 /* --- Navigation Bar Buttons --- */
-.navButton, .navButton input{ 
+/*Navigation Button colors and border*/
+.navButton{ 
     background: rgb(5, 155, 5);
-    color: white;
-    border: none;    
-    margin: 0; 
-    padding: 0;
-    font-size: 1.2vw;
+    color: #ffffff;
+    border: none;
 }
 
+/*Nav button input font and sizes*/
 .navButton > input{
-    width: 6rem;
+    font-size: 0.95em;
     margin: 0;
-    padding: 1rem;
+    padding: 0;
     width: 100%;
     height: 100%;
 }
 
-.navButton:hover, .navButton:hover input{
+/*Nav button hover color*/
+.navButton:hover{
     background: #ff7b00;
-    color: rgb(54, 40, 0); 
-    font-weight: bold;
+    color: rgb(54, 40, 0);
 }
 /* --- Navigation Bar Buttons --- */
 
 
+
 /* --- Select-option --- */
+/*Select decorated like input tags*/
 select{
-    border: solid 1px black;
+    border: solid 1px #000000;
     border-radius: 10px;
     color: rgb(100, 100, 100);
     width: 12vw;
@@ -145,14 +149,12 @@ select{
     font-size: 1.2vw;
 }
 
+/*On hover: change text color to black*/
 select:hover{
-    color: black;
-}
-
-option{
-    background: white;
+    color: #000000;
 }
 /* --- Select-option --- */
+
 
 
 /* --- Search bar  --- */
@@ -175,7 +177,8 @@ option{
 /* --- Search bar  --- */
 
 
-/* --- Divs  --- */
+
+/* --- Main  --- */
 /*Main tag: centered and width adjustment*/
 .main{
     text-align: center;
@@ -183,44 +186,50 @@ option{
     margin: 0 auto;
     background:#ffffff;
 }
-/* --- Divs  --- */
+/* --- Main  --- */
 
 
-/* --- IDs  --- */
+
+/* --- Logo & Name  --- */
+/*Logo image size adjustments*/
 #websiteLogo{
     border-radius: 50%;
     float: right;
-    width: 10vw;
-    height: 10vw;
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width:200px;
+    max-height:200px;
 }
 
+/*Source and img tags height restriction*/
+#websiteLogo source, #websiteLogo img{
+    height: 100%;
+}
+
+/*Site name centered*/
 #websiteName{
     text-align: center;
+    height: 50%;
 }
 
+/*Site name links to index color change*/
+#websiteName a:hover{
+    color:#ff7b00;
+    text-shadow: 0 0 3px #000000;
+}
+
+/*Site name link decoration*/
 #websiteName a{
-    color: rgb(5, 185, 5);
-    text-shadow: 3px 3px black;
-    height: 49%;
-    font-size: 100%;
-    margin: 0;
-    margin-top: -1em;
-}
-/* --- IDs  --- */
-
-
-/* --- Classes  --- */
-.dropdownSelection{
-    display: none;
-    position: absolute;
-    background: rgb(25, 205, 25);
-}
-
-.dropdownSelection a{
     text-decoration: none;
-    color: black;
+    color: rgb(5, 185, 5);
+    text-shadow: 3px 3px rgb(54, 40, 0);
+    height: 100%;
+    font-size: 2em;
+    margin: 0;
 }
-/* --- Classes  --- */
+/* --- Logo & Name  --- */
+
 
 
 /* --- Breadcrumb navigation  --- */
@@ -245,39 +254,36 @@ option{
 /* --- Breadcrumb navigation  --- */
 
 
-/* --- Logo  --- */
-/*Image size adjustments*/
-#websiteLogo{
-    display: block;
-    max-width:200px;
-    max-height:200px;
-    width: auto;
-    height: auto;
-}
-/* --- Logo  --- */
-
 
 /* --- Base flexbox and grid  --- */
+/*CSS flexbox*/
 .flexContainer{
   display: flex;
   align-items: stretch;
 }
 
+/*CSS grid*/
 .gridContainer{
     display: grid;
 }
 
-/*Navigation bar 5 button grid layout*/
+/*Navigation bar 5 button grid layout and gap*/
 nav.gridContainer{
     grid-template-columns: auto auto auto auto auto;
+    grid-column-gap: 0.1%;
 }
 
-/*header 3 segment flexbox: first, last*/
+/*Search bars in the middle of the div*/
+.headerFlexItemSearch{
+    text-align: center;
+}
+
+/*header 3 segment flexbox grow: first, last*/
 .headerFlexItemLogo, .headerFlexItemSearch{
     flex-grow: 2;
 }
 
-/*header 3 segment flexbox: middle*/
+/*header 3 segment flexbox grow: middle*/
 .headerFlexItemNav{
     flex-grow: 4;
 }
@@ -285,11 +291,15 @@ nav.gridContainer{
 
 
 
+
+
 /* ----- SCREEN SIZE BASED OPERATIONS  ----- */
 
 
 
-/* Mobile Styles */
+
+
+/* Mobile Devices */
 @media only screen and (max-width: 500px) {
     body {
         font-size: 1rem;
@@ -321,17 +331,13 @@ nav.gridContainer{
         padding: 0;
     }
 
-    .navButton input{
-        font-size: 3vw;
-        padding: 0;
-    }
-
-    .headerSiteName, nav.gridContainer{
-        height: 50%;
+    /*Site name font size adjustment*/
+    #websiteName a{
+        font-size: 1.5em;
     }
 }
 
-/* Tablet Styles */
+/* Tablets */
 @media only screen and (min-width: 501px) and (max-width: 1025px) {
     body {
         font-size: 1rem;
@@ -353,7 +359,7 @@ nav.gridContainer{
 }
 
 
-/* Lower Res Desktop Styles - HD*/
+/* Lower Res Desktop - HD*/
 @media only screen and (min-width: 1026px) and (max-width: 1300px) {
     body{
         font-size: 1.5rem;
@@ -371,6 +377,6 @@ nav.gridContainer{
     }
 }
 
-/* Desktop Styles - FullHD+*/
+/* High Res Desktop - FullHD+*/
 @media only screen and (min-width: 1301px) {
 }

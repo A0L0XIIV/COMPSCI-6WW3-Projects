@@ -4,15 +4,16 @@ input{
 }
 
 
+
 /* --- Radios  --- */
 /*Flex container's width and its centered*/
-.flexContainer{
+.radioFlex, .checkboxFlex{
     width: 50%;
     margin: 0 auto;
 }
 
 /*Grid for 2 radio divs*/
-.gridContainer{
+.flexDiv1, .flexDiv3{
     grid-template-columns: auto auto;
 }
 
@@ -35,6 +36,7 @@ input[type="radio"]{
     flex-grow: 7;
 }
 /* --- Radios  --- */
+
 
 
 /* --- CheckBox  --- */

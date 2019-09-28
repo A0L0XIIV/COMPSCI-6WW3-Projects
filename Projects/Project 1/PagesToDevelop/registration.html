@@ -30,9 +30,9 @@
 
 <body>
 
-    <header class="row">
+    <header class="flexContainer">
         <!-- Site Logo w/ index.html link-->
-        <div class="col-3" id="headerLogoDiv">
+        <div class="headerFlexItemLogo" id="headerLogoDiv">
             <a href="./index.html">
                 <picture id="websiteLogo">
                     <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logos/Logo.png">
@@ -42,14 +42,14 @@
         </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="col-6" id="headerNavDiv">
+        <div class="headerFlexItemNav" id="headerNavDiv">
             <!-- Website name -->
-            <div class="row justify-content-md-center align-items-end" id="websiteName">
-                <h2>ParkRater</h2>
+            <div class="headerSiteName" id="websiteName">
+                <a href="../PagesToDevelop/index.html">ParkRater</a>
             </div>
 
             <!-- Navbar and its linked buttons -->
-            <nav class="row justify-content-md-center align-items-end">      
+            <nav class="gridContainer">
                 <form action="../PagesToDevelop/result_sample.html" class="navButton">
                     <input type="submit" value="Results" />
                 </form>
@@ -64,19 +64,20 @@
                 </form>
                 <form action="../PagesToDevelop/registration.html" class="navButton">
                     <input type="submit" value="Sign Up" />
-                </form>             
+                </form>
             </nav>
         </div>
 
         <!-- Search bar and user setting dropdown -->
-        <div class="col-3" id="headerSearchDiv">
+        <div class="headerFlexItemSearch gridContainer" id="headerSearchDiv">
+            <div></div>
             <!-- Search bar and its button -->
-            <div class="row">
-                <input type="search" name="searchBox" class="searchBox" placeholder="Enter park name">
+            <div class="searchWithName">
+                <input type="search" name="searchBox" class="searchBox" placeholder=" Enter park name">
                 <button class="searchButton">Search</button>
             </div>
             <!-- Search w/ rating dropdown and its button -->
-            <div class="row">
+            <div class="searchWithRate">
                 <select>
                     <option value="" hidden selected>Select rating</option>
                     <option value="10">10</option>
@@ -137,7 +138,7 @@
         <p>How often do you visit parks?</p>
 
         <!--Flex box for 3 rows-->
-        <div class="flexContainer">
+        <div class="flexContainer radioFlex">
             <!--First grid div for # of days-->
             <div class="gridContainer flexDiv1">
                 <p class="daysValues">1-2</p>
@@ -169,7 +170,7 @@
         <hr>
 
         <!--Input for terms&conditions, type=checkbox-->
-        <div class="flexContainer checkBox">
+        <div class="flexContainer checkboxFlex">
             <input type="checkbox" name="termsAndPrivacy" id="termsAndPrivacy" required>
             <p class="termsAndPrivacyText">
                 I read and acceptted
