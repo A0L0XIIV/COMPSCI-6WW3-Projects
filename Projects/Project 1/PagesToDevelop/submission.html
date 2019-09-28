@@ -34,7 +34,7 @@
         <!-- Site Logo w/ index.html link-->
         <div class="headerFlexItemLogo" id="headerLogoDiv">
             <a href="./index.html">
-                <picture id="websiteLogo">
+                <picture id="websiteLogo" role="img" aria-label="ParkRater Logo">
                     <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logos/Logo.png">
                     <img src="../Images/Logos/LogoSmall.png" alt="ParkRater Logo" id="websiteLogoSmall">
                 </picture>
@@ -51,30 +51,30 @@
             <!-- Navbar and its linked buttons -->
             <nav class="gridContainer">
                 <form action="../PagesToDevelop/result_sample.html" class="navButton">
-                    <input type="submit" value="Results" />
+                    <input type="submit" value="Results" role="button" aria-pressed="false"/>
                 </form>
                 <form action="../PagesToDevelop/individual_sample.html" class="navButton">
-                    <input type="submit" value="Individual" />
+                    <input type="submit" value="Individual" role="button" aria-pressed="false"/>
                 </form>
                 <form action="../PagesToDevelop/search.html" class="navButton">
-                    <input type="submit" value="Search Parks" />
+                    <input type="submit" value="Search Parks" role="button" aria-pressed="false"/>
                 </form>
                 <form action="../PagesToDevelop/submission.html" class="navButton">
-                    <input type="submit" value="New Park" />
+                    <input type="submit" value="New Park" role="button" aria-pressed="false"/>
                 </form>
                 <form action="../PagesToDevelop/registration.html" class="navButton">
-                    <input type="submit" value="Sign Up" />
+                    <input type="submit" value="Sign Up" role="button" aria-pressed="false"/>
                 </form>
             </nav>
         </div>
 
-        <!-- Search bar and user setting dropdown -->
-        <div class="headerFlexItemSearch gridContainer" id="headerSearchDiv">
+        <!-- Search bars -->
+        <div class="headerFlexItemSearch gridContainer" id="headerSearchDiv" role="search">
             <div></div>
             <!-- Search bar and its button -->
             <div class="searchWithName">
                 <input type="search" name="searchBox" class="searchBox" placeholder=" Enter park name">
-                <button class="searchButton">Search</button>
+                <button class="searchButton" role="button" aria-pressed="false">Search</button>
             </div>
             <!-- Search w/ rating dropdown and its button -->
             <div class="searchWithRate">
@@ -91,7 +91,7 @@
                     <option value="2">2</option>
                     <option value="1">1</option>
                 </select>
-                <button class="searchButton">Search</button>
+                <button class="searchButton" role="button" aria-pressed="false">Search</button>
             </div>
         </div>
     </header>
@@ -100,7 +100,7 @@
     <main class="main">
 
         <!-- Breadcrum: Navigation -->
-        <div class="breadcrumb">
+        <div class="breadcrumb" role="navigation">
             <ul>
                 <li>
                     <a href="../PagesToDevelop/index.html">Home</a>
@@ -141,14 +141,14 @@
 
         <br>
         <!--Input for submitting the form, type=submit-->
-        <input type="submit" value="Submit" class="submissionButton">
+        <input type="submit" value="Submit" class="submissionButton" role="button" aria-pressed="false">
         <br>
         <br>
 
     </main>
 
     <!-- footer of the page -->
-    <footer>
+    <footer role="contentinfo">
         &copy; ParkRater, Baran Kaya, 2019
     </footer>
 
