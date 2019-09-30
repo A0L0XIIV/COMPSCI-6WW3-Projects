@@ -1,13 +1,15 @@
 # COMPSCI-6WW3-Projects
 McMaster University COMPSCI 6WW3: Web Applications and Web Systems Course Projects
 
-Baran Kaya, 400284996
+Baran Kaya, 400284996, kayab@mcmaster.ca
 COMPSCI 6WW3
 
 Live website: http://kayabaran.com/ParkRater
 GitHub Repository: https://github.com/A0L0XIIV/COMPSCI-6WW3-Projects
 
 Note: I tried to add (doq4@mcmaster.ca) as a collaborator but; when I searched with email, it couldn't find the user.
+
+- For project 1 I didn't use any libraries. I added bootstrap css styles in html code because I'm going to use them in the next projects.
 
 -----------------------------------
 Project 1 Add-on task 2 questions:
