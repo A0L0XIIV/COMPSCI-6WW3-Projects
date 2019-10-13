@@ -1,0 +1,41 @@
+/* --- Map and description  --- */
+/*Map image size*/
+.parkData img{
+    width: 90%;
+    height: auto;
+}
+
+/*Park info paragraf justify*/
+.parkData p{
+    text-align: justify;
+}
+/* --- Map and description  --- */
+
+
+
+/* --- Review Table  --- */
+/*Table with only horizontal lines*/
+tr {
+    border-bottom: 0.3em solid rgb(54, 40, 0);
+    border-top: 0.3em solid rgb(54, 40, 0);
+    border-collapse: collapse;
+}
+
+/*Table rows width adjustment*/
+.resultTableMap{
+    width: 35%;
+    height: 20rem;
+}
+
+/*Table rows width adjustment*/
+.resultTableInfo{
+    width: 55%;
+    height: 20rem;
+}
+
+/*Table rows width adjustment*/
+.resultTableLink{
+    width: 10%;
+    height: 20rem;
+}
+/* --- Review Table  --- */
