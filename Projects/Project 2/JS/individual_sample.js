@@ -14,7 +14,8 @@ function parkMap(parkName, coordinate_x, coordinate_y) {
   L.tileLayer("https:/a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-    maxZoom: 18
+    maxZoom: 18,
+    minZoom: 1
   }).addTo(mymap);
 
   L.marker([coordinate_x, coordinate_y])
