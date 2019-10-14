@@ -1,125 +1,144 @@
 /* --- Review List --- */
 /*UL w/ no dots and margin-padding sizes*/
-.parkData ul{
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
+.parkData ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /*Extra space between reviews*/
-.parkData li{
-    padding-bottom: 2em;
+.parkData li {
+  padding-bottom: 2em;
 }
 /* --- Review List --- */
 
-
-
 /* --- Park map & images --- */
 /*Width of main div*/
-.parkMapAndImages{
-    margin: 0 auto;
-    width: 90%;
-    display: inline-block;
+.parkMapAndImages {
+  margin: 0 auto;
+  width: 90%;
+  display: inline-block;
 }
 
 /*Lean map left side*/
-.parkMap{
-    width: 50%;
-    float: left;
+.parkMap {
+  width: 50%;
+  height: 100%;
+  float: left;
 }
 
 /*Lean image right side*/
-.parkImages{
-    width: 50%;
-    height: 100%;
-    float: left;
+.parkImages {
+  width: 50%;
+  height: 100%;
+  float: left;
 }
 
 /*Map image size*/
-#parkMap{
-    width: 98%;
-    height: auto;
-    float: left;
+#map {
+  width: 98%;
+  height: 23vw;
+  float: left;
 }
 
 /*Park image size*/
-#parkImage{
-    width: 98%;
-    height: auto;
-    float: right;
+#parkImage {
+  width: 98%;
+  height: auto;
+  float: right;
 }
 /* --- Park map & images --- */
 
-
-
 /* --- Park video --- */
 /*Video size*/
-video{
-    width: 50%;
-    height: 100%;
+video {
+  width: 50%;
+  height: 100%;
 }
 /* --- Park video --- */
-
-
 
 /* --- Park properties & description --- */
 /*Maiv div size and margins*/
-.parkPropertiesAndDescription{
-    display: inline-block;
-    margin: 0 auto;
-    width: 90%;
-    margin-bottom: 1.5em;
+.parkPropertiesAndDescription {
+  display: inline-block;
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 1.5em;
 }
 
 /*Properties Li size*/
-.parkProperties{
-    text-align: left;
-    width: 33%;
-    float: left;
+.parkProperties {
+  text-align: left;
+  width: 33%;
+  float: left;
 }
 
 /*Description div size and text-decoration*/
-.parkDescription{
-    text-align: justify;
-    width: 66%;
-    float: left;
+.parkDescription {
+  text-align: justify;
+  width: 66%;
+  float: left;
 }
 
 /*Extra space between properties list*/
-.parkProperties ul li{
-    margin-bottom: 0.5em;
+.parkProperties ul li {
+  margin-bottom: 0.5em;
 }
 /* --- Park properties & description --- */
 
-
-
 /* --- User reviews --- */
 /*Main div for username and rating*/
-.reviewUsernameAndRating{
-    display: inline-block;
-    width: 90%;
-    margin: 0 auto;
+.reviewUsernameAndRating {
+  display: inline-block;
+  width: 90%;
+  margin: 0 auto;
 }
 
 /*Username left side alignment*/
-.reviewUsername{
-    float: left;
+.reviewUsername {
+  float: left;
 }
 
 /*Rating right side alignment*/
-.reviewUserRating{
-    float: right;
+.reviewUserRating {
+  float: right;
 }
 
 /*Review size and text-decoration*/
-.userReview{
-    width: 90%;
-    margin: 0 auto;
-    text-align: justify;
+.userReview {
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
 }
 
 /*Centered review div*/
-.reviewDiv{
-    margin: 0 auto;
+.reviewDiv {
+  margin: 0 auto;
 }
 /* --- User reviews --- */
+
+/* ----- SCREEN SIZE BASED OPERATIONS  ----- */
+
+/* Mobile Devices */
+@media only screen and (max-width: 500px) {
+  /*Map height adjusment*/
+  #map {
+    height: 33vw;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 501px) and (max-width: 1025px) {
+  /*Map height adjusment*/
+  #map {
+    height: 33vw;
+  }
+}
+
+/* Lower Res Desktop - HD*/
+@media only screen and (min-width: 1026px) and (max-width: 1300px) {
+  /*Map height adjusment*/
+  #map {
+    height: 29vw;
+  }
+}

@@ -10,13 +10,20 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/individual_sample.css" />
-    <!-- OpenLayers - OpenStreetMap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
     <!-- JS sourse -->
     <script type="text/javascript" src="../JS/main.js"></script>
+    <script type="text/javascript" src="../JS/individual_sample.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- OpenLayers - OpenStreetMap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+    <!-- LeafletJS JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
     <!-- Title of the page -->
     <title>Highland Garden's Park</title>
     <!-- IPhone adding to home screen -->
@@ -56,7 +63,7 @@
     <meta property="og:site_name" content="ParkRater" />
 </head>
 
-<body>
+<body onload="init()">
 
     <header class="flexContainer">
         <!-- Site Logo w/ index.html link-->
@@ -148,21 +155,7 @@
             <div class="parkMapAndImages">
                 <!-- Map of the park -->
                 <div class="parkMap">
-                    <div id="map" style="height: 400px; width: 100%;"></div>
-                    <script type="text/javascript">
-                        var map = new ol.Map({
-                          target: 'map',
-                          layers: [
-                            new ol.layer.Tile({
-                              source: new ol.source.OSM()
-                            })
-                          ],
-                          view: new ol.View({
-                            center: ol.proj.fromLonLat([-79.8922284, 43.245557]),
-                            zoom: 10
-                          })
-                        });
-                      </script>
+                    <div id="map"></div>
                 </div>
 
                 <!-- Images of the park -->
@@ -180,20 +173,24 @@
                 </video>
             </div>
 
-            <!-- Coordinates of the park with schema geo coordinates microdata -->
-            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-                <p>Latitude: 43.245557</p>
-                <p>Longitude: -79.8922284</p>
-                <meta itemprop="latitude" content="43.245557" />
-                <meta itemprop="longitude" content="-79.8922284" />
-            </div>
-
             <hr>
 
             <div class="parkPropertiesAndDescription">
                 <h2>Park Properties</h2>
                 <!-- Park properties -->
                 <div class="parkProperties">
+                    <!-- Coordinates of the park with schema geo coordinates microdata -->
+                    <ul itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                        <li>
+                            <b>Latitude:</b>
+                            <span itemprop="latitude">43.245557</span>
+                        </li>
+                        <li>
+                            <b>Longitude:</b>
+                            <span itemprop="longitude">-79.8922284</span>
+                        </li>
+                    </ul>
+                    <!-- Address of the park with schema postal address microdata -->
                     <ul itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                         <li>
                             <b>Country:</b>

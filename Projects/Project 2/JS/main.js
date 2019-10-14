@@ -1,3 +1,5 @@
+function init() {}
+
 function validateEmail(email) {
   // New pattern for emails
   var emailPattern = new RegExp("[^@]+@[^.]+..+");
