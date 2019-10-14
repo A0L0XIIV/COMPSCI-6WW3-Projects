@@ -146,7 +146,13 @@
 
       <!--Input for email address, type=email-->
       <p>*Email:</p>
-      <input type="email" name="userMail" id="userMail" required />
+      <input
+        type="email"
+        name="userMail"
+        id="userMail"
+        pattern="[^@]+@[^\.]+\..+"
+        required
+      />
 
       <!--Input for user password, type=password-->
       <p>*Password:</p>

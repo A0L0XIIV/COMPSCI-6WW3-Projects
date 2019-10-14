@@ -10,9 +10,13 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/individual_sample.css" />
+    <!-- OpenLayers - OpenStreetMap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
     <!-- JS sourse -->
     <script type="text/javascript" src="../JS/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- OpenLayers - OpenStreetMap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
     <!-- Title of the page -->
     <title>Highland Garden's Park</title>
     <!-- IPhone adding to home screen -->
@@ -143,8 +147,22 @@
 
             <div class="parkMapAndImages">
                 <!-- Map of the park -->
-                <div class="parkMap" role="img" aria-label="Park's Map">
-                    <img src="../Images/Map.png" alt="Park's location on map" id="parkMap">
+                <div class="parkMap">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                    <script type="text/javascript">
+                        var map = new ol.Map({
+                          target: 'map',
+                          layers: [
+                            new ol.layer.Tile({
+                              source: new ol.source.OSM()
+                            })
+                          ],
+                          view: new ol.View({
+                            center: ol.proj.fromLonLat([-79.8922284, 43.245557]),
+                            zoom: 10
+                          })
+                        });
+                      </script>
                 </div>
 
                 <!-- Images of the park -->
