@@ -6,6 +6,16 @@ function init() {
 
   // Load maps
   parkMap(parkName, coordinate_x, coordinate_y);
+
+  // Use jQuery text function to escape HTML
+  $(".parkName").text("Highland Garden's Park");
+  $("#latitude").text(coordinate_x);
+  $("#longitude").text(coordinate_y);
+  $("#addressCountry").text("Canada");
+  $("#addressRegion").text("ON");
+  $("#addressLocality").text("Hamilton");
+  $("#streetAddress").text("1 Hillcrest Avenue");
+  $("#postalCode").text("L8P 2X3");
 }
 
 function parkMap(parkName, coordinate_x, coordinate_y) {
@@ -21,13 +31,4 @@ function parkMap(parkName, coordinate_x, coordinate_y) {
   L.marker([coordinate_x, coordinate_y])
     .addTo(mymap)
     .bindPopup(parkName);
-}
-
-var popup = L.popup();
-
-function onMapClick(e) {
-  popup
-    .setLatLng(e.latlng)
-    .setContent("You clicked the map")
-    .openOn(map);
 }

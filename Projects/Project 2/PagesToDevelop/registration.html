@@ -14,8 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/registration.css" />
     <!-- JS sourse -->
-    <script type="text/javascript" src="../JS/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../JS/main.js"></script>
+    <script type="text/javascript" src="../JS/registiration.js"></script>
+
     <!-- Title of the page -->
     <title>Sign Up to ParkRater</title>
     <!-- IPhone adding to home screen -->
@@ -140,119 +142,157 @@
         </ul>
       </div>
 
-      <!--Input for username, type=text-->
-      <p>*Username:</p>
-      <input type="text" name="userName" id="userName" required />
-
-      <!--Input for email address, type=email-->
-      <p>*Email:</p>
-      <input
-        type="email"
-        name="userMail"
-        id="userMail"
-        pattern="[^@]+@[^\.]+\..+"
-        required
-      />
-
-      <!--Input for user password, type=password-->
-      <p>*Password:</p>
-      <!--At least one lowercase, a uppercase, a number, special character and length between 8 to 15-->
-      <input
-        type="password"
-        name="userPassword"
-        id="userPassword"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&*()]).{8,15}$"
-        required
-      />
-
-      <!--Input for user city, type=text-->
-      <p>Current City:</p>
-      <input type="text" name="userCity" id="userCity" />
-
-      <!--Input for user phone number, type=tel-->
-      <p>Phone:</p>
-      <input
-        type="tel"
-        name="userPhone"
-        id="userPhone"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-      />
-
-      <hr />
-
-      <!--Input for frequency, type=radio-->
-      <p>How often do you visit parks?</p>
-
-      <!--Flex box for 3 rows-->
-      <div class="flexContainer radioFlex">
-        <!--First grid div for # of days-->
-        <div class="gridContainer flexDiv1">
-          <p class="daysValues">1-2</p>
-          <input type="radio" name="days" id="1to2" />
-          <p>3-4</p>
-          <input type="radio" name="days" id="3to4" />
-          <p>5-6</p>
-          <input type="radio" name="days" id="5to6" />
-          <p>7+</p>
-          <input type="radio" name="days" id="7plus" />
+      <form
+        id="registerForm"
+        action=""
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <!--Input for username, type=text-->
+        <div>
+          <p>*Username:</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            pattern="^([-_!&amp;*()\']*[a-zA-Z0-9]+[-_!&amp;*()\']*)+$"
+            required
+          />
+          <span id="usernameError"></span>
         </div>
-        <!--Second grid div for "in a"-->
-        <div class="flexDiv2">
-          <p>in a</p>
+
+        <!--Input for email address, type=email-->
+        <div>
+          <p>*Email:</p>
+          <input
+            type="email"
+            name="userEmail"
+            id="userEmail"
+            pattern="[^@]+@[^\.]+\..+"
+            required
+          />
+          <span id="emailError"></span>
         </div>
-        <!--Third grid div for period-->
-        <div class="gridContainer flexDiv3">
-          <p>week</p>
-          <input type="radio" name="period" id="week" />
-          <p>month</p>
-          <input type="radio" name="period" id="month" />
-          <p>session</p>
-          <input type="radio" name="period" id="session" />
-          <p>year</p>
-          <input type="radio" name="period" id="year" />
+
+        <!--Input for user password, type=password-->
+        <div>
+          <p>*Password:</p>
+          <!--At least one lowercase, a uppercase, a number, special character and length between 8 to 15-->
+          <input
+            type="password"
+            name="userPassword"
+            id="userPassword"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&amp;*()]).{8,15}$"
+            required
+          />
+          <span id="passwordError"></span>
         </div>
-      </div>
 
-      <hr />
+        <!--Input for user city, type=text-->
+        <div>
+          <p>Current City:</p>
+          <input
+            type="text"
+            name="userCity"
+            id="userCity"
+            pattern="^([-&\']*[a-zA-Z0-9]+[-&amp;\']*)+$"
+          />
+          <span id="cityError"></span>
+        </div>
 
-      <!--Input for terms&conditions, type=checkbox-->
-      <div class="flexContainer checkboxFlex">
-        <input
-          type="checkbox"
-          name="termsAndPrivacy"
-          id="termsAndPrivacy"
-          required
-          aria-checked="false"
-        />
-        <p class="termsAndPrivacyText">
-          I read and acceptted
-          <a href="https://www.google.com/search?q=terms+%26+conditions"
-            >Terms&Conditions</a
-          >
-          and
-          <a href="https://www.google.com/search?q=privacy+policy"
-            >Privacy Policy</a
-          >
-          of ParkRater.
-        </p>
-      </div>
+        <!--Input for user phone number, type=tel-->
+        <div>
+          <p>Phone:</p>
+          <input
+            type="tel"
+            name="userPhone"
+            id="userPhone"
+            pattern="^[+]{0,1}[0-9\s]{0,4}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+          />
+          <span id="phoneError"></span>
+        </div>
 
-      <hr />
+        <hr />
 
-      <!--Input for form reset, type=reset-->
-      <input
-        type="reset"
-        value="Reset"
-        class="resetButton"
-        aria-pressed="false"
-      />
-      <!--Input for submitting the form, type=submit-->
-      <input
-        type="submit"
-        value="Submit"
-        class="submitButton"
-        aria-pressed="false"
-      />
+        <!--Input for frequency, type=radio-->
+        <div>
+          <p>How often do you visit parks?</p>
+
+          <!--Flex box for 3 rows-->
+          <div class="flexContainer radioFlex">
+            <!--First grid div for # of days-->
+            <div class="gridContainer flexDiv1">
+              <p class="daysValues">1-2</p>
+              <input type="radio" name="days" id="1to2" />
+              <p>3-4</p>
+              <input type="radio" name="days" id="3to4" />
+              <p>5-6</p>
+              <input type="radio" name="days" id="5to6" />
+              <p>7+</p>
+              <input type="radio" name="days" id="7plus" />
+            </div>
+            <!--Second grid div for "in a"-->
+            <div class="flexDiv2">
+              <p>in a</p>
+            </div>
+            <!--Third grid div for period-->
+            <div class="gridContainer flexDiv3">
+              <p>week</p>
+              <input type="radio" name="period" id="week" />
+              <p>month</p>
+              <input type="radio" name="period" id="month" />
+              <p>session</p>
+              <input type="radio" name="period" id="session" />
+              <p>year</p>
+              <input type="radio" name="period" id="year" />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!--Input for terms&conditions, type=checkbox-->
+        <div class="flexContainer checkboxFlex">
+          <input
+            type="checkbox"
+            name="termsAndPrivacy"
+            id="termsAndPrivacy"
+            required
+            aria-checked="false"
+          />
+          <p class="termsAndPrivacyText">
+            I read and acceptted
+            <a href="https://www.google.com/search?q=terms+%26+conditions"
+              >Terms&Conditions</a
+            >
+            and
+            <a href="https://www.google.com/search?q=privacy+policy"
+              >Privacy Policy</a
+            >
+            of ParkRater.
+          </p>
+          <span id="termsAndPrivacyErrror"></span>
+        </div>
+
+        <hr />
+
+        <!--Input for form reset, type=reset-->
+        <div>
+          <input
+            type="reset"
+            value="Reset"
+            class="resetButton"
+            aria-pressed="false"
+          />
+          <!--Input for submitting the form, type=submit-->
+          <input
+            type="submit"
+            value="Submit"
+            class="submitButton"
+            aria-pressed="false"
+          />
+        </div>
+      </form>
       <br /><br />
     </main>
 

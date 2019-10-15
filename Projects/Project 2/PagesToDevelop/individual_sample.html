@@ -11,9 +11,9 @@
     <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
     <link rel="stylesheet" type="text/css" href="../CSS/individual_sample.css" />
     <!-- JS sourse -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../JS/main.js"></script>
     <script type="text/javascript" src="../JS/individual_sample.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- LeafletJS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -142,7 +142,7 @@
                 </li>
                 <li>></li>
                 <li>
-                    <a href="../PagesToDevelop/individual_sample.html">Park</a>
+                    <a href="../PagesToDevelop/individual_sample.html" class="parkName">Park</a>
                 </li>
             </ul>
         </div>
@@ -150,7 +150,7 @@
         <!-- Park with Place scheme -->
         <div itemscope itemtype="http://schema.org/Place" class="parkData">
             <!-- Name of the park -->
-            <h1 itemprop="name">Highland Garden's Park</h1>
+            <h1 itemprop="name" class="parkName">Highland Garden's Park</h1>
 
             <div class="parkMapAndImages">
                 <!-- Map of the park -->
@@ -183,34 +183,34 @@
                     <ul itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                         <li>
                             <b>Latitude:</b>
-                            <span itemprop="latitude">43.245557</span>
+                            <span itemprop="latitude" id="latitude">43.245557</span>
                         </li>
                         <li>
                             <b>Longitude:</b>
-                            <span itemprop="longitude">-79.8922284</span>
+                            <span itemprop="longitude" id="longitude">-79.8922284</span>
                         </li>
                     </ul>
                     <!-- Address of the park with schema postal address microdata -->
                     <ul itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                         <li>
                             <b>Country:</b>
-                            <span itemprop="addressCountry">Canada</span>
+                            <span itemprop="addressCountry" id="addressCountry">Canada</span>
                         </li>
                         <li>
                             <b>State/Region:</b>
-                            <span itemprop="addressRegion">ON</span>
+                            <span itemprop="addressRegion" id="addressRegion">ON</span>
                         </li>
                         <li>
                             <b>City:</b>
-                            <span itemprop="addressLocality">Hamilton</span>
+                            <span itemprop="addressLocality" id="addressLocality">Hamilton</span>
                         </li>
                         <li>
                             <b>Address:</b>
-                            <span itemprop="streetAddress">1 Hillcrest Avenue</span>
+                            <span itemprop="streetAddress" id="streetAddress">1 Hillcrest Avenue</span>
                         </li>
                         <li>
                             <b>Code:</b>
-                            <span itemprop="postalCode">L8P 2X3</span>
+                            <span itemprop="postalCode" id="postalCode">L8P 2X3</span>
                         </li>
                     </ul>
                 </div>

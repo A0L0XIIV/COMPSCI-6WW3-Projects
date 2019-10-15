@@ -59,12 +59,3 @@ function addMarker(map, x, y, description) {
     .addTo(map)
     .bindPopup(description);
 }
-
-var popup = L.popup();
-
-function onMapClick(e) {
-  popup
-    .setLatLng(e.latlng)
-    .setContent("You clicked the map")
-    .openOn(map);
-}
