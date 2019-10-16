@@ -248,6 +248,14 @@ select:hover {
 }
 /* --- Breadcrumb navigation  --- */
 
+/* --- Error styles  --- */
+.error {
+  font-size: 0.8em;
+  color: red;
+  margin: 1em;
+}
+/* --- Error styles  --- */
+
 /* --- Base flexbox and grid  --- */
 /*CSS flexbox*/
 .flexContainer {

@@ -158,7 +158,7 @@
             pattern="^([-_!&amp;*()\']*[a-zA-Z0-9]+[-_!&amp;*()\']*)+$"
             required
           />
-          <span id="usernameError"></span>
+          <p id="usernameError" class="error"></p>
         </div>
 
         <!--Input for email address, type=email-->
@@ -171,7 +171,7 @@
             pattern="[^@]+@[^\.]+\..+"
             required
           />
-          <span id="emailError"></span>
+          <p id="emailError" class="error"></p>
         </div>
 
         <!--Input for user password, type=password-->
@@ -185,7 +185,7 @@
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&amp;*()]).{8,15}$"
             required
           />
-          <span id="passwordError"></span>
+          <p id="passwordError" class="error"></p>
         </div>
 
         <!--Input for user city, type=text-->
@@ -197,7 +197,7 @@
             id="userCity"
             pattern="^([-&\']*[a-zA-Z0-9]+[-&amp;\']*)+$"
           />
-          <span id="cityError"></span>
+          <p id="cityError" class="error"></p>
         </div>
 
         <!--Input for user phone number, type=tel-->
@@ -209,7 +209,7 @@
             id="userPhone"
             pattern="^[+]{0,1}[0-9\s]{0,4}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
           />
-          <span id="phoneError"></span>
+          <p id="phoneError" class="error"></p>
         </div>
 
         <hr />
@@ -271,7 +271,7 @@
             >
             of ParkRater.
           </p>
-          <span id="termsAndPrivacyErrror"></span>
+          <p id="termsAndPrivacyErrror" class="error"></p>
         </div>
 
         <hr />

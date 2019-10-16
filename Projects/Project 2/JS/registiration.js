@@ -1,18 +1,36 @@
-// Get inputs by id
-const form = $("#registerForm")[0];
-const username = $("#username")[0];
-const email = $("#userEmail")[0];
-const password = $("#userPassword");
-const city = $("#userCity")[0];
-const phone = $("#userPhone")[0];
-const termsAndPrivacy = $("#termsAndPrivacy")[0];
-// Get error panels by id
-const usernameError = $("#usernameError")[0];
-const emailError = $("#emailError")[0];
-const passwordError = $("#passwordError")[0];
-const cityError = $("#cityError")[0];
-const phoneError = $("#phoneError")[0];
-const termsAndPrivacyErrror = $("#termsAndPrivacyErrror")[0];
+window.onload = init;
+
+const form;
+const username;
+const email;
+const password;
+const city;
+const phone;
+const termsAndPrivacy;
+const usernameError;
+const emailError;
+const passwordError;
+const cityError;
+const phoneError;
+const termsAndPrivacyErrror;
+
+function init() {
+    // Get inputs by id
+    form = $("#registerForm");
+    username = $("#username");
+    email = $("#userEmail");
+    password = $("#userPassword");
+    city = $("#userCity");
+    phone = $("#userPhone");
+    termsAndPrivacy = $("#termsAndPrivacy");
+    // Get error panels by id
+    usernameError = $("#usernameError");
+    emailError = $("#emailError");
+    passwordError = $("#passwordError");
+    cityError = $("#cityError");
+    phoneError = $("#phoneError");
+    termsAndPrivacyErrror = $("#termsAndPrivacyErrror");
+}
 
 // Check required inputs emptiness
 function emptyCheck() {
