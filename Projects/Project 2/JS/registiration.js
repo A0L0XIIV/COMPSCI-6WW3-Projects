@@ -1,5 +1,7 @@
+// Init function
 window.onload = init;
 
+// Global variables
 const form;
 const username;
 const email;
@@ -14,6 +16,7 @@ const cityError;
 const phoneError;
 const termsAndPrivacyErrror;
 
+// Declare global variables in init function
 function init() {
     // Get inputs by id
     form = $("#registerForm");
@@ -32,7 +35,7 @@ function init() {
     termsAndPrivacyErrror = $("#termsAndPrivacyErrror");
 }
 
-// Check required inputs emptiness
+// Check required inputs for empty values
 function emptyCheck() {
   if (username.value === "" || username.value == null) {
     usernameError.text("Username cannot be empty!");
@@ -49,7 +52,7 @@ function emptyCheck() {
   return true;
 }
 
-// Terms & Privacy check
+// Terms & Privacy check -> Should be check in order to submit
 function termsAndPrivacyCheck() {
   if (termsAndPrivacy.value === false) {
     termsAndPrivacyErrror.text("Please read an accept the Terms&Privicy.");
@@ -75,7 +78,7 @@ function validateEmail() {
 // Password validation and error messages
 function validatePassword() {
   // New pattern for passwords
-  // lowercase, uppercase, digit, special chars and length:8-15
+  // lowercase, uppercase, digit, special char. and length:8-15
   var passwordPattern = new RegExp(
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[-_=+!@#$%^&*()]).{8,15}$"
   );
@@ -98,6 +101,7 @@ function validateName(name, isUsername) {
   if (namePattern.test(name)) {
     return true;
   } else {
+    // This function called with both username and city name
     if (isUsername) {
       usernameError.text("Please just use letters, numbers and -_!&*()'");
     } else {
@@ -127,7 +131,7 @@ function validatePhone() {
   }
 }
 
-// Validate whole form
+// Validate all form data
 function validateForm() {
   if (form) {
     // Required validations

@@ -1,4 +1,6 @@
+// Init function -> body calls it
 function init() {
+  // Set dynamic variables in init function
   var parkName = "Highland Garden's Park";
 
   var coordinate_x = 43.245557;
@@ -18,17 +20,21 @@ function init() {
   $("#postalCode").text("L8P 2X3");
 }
 
+// LeafletJS and OpenStreetMap function
 function parkMap(parkName, coordinate_x, coordinate_y) {
-  var mymap = L.map("map").setView([coordinate_x, coordinate_y], 15);
+  // Set map coordinates and zoom (15)
+  var map = L.map("map").setView([coordinate_x, coordinate_y], 15);
 
+  // Set layers of the map and min/max zoom
   L.tileLayer("https:/a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
     maxZoom: 18,
     minZoom: 1
-  }).addTo(mymap);
+  }).addTo(map);
 
+  // Put park's marker on map
   L.marker([coordinate_x, coordinate_y])
-    .addTo(mymap)
+    .addTo(map)
     .bindPopup(parkName);
 }

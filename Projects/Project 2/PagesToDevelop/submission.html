@@ -16,6 +16,7 @@
     <!-- JS sourse -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../JS/main.js"></script>
+    <script type="text/javascript" src="../JS/search.js"></script>
 
     <!-- Title of the page -->
     <title>Add a new park</title>
@@ -161,8 +162,11 @@
         placeholder="Description (max 500 words)"
       ></textarea>
 
+      <hr />
+
       <!--Input for park coordinates, type=number-->
-      <p>*Coordinate - Latitude:</p>
+      <h4>*Coordinates (input or location)</h4>
+      <p>Latitude:</p>
       <input
         type="number"
         name="parkLatitude"
@@ -171,7 +175,7 @@
         required
       />
       <br />
-      <p>*Coordinate - Longitude:</p>
+      <p>Longitude:</p>
       <input
         type="number"
         name="parkLongitude"
@@ -180,6 +184,18 @@
         required
       />
       <br />
+      <div>
+        <p>Current Location</p>
+        <input
+          type="submit"
+          value="Get location"
+          class="searchButton"
+          aria-pressed="false"
+          onclick="getLocation()"
+        />
+        <p id="locationError" class="error"></p>
+      </div>
+      <hr />
 
       <!--Input for park image, type=file, accept=image-->
       <p>Image:</p>
