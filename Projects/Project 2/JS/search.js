@@ -10,7 +10,9 @@ function init() {
 
 // Geolocation API call
 function getLocation() {
+  // If Geolocation is available
   if (navigator.geolocation) {
+    locationError.text("Locating...");
     navigator.geolocation.getCurrentPosition(showPosition, showError);
   } else {
     locationError.text("Geolocation is not supported by this browser.");
@@ -29,6 +31,7 @@ function showPosition(position) {
   var parkLongitude = document.getElementById("parkLongitude");
   if (parkLongitude) parkLongitude.value = longitude;
 
+  locationError.text("");
   alert("Latitude: " + latitude + "\nLongitude: " + longitude);
 }
 
