@@ -96,7 +96,7 @@ function validatePassword() {
 // Username and city validation and error messages
 function validateName(name, isUsername) {
   // New pattern for names
-  var namePattern = new RegExp("^([-_!&*()']*[a-zA-z0-9]+[-_!&*()']*)+$");
+  var namePattern = new RegExp("^([-_!&*()']*[a-zA-Z0-9]+[-_!&*()']*)+$");
   // Return its comparision result and show the errors
   if (namePattern.test(name)) {
     return true;

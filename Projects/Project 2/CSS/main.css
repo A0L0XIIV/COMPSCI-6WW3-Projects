@@ -110,6 +110,11 @@ input:invalid {
   background-color: #ffcccc;
 }
 
+input[type="number"]:valid,
+input[type="text"]:valid {
+  border-color: #006900;
+}
+
 input:required {
   border-color: red;
   border-width: 1px;

@@ -30,11 +30,11 @@
       content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1"
     />
     <!-- Favicon for homescreens -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#2fa22b" />
     <meta name="theme-color" content="#ffffff" />
   </head>
@@ -72,10 +72,7 @@
           <form action="./result_sample.html" class="navButton">
             <input type="submit" value="Results" aria-pressed="false" />
           </form>
-          <form
-            action="./individual_sample.html"
-            class="navButton"
-          >
+          <form action="./individual_sample.html" class="navButton">
             <input type="submit" value="Individual" aria-pressed="false" />
           </form>
           <form action="./search.html" class="navButton">
@@ -155,7 +152,8 @@
             type="text"
             name="username"
             id="username"
-            pattern="^([-_!&amp;*()\']*[a-zA-Z0-9]+[-_!&amp;*()\']*)+$"
+            pattern="^([-_!&*()']*[a-zA-Z0-9]+[-_!&*()']*)+$"
+            title="Only letters, numbers and -_!&*()' characters"
             required
           />
           <p id="usernameError" class="error"></p>
@@ -169,6 +167,7 @@
             name="userEmail"
             id="userEmail"
             pattern="[^@]+@[^\.]+\..+"
+            title="Please use a proper email address."
             required
           />
           <p id="emailError" class="error"></p>
@@ -182,7 +181,8 @@
             type="password"
             name="userPassword"
             id="userPassword"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&amp;*()]).{8,15}$"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&*()]).{8,15}$"
+            title="At least an uppercase, a lowercase, a number, a special character -_=+!@#$%^&*() and length of 8-15"
             required
           />
           <p id="passwordError" class="error"></p>
@@ -195,7 +195,8 @@
             type="text"
             name="userCity"
             id="userCity"
-            pattern="^([-&\']*[a-zA-Z0-9]+[-&amp;\']*)+$"
+            pattern="^([a-zA-Z0-9]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters"
           />
           <p id="cityError" class="error"></p>
         </div>
@@ -208,6 +209,7 @@
             name="userPhone"
             id="userPhone"
             pattern="^[+]{0,1}[0-9\s]{0,4}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+            title="Examples: 9998887766, 999 888 77 66, +1 (999) 888 77 66, ..."
           />
           <p id="phoneError" class="error"></p>
         </div>
