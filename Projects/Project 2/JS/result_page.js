@@ -21,7 +21,7 @@ function parkMap(parkDescription, coordinate_x, coordinate_y, name) {
   var map = L.map(name).setView([coordinate_x, coordinate_y], 15);
 
   // Set layers of the map and min/max zoom
-  L.tileLayer("https:/a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
     maxZoom: 18,
