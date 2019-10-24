@@ -13,6 +13,8 @@ Note: I tried to add (doq4@mcmaster.ca) as a collaborator but; when I searched w
 
 - For project 2 I only used bootstrap.
 
+- After project 2 navigation menu's Results and Individual buttons will be deleted. They are here for quick link to static pages. With server integration Results and Individual pages will be called via Search page.
+
 -----------------------------------
 
 Project 1 Add-on task 2 questions:
