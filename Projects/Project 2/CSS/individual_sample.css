@@ -47,6 +47,11 @@
   height: auto;
   float: right;
 }
+
+/*Carousel hover for open modal*/
+#parkImageCarousel .carousel-item:hover {
+  opacity: 0.75;
+}
 /* --- Park map & images --- */
 
 /* --- Park video --- */

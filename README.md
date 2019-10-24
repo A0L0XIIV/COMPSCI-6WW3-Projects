@@ -11,7 +11,10 @@ Note: I tried to add (doq4@mcmaster.ca) as a collaborator but; when I searched w
 
 - For project 1 I didn't use any libraries. I added bootstrap css styles in html code because I'm going to use them in the next projects.
 
+- For project 2 I only used bootstrap.
+
 -----------------------------------
+
 Project 1 Add-on task 2 questions:
 
 i. I have 2 different size logos for my project. One of them is 100x100px and the other 
@@ -48,7 +51,7 @@ we have to give every source and img tag different id and adjust their size indi
 
 -----------------------------------
 
-In Project 1 I used (unsplash.com) for free open source images.
+In this project I used (unsplash.com) for free open source images.
 
 Also I designed site logo on (freelogodesign.org).
 
