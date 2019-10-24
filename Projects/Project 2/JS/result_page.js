@@ -28,6 +28,13 @@ function parkMap(parkDescription, coordinate_x, coordinate_y, name) {
     minZoom: 1
   }).addTo(map);
 
+  // On small screens, make attribution text smaller
+  if ($(window).width() <= 500) {
+    $(".leaflet-control-attribution").css({
+      fontSize: 5.5
+    });
+  }
+
   // Add marker or markers on map
   // Map Results page
   if (name === "mapResultsMap") {
