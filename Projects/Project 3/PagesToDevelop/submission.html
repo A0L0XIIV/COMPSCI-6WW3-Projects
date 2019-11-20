@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/submission.css" />
+    <!-- JS sourse -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../JS/main.js"></script>
+    <script type="text/javascript" src="../JS/search.js"></script>
+
+    <!-- Title of the page -->
+    <title>Add a new park</title>
+    <!-- IPhone adding to home screen -->
+    <link rel="apple-touch-icon" href="../Images/Logos/LogoSmall.png" />
+    <link rel="apple-touch-startup-image" href="../Images/Logos/Logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="viewport"
+      content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1"
+    />
+    <!-- Favicon for homescreens -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2fa22b" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <header class="flexContainer">
+      <!-- Site Logo w/ index.html link-->
+      <div class="headerFlexItemLogo" id="headerLogoDiv">
+        <a href="./index.html">
+          <picture id="websiteLogo">
+            <source
+              media="(min-width: 800px)"
+              id="websiteLogoBig"
+              srcset="../Images/Logos/Logo.png"
+            />
+            <img
+              src="../Images/Logos/LogoSmall.png"
+              alt="ParkRater Logo"
+              id="websiteLogoSmall"
+              aria-label="ParkRater Logo"
+            />
+          </picture>
+        </a>
+      </div>
+
+      <!-- Center div of the header: Name of the website and navbar -->
+      <div class="headerFlexItemNav" id="headerNavDiv">
+        <!-- Website name -->
+        <div class="headerSiteName" id="websiteName">
+          <a href="./index.html">ParkRater</a>
+        </div>
+
+        <!-- Navbar and its linked buttons -->
+        <nav class="gridContainer">
+          <form action="./result_sample.html" class="navButton">
+            <input type="submit" value="Results" aria-pressed="false" />
+          </form>
+          <form action="./individual_sample.html" class="navButton">
+            <input type="submit" value="Individual" aria-pressed="false" />
+          </form>
+          <form action="./search.html" class="navButton">
+            <input type="submit" value="Search Parks" aria-pressed="false" />
+          </form>
+          <form action="./submission.html" class="navButton">
+            <input type="submit" value="New Park" aria-pressed="false" />
+          </form>
+          <form action="./registration.html" class="navButton">
+            <input type="submit" value="Sign Up" aria-pressed="false" />
+          </form>
+        </nav>
+      </div>
+
+      <!-- Search bars -->
+      <div
+        class="headerFlexItemSearch gridContainer"
+        id="headerSearchDiv"
+        role="search"
+      >
+        <div></div>
+        <!-- Search bar and its button -->
+        <div class="searchWithName">
+          <input
+            type="search"
+            name="searchBox"
+            class="searchBox"
+            placeholder=" Enter park name"
+          />
+          <button class="searchButton" aria-pressed="false">Search</button>
+        </div>
+        <!-- Search w/ rating dropdown and its button -->
+        <div class="searchWithRate">
+          <select>
+            <option value="" hidden selected>Select rating</option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+          <button class="searchButton" aria-pressed="false">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Centered main-->
+    <main class="main">
+      <!-- Breadcrum: Navigation -->
+      <div class="breadcrumb" role="navigation">
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>></li>
+          <li>
+            <a href="./submission.html">Add a Park</a>
+          </li>
+        </ul>
+      </div>
+
+      <form id="submissionForm" action="" method="post">
+        <!--Input for park name, type=text-->
+        <div>
+          <p>*Name of the park:</p>
+          <input
+            type="text"
+            name="parkName"
+            id="parkName"
+            placeholder="Park name"
+            pattern="^([a-zA-Z0-9]+[-&']*)+$"
+            title="Only letters, numbers and -&' characters. Max letters is 50."
+            maxlength="50"
+            required
+          />
+        </div>
+
+        <!--Input/textarea for park description, type=textarea-->
+        <div>
+          <p>Description:</p>
+          <textarea
+            rows="3"
+            cols="30"
+            maxlength="500"
+            name="parkDescription"
+            id="parkDescription"
+            placeholder="Description (max 500 words)"
+          ></textarea>
+        </div>
+
+        <hr />
+
+        <!--Input for park coordinates, type=number-->
+        <div>
+          <h4>*Coordinates (input or location)</h4>
+          <p>Latitude:</p>
+          <input
+            type="number"
+            step="00.0000001"
+            min="-90"
+            max="90"
+            name="parkLatitude"
+            id="parkLatitude"
+            placeholder="Latitude (00.0000000)"
+            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            title="Min: -90, Max:90, Decimal max:7, 00.0000000"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <p>Longitude:</p>
+          <input
+            type="number"
+            step="0.0000001"
+            min="-180"
+            max="180"
+            name="parkLongitude"
+            id="parkLongitude"
+            placeholder="Longitude (00.0000000)"
+            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            title="Min: -180, Max:180, Decimal max:7, 00.0000000"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <p>Current Location:</p>
+          <input
+            type="submit"
+            value="Get location"
+            class="searchButton"
+            aria-pressed="false"
+            onclick="getLocation()"
+          />
+          <p id="locationError" class="error"></p>
+        </div>
+        <hr />
+
+        <!-- Input for park country, type=text -->
+        <div>
+          <p>Country:</p>
+          <input
+            type="text"
+            name="parkCountry"
+            id="parkCountryInput"
+            placeholder="Country"
+            pattern="[a-zA-Z ]{2,}"
+            title="Please just use letters and space character."
+            maxlength="50"
+          />
+        </div>
+        <br />
+
+        <!-- Input for park region, type=text -->
+        <div>
+          <p>Region/State:</p>
+          <input
+            type="text"
+            name="parkRegion"
+            id="parkRegionInput"
+            placeholder="Region/State"
+            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters. Max length is 50."
+            maxlength="50"
+          />
+        </div>
+        <br />
+
+        <!-- Input for park city, type=text -->
+        <div>
+          <p>City:</p>
+          <input
+            type="text"
+            name="parkCity"
+            id="parkCityInput"
+            placeholder="City"
+            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters. Max length is 50."
+            maxlength="50"
+          />
+        </div>
+        <br />
+
+        <!-- Input for park address, type=text -->
+        <div>
+          <p>Address:</p>
+          <input
+            type="text"
+            name="parkAddress"
+            id="parkAddressInput"
+            placeholder="Address (Street and number)"
+            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters. Max length is 100."
+            maxlength="100"
+          />
+        </div>
+        <br />
+
+        <!-- Input for park postal code, type=text -->
+        <div>
+          <p>Postal Code:</p>
+          <input
+            type="text"
+            name="parkPostalCode"
+            id="parkPostalCodeInput"
+            placeholder="Postal Code"
+            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters. Max length is 10."
+            maxlength="10"
+          />
+        </div>
+
+        <hr />
+
+        <!--Input for park image, type=file, accept=image-->
+        <div>
+          <p>Image:</p>
+          <input type="file" accept="image/*" name="parkImage" id="parkImage" />
+        </div>
+        <br />
+
+        <!--Input for park video, type=file, accept=video-->
+        <div>
+          <p>Video:</p>
+          <input type="file" accept="video/*" name="parkVideo" id="parkVideo" />
+        </div>
+
+        <hr />
+
+        <br />
+        <!--Input for submitting the form, type=submit-->
+        <div>
+          <input
+            type="submit"
+            value="Submit"
+            class="submissionButton"
+            aria-pressed="false"
+          />
+        </div>
+      </form>
+      <br />
+      <br />
+    </main>
+
+    <!-- footer of the page -->
+    <footer>
+      &copy; ParkRater, Baran Kaya, 2019
+    </footer>
+  </body>
+</html>

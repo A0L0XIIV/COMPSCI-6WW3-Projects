@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/registration.css" />
+    <!-- JS sourse -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../JS/main.js"></script>
+    <script type="text/javascript" src="../JS/registiration.js"></script>
+
+    <!-- Title of the page -->
+    <title>Sign Up to ParkRater</title>
+    <!-- IPhone adding to home screen -->
+    <link rel="apple-touch-icon" href="../Images/Logos/LogoSmall.png" />
+    <link rel="apple-touch-startup-image" href="../Images/Logos/Logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="viewport"
+      content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1"
+    />
+    <!-- Favicon for homescreens -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2fa22b" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <header class="flexContainer">
+      <!-- Site Logo w/ index.html link-->
+      <div class="headerFlexItemLogo" id="headerLogoDiv">
+        <a href="./index.html">
+          <picture id="websiteLogo">
+            <source
+              media="(min-width: 800px)"
+              id="websiteLogoBig"
+              srcset="../Images/Logos/Logo.png"
+            />
+            <img
+              src="../Images/Logos/LogoSmall.png"
+              alt="ParkRater Logo"
+              id="websiteLogoSmall"
+              aria-label="ParkRater Logo"
+            />
+          </picture>
+        </a>
+      </div>
+
+      <!-- Center div of the header: Name of the website and navbar -->
+      <div class="headerFlexItemNav" id="headerNavDiv">
+        <!-- Website name -->
+        <div class="headerSiteName" id="websiteName">
+          <a href="./index.html">ParkRater</a>
+        </div>
+
+        <!-- Navbar and its linked buttons -->
+        <nav class="gridContainer">
+          <form action="./result_sample.html" class="navButton">
+            <input type="submit" value="Results" aria-pressed="false" />
+          </form>
+          <form action="./individual_sample.html" class="navButton">
+            <input type="submit" value="Individual" aria-pressed="false" />
+          </form>
+          <form action="./search.html" class="navButton">
+            <input type="submit" value="Search Parks" aria-pressed="false" />
+          </form>
+          <form action="./submission.html" class="navButton">
+            <input type="submit" value="New Park" aria-pressed="false" />
+          </form>
+          <form action="./registration.html" class="navButton">
+            <input type="submit" value="Sign Up" aria-pressed="false" />
+          </form>
+        </nav>
+      </div>
+
+      <!-- Search bars -->
+      <div
+        class="headerFlexItemSearch gridContainer"
+        id="headerSearchDiv"
+        role="search"
+      >
+        <div></div>
+        <!-- Search bar and its button -->
+        <div class="searchWithName">
+          <input
+            type="search"
+            name="searchBox"
+            class="searchBox"
+            placeholder=" Enter park name"
+          />
+          <button class="searchButton" aria-pressed="false">Search</button>
+        </div>
+        <!-- Search w/ rating dropdown and its button -->
+        <div class="searchWithRate">
+          <select>
+            <option value="" hidden selected>Select rating</option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+          <button class="searchButton" aria-pressed="false">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Centered main-->
+    <main class="main">
+      <!-- Breadcrum: Navigation -->
+      <div class="breadcrumb" role="navigation">
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>></li>
+          <li>
+            <a href="./registration.html">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+
+      <form
+        name="registerForm"
+        id="registerForm"
+        action=""
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <!--Input for username, type=text-->
+        <div>
+          <p>*Username:</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            pattern="^([-_!&*()']*[a-zA-Z0-9]+[-_!&*()']*)+$"
+            title="Only letters, numbers and -_!&*()' characters. Max length is 20."
+            maxlength="20"
+            required
+          />
+          <p id="usernameError" class="error"></p>
+        </div>
+
+        <!--Input for email address, type=email-->
+        <div>
+          <p>*Email:</p>
+          <input
+            type="email"
+            name="userEmail"
+            id="userEmail"
+            pattern="[^@]+@[^\.]+\..+"
+            title="Please use a proper email address. Max length is 50."
+            maxlength="50"
+            required
+          />
+          <p id="emailError" class="error"></p>
+        </div>
+
+        <!--Input for user password, type=password-->
+        <div>
+          <p>*Password:</p>
+          <!--At least one lowercase, a uppercase, a number, special character and length between 8 to 15-->
+          <input
+            type="password"
+            name="userPassword"
+            id="userPassword"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_=+!@#$%^&*()]).{8,15}$"
+            title="At least an uppercase, a lowercase, a number, a special character -_=+!@#$%^&*() and length of 8-15"
+            required
+          />
+          <p id="passwordError" class="error"></p>
+        </div>
+
+        <!--Input for user city, type=text-->
+        <div>
+          <p>Current City:</p>
+          <input
+            type="text"
+            name="userCity"
+            id="userCity"
+            pattern="^([a-zA-Z0-9]+[-&']*)+$"
+            title="Please only use letters, numbers and -&' characters. Max length is 50."
+            maxlength="50"
+          />
+          <p id="cityError" class="error"></p>
+        </div>
+
+        <!--Input for user phone number, type=tel-->
+        <div>
+          <p>Phone:</p>
+          <input
+            type="tel"
+            name="userPhone"
+            id="userPhone"
+            pattern="^[+]{0,1}[0-9\s]{0,4}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
+            title="Examples: 9998887766, 999 888 77 66, +1 (999) 888 77 66, ..."
+            maxlength="20"
+          />
+          <p id="phoneError" class="error"></p>
+        </div>
+
+        <hr />
+
+        <!--Input for frequency, type=radio-->
+        <div>
+          <p>How often do you visit parks?</p>
+
+          <!--Flex box for 3 rows-->
+          <div class="flexContainer radioFlex">
+            <!--First grid div for # of days-->
+            <div class="gridContainer flexDiv1">
+              <p class="daysValues">1-2</p>
+              <input type="radio" name="days" id="1to2" />
+              <p>3-4</p>
+              <input type="radio" name="days" id="3to4" />
+              <p>5-6</p>
+              <input type="radio" name="days" id="5to6" />
+              <p>7+</p>
+              <input type="radio" name="days" id="7plus" />
+            </div>
+            <!--Second grid div for "in a"-->
+            <div class="flexDiv2">
+              <p>in a</p>
+            </div>
+            <!--Third grid div for period-->
+            <div class="gridContainer flexDiv3">
+              <p>week</p>
+              <input type="radio" name="period" id="week" />
+              <p>month</p>
+              <input type="radio" name="period" id="month" />
+              <p>session</p>
+              <input type="radio" name="period" id="session" />
+              <p>year</p>
+              <input type="radio" name="period" id="year" />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!--Input for terms&conditions, type=checkbox-->
+        <div class="flexContainer checkboxFlex">
+          <input
+            type="checkbox"
+            name="termsAndPrivacy"
+            id="termsAndPrivacy"
+            required
+            aria-checked="false"
+          />
+          <p class="termsAndPrivacyText">
+            I read and acceptted
+            <a href="https://www.google.com/search?q=terms+%26+conditions"
+              >Terms&Conditions</a
+            >
+            and
+            <a href="https://www.google.com/search?q=privacy+policy"
+              >Privacy Policy</a
+            >
+            of ParkRater.
+          </p>
+          <p id="termsAndPrivacyErrror" class="error"></p>
+        </div>
+
+        <hr />
+
+        <!--Input for form reset, type=reset-->
+        <div>
+          <input
+            type="reset"
+            value="Reset"
+            class="resetButton"
+            aria-pressed="false"
+          />
+          <!--Input for submitting the form, type=submit-->
+          <input
+            type="submit"
+            value="Submit"
+            class="submitButton"
+            aria-pressed="false"
+          />
+        </div>
+      </form>
+      <br /><br />
+    </main>
+
+    <!-- Footer of the page -->
+    <footer>
+      &copy; ParkRater, Baran Kaya, 2019
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+/*Empty space between inputs*/
+input{
+    margin-bottom: 1em;
+}
+
+
+
+/* --- Radios  --- */
+/*Flex container's width and its centered*/
+.radioFlex, .checkboxFlex{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*Grid for 2 radio divs*/
+.flexDiv1, .flexDiv3{
+    grid-template-columns: auto auto;
+}
+
+/*Input radios' width and sizes*/
+input[type="radio"]{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*Middle flex div's grow, margin and boldness*/
+.flexDiv2{
+    flex-grow: 2;
+    margin-top: 15%;
+    font-weight: bold;
+}
+
+/*First and third divs' flex-grow*/
+.flexDiv1, .flexDiv3{
+    flex-grow: 7;
+}
+/* --- Radios  --- */
+
+
+
+/* --- CheckBox  --- */
+/*Checkbox input tag's witdh and flex-grow*/
+#termsAndPrivacy{
+    width: 10%;
+    flex-grow: 1;
+}
+
+/*Checkbox text's flex-grow*/
+.termsAndPrivacyText{
+    flex-grow: 9;
+}
+/* --- CheckBox  --- */
+
+
+
+
+/* Mobile Devices */
+@media only screen and (max-width: 500px) {
+    /*Flex container's mobile width*/
+    .radioFlex, .checkboxFlex{
+        width: 90%;
+    }
+}
+
+
+/* Tablets */
+@media only screen and (min-width: 501px) and (max-width: 1025px) {
+    /*Flex container's tablet width*/
+    .radioFlex, .checkboxFlex{
+        width: 80%;
+    }
+}
