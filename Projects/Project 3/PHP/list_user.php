@@ -1,6 +1,6 @@
 <?php
 
-require_once('./mysqli_connect.php');
+require_once('../mysqli_connect.php');
 
 $query = "SELECT * FROM park";
 
