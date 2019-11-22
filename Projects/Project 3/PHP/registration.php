@@ -1,4 +1,7 @@
 <?php 
+    require "head.php";
+?>
+<?php 
     require "header.php";
 ?>
 
@@ -8,11 +11,11 @@
       <div class="breadcrumb" role="navigation">
         <ul>
           <li>
-            <a href="./index.html">Home</a>
+            <a href="./index.php">Home</a>
           </li>
           <li>></li>
           <li>
-            <a href="./registration.html">Sign Up</a>
+            <a href="./registration.php">Sign Up</a>
           </li>
         </ul>
       </div>
@@ -26,18 +29,9 @@
       >
 
       <?php
-      // Registration errors
-        if(isset($_GET['error'])){
-            if($_GET['error'] == "emptyfields"){
-                echo '<p class=registrationError>Username, email or password fields are empty.</p>';
-            }
-            else if($_GET['error'] == "invalidusernameemail"){
-                echo '<p class=registrationError>Username and email are invalid.</p>';
-            }
-        }
         // Successfully registered
-        else if(isset($_GET['registration']) == "success"){
-            echo '<p class=registrationSuccess>Sign up successful!</p>';
+        if(isset($_GET['registration']) && $_GET['registration'] == "success"){
+            echo '<p class="success">Sign up successful!</p>';
         }
       ?>
         <!--Input for username, type=text-->
@@ -50,9 +44,25 @@
             pattern="^([-_!&*()']*[a-zA-Z0-9]+[-_!&*()']*)+$"
             title="Only letters, numbers and -_!&*()' characters. Max length is 20."
             maxlength="20"
+            value="<?php if(isset($_REQUEST['username'])) echo $_REQUEST['username'];?>"
             required
           />
-          <p id="usernameError" class="error"></p>
+          <?php
+            if(isset($_GET['error'])){
+              // Username error
+              if($_GET['error'] == "invalidusername"){
+                  echo '<p class="error">Invalid username!</p>';
+              }
+              // Username and email error
+              else if($_GET['error'] == "invalidusernameemail"){
+                echo '<p class="error">Invalid username and email address!</p>';
+              }
+              // Username or email taken
+              else if($_GET['error'] == "usertaken"){
+                echo '<p class="error">Username or email taken!</p>';
+              }
+            }
+          ?>
         </div>
 
         <!--Input for email address, type=email-->
@@ -65,9 +75,15 @@
             pattern="[^@]+@[^\.]+\..+"
             title="Please use a proper email address. Max length is 50."
             maxlength="50"
+            value="<?php if(isset($_REQUEST['email'])) echo $_REQUEST['email'];?>"
             required
           />
-          <p id="emailError" class="error"></p>
+          <?php
+            // Email error
+            if(isset($_GET['error']) && $_GET['error'] == "invalidemail"){
+                echo '<p class="error">Invalid email address!</p>';
+            }
+          ?>
         </div>
 
         <!--Input for user password, type=password-->
@@ -82,7 +98,12 @@
             title="At least an uppercase, a lowercase, a number, a special character -_=+!@#$%^&*() and length of 8-15"
             required
           />
-          <p id="passwordError" class="error"></p>
+          <?php
+            // Password error
+            if(isset($_GET['error']) && $_GET['error'] == "invalidpassword"){
+                echo '<p class="error">Invalid password!</p>';
+            }
+          ?>
         </div>
 
         <!--Input for user city, type=text-->
@@ -95,8 +116,14 @@
             pattern="^([a-zA-Z0-9]+[-&']*)+$"
             title="Please only use letters, numbers and -&' characters. Max length is 50."
             maxlength="50"
+            value="<?php if(isset($_REQUEST['city'])) echo $_REQUEST['city'];?>"
           />
-          <p id="cityError" class="error"></p>
+          <?php
+            // City error
+            if(isset($_GET['error']) && $_GET['error'] == "invalidcity"){
+                echo '<p class="error">Invalid city name!</p>';
+            }
+          ?>
         </div>
 
         <!--Input for user phone number, type=tel-->
@@ -109,8 +136,14 @@
             pattern="^[+]{0,1}[0-9\s]{0,4}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
             title="Examples: 9998887766, 999 888 77 66, +1 (999) 888 77 66, ..."
             maxlength="20"
+            value="<?php if(isset($_REQUEST['phone'])) echo $_REQUEST['phone'];?>"
           />
-          <p id="phoneError" class="error"></p>
+          <?php
+            // Phone error
+            if(isset($_GET['error']) && $_GET['error'] == "invalidphone"){
+                echo '<p class="error">Invalid phone number!</p>';
+            }
+          ?>
         </div>
 
         <hr />
@@ -124,13 +157,13 @@
             <!--First grid div for # of days-->
             <div class="gridContainer flexDiv1">
               <p class="daysValues">1-2</p>
-              <input type="radio" name="days" id="1to2" />
+              <input type="radio" name="days" value="1" id="1to2" />
               <p>3-4</p>
-              <input type="radio" name="days" id="3to4" />
+              <input type="radio" name="days" value="3" id="3to4" />
               <p>5-6</p>
-              <input type="radio" name="days" id="5to6" />
+              <input type="radio" name="days" value="5" id="5to6" />
               <p>7+</p>
-              <input type="radio" name="days" id="7plus" />
+              <input type="radio" name="days" value="7" id="7plus" />
             </div>
             <!--Second grid div for "in a"-->
             <div class="flexDiv2">
@@ -139,13 +172,13 @@
             <!--Third grid div for period-->
             <div class="gridContainer flexDiv3">
               <p>week</p>
-              <input type="radio" name="period" id="week" />
+              <input type="radio" name="period" value="52" id="week" />
               <p>month</p>
-              <input type="radio" name="period" id="month" />
+              <input type="radio" name="period" value="12" id="month" />
               <p>session</p>
-              <input type="radio" name="period" id="session" />
+              <input type="radio" name="period" value="4" id="session" />
               <p>year</p>
-              <input type="radio" name="period" id="year" />
+              <input type="radio" name="period" value="1" id="year" />
             </div>
           </div>
         </div>
@@ -158,8 +191,8 @@
             type="checkbox"
             name="terms-and-privacy"
             id="termsAndPrivacy"
-            required
             aria-checked="false"
+            required
           />
           <p class="termsAndPrivacyText">
             I read and acceptted
@@ -182,13 +215,14 @@
           <input
             type="reset"
             value="Reset"
-            class="resetButton"
+            class="cancelButton"
             aria-pressed="false"
           />
           <!--Input for submitting the form, type=submit-->
           <input
             type="submit"
             value="Submit"
+            name="register-submit"
             class="submitButton"
             aria-pressed="false"
           />
@@ -196,7 +230,6 @@
       </form>
       <br /><br />
     </main>
-
 
 <?php
     require "footer.php";
