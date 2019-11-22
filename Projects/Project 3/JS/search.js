@@ -32,7 +32,7 @@ function showPosition(position) {
   if (parkLongitude) parkLongitude.value = longitude;
 
   locationError.text("");
-  alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+  //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
 }
 
 // Shows different error types

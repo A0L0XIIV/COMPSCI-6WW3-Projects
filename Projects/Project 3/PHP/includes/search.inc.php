@@ -1,13 +1,13 @@
 <?php
 // Search parks with park name
-if(isset($_POST['name-search'])){
+if(isset($_POST['name-search-submit'])){
     // Database conenction
-    require 'dbh.inc.php';
+    require '../../../mysqli_connect.php';
 
     $parkName = $_POST['search-park-name'];
 
     // Empty field check
-    if(empty(parkName)){
+    if(empty($parkName)){
         header("Location: ../search.php?error=emptyfield=name");
         exit();
     }    
@@ -23,10 +23,12 @@ if(isset($_POST['name-search'])){
         else{
             mysqli_stmt_bind_param($stmt, "s", $parkName);
             mysqli_stmt_execute($stmt);
-            $results = mysqli_stmt_get_result($stmt);
+            $results = mysqli_stmt_get_result($stmt); // MORE THAN ONE RESULT WITH LIKE --> RESULT PAGE
             // Check if username is taken or not
             if($row = mysqli_fetch_assoc($results)){
                 // Redirect to results page with the data
+                header("Location: ../individual_sample.php?id=".$row['id']);
+                exit();
             }
             else{
                 header("Location: ../search.php?error=noparkfound");
@@ -40,21 +42,21 @@ if(isset($_POST['name-search'])){
 
 }
 // Search parks with park rank
-else if(isset($_POST['rank-search'])){
+else if(isset($_POST['rank-search-submit'])){
     // Database conenction
-    require 'dbh.inc.php';
+    require '../../../mysqli_connect.php';
 
     $parkRank = $_POST['search-park-rank'];
 
     // Empty field check
-    if(empty(parkRank)){
+    if(empty($parkRank)){
         header("Location: ../search.php?error=emptyfield=rank");
         exit();
     }    
     // Not empty
     else{
         // ? because sql injection
-        $sql = "SELECT * FROM park WHERE rank=?"; //JOIN SQL PARK-REVIEW
+        $sql = "SELECT * FROM park NATURAL JOIN review WHERE rank=?"; //JOIN SQL PARK-REVIEW
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../search.php?error=sqlerror");
@@ -63,10 +65,12 @@ else if(isset($_POST['rank-search'])){
         else{
             mysqli_stmt_bind_param($stmt, "i", $parkRank);
             mysqli_stmt_execute($stmt);
-            $results = mysqli_stmt_get_result($stmt);
+            $results = mysqli_stmt_get_result($stmt);// MORE THAN ONE RESULT --> RESULT PAGE
             // Check if username is taken or not
             if($row = mysqli_fetch_assoc($results)){
                 // Redirect to results page with the data
+                header("Location: ../individual_sample.php?id=".$row['id']);
+                exit();
             }
             else{
                 header("Location: ../search.php?error=noparkfound");
@@ -79,9 +83,9 @@ else if(isset($_POST['rank-search'])){
     mysqli_close($conn);
     }
 // Search parks with park location
-else if(isset($_POST['location-search'])){
+else if(isset($_POST['location-search-submit'])){
     // Database conenction
-    require 'dbh.inc.php';
+    require '../../../mysqli_connect.php';
 
     $parkLatitude = $_POST['search-park-latitude'];
     $parkLongitude = $_POST['search-park-longitude'];
@@ -91,7 +95,7 @@ else if(isset($_POST['location-search'])){
     $minParkLongitude = $parkLongitude - 0.01;
 
     // Empty field check
-    if(empty(parkLocation)){
+    if(empty($parkLocation)){
         header("Location: ../search.php?error=emptyfield=location");
         exit();
     }    
@@ -105,7 +109,7 @@ else if(isset($_POST['location-search'])){
             exit();
         }
         else{
-            mysqli_stmt_bind_param($stmt, "iiii", $maxParkLatitude, $minParkLatitude. $maxParkLongitude, $minParkLongitude);
+            mysqli_stmt_bind_param($stmt, "iiii", $maxParkLatitude, $minParkLatitude, $maxParkLongitude, $minParkLongitude);
             mysqli_stmt_execute($stmt);
             $results = mysqli_stmt_get_result($stmt);
             // Check if username is taken or not
@@ -113,7 +117,7 @@ else if(isset($_POST['location-search'])){
                 // Redirect to results page with the data
             }
             else{
-                header("Location: ../search.php?error=noparkfound");
+                header("Location: ../search.php?error=noparkfound&".$parkLatitude.','.$parkLongitude.','.$maxParkLatitude.','.$minParkLatitude.','.$maxParkLongitude.','.$minParkLongitude);
                 exit();
             }
         }
