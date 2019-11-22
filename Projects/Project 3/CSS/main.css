@@ -62,13 +62,8 @@ button {
   font-size: 1.2vw;
 }
 
-/*Button on hover operations*/
-button:hover {
-  background: #ff7b00;
-  color: rgb(54, 40, 0);
-}
-
 /*Submit&Reset buttons colors, border and sizes*/
+.submitButton,
 input[type="submit"],
 input[type="reset"] {
   background: rgb(5, 155, 5);
@@ -80,14 +75,24 @@ input[type="reset"] {
   width: 6em;
   height: auto;
 }
-/*Submit button hover colors and text decorations*/
+
+/*Red cancel and reset buttons*/
+.cancelButton,
+input[type="reset"] {
+  background: rgb(155, 5, 5);
+}
+
+/*Button and submit input on hover operations*/
+button:hover,
 input[type="submit"]:hover {
   background: #ff7b00;
   color: rgb(54, 40, 0);
   font-weight: bold;
   text-shadow: 0 0 2px white;
 }
+
 /*Reset button hover colors and text decorations*/
+.cancelButton:hover,
 input[type="reset"]:hover {
   background: rgb(54, 40, 0);
   color: #ffffff;
@@ -142,6 +147,7 @@ input:required {
 .navButton:hover {
   background: #ff7b00;
   color: rgb(54, 40, 0);
+  border-bottom: solid 2px rgb(54, 40, 0);
 }
 /* --- Navigation Bar Buttons --- */
 
@@ -165,6 +171,7 @@ select:hover {
 /* --- Search bar  --- */
 /*Search buttons on navbar size&shape*/
 .searchButton {
+  font-size: 0.95em;
   border-radius: 5px;
   padding: 0 !important;
   padding-left: 0.2em !important;
@@ -253,13 +260,19 @@ select:hover {
 }
 /* --- Breadcrumb navigation  --- */
 
-/* --- Error styles  --- */
+/* --- Error and success styles  --- */
 .error {
   font-size: 0.8em;
   color: red;
   margin: 1em;
 }
-/* --- Error styles  --- */
+
+.success {
+  font-size: 0.8em;
+  color: green;
+  margin: 1em;
+}
+/* --- Error and success styles  --- */
 
 /* --- Base flexbox and grid  --- */
 /*CSS flexbox*/
