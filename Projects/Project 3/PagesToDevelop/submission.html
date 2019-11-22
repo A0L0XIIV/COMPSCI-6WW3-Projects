@@ -162,7 +162,7 @@
             name="parkName"
             id="parkName"
             placeholder="Park name"
-            pattern="^([a-zA-Z0-9]+[-&']*)+$"
+            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
             title="Only letters, numbers and -&' characters. Max letters is 50."
             maxlength="50"
             required
@@ -196,7 +196,7 @@
             name="parkLatitude"
             id="parkLatitude"
             placeholder="Latitude (00.0000000)"
-            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            pattern="^([-]?[0-9]{1,2}\.[0-9]{3,7})$"
             title="Min: -90, Max:90, Decimal max:7, 00.0000000"
             required
           />
@@ -212,7 +212,7 @@
             name="parkLongitude"
             id="parkLongitude"
             placeholder="Longitude (00.0000000)"
-            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            pattern="^([-]?[0-9]{1,2}\.[0-9]{3,7})$"
             title="Min: -180, Max:180, Decimal max:7, 00.0000000"
             required
           />
