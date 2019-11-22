@@ -1,23 +1,25 @@
 // Init function -> body calls it
 function init() {
+  // Hide new review div and cancel button on init
+  $(".newReview").hide(1);
+  $("#hideButton").hide(1);
   // Set dynamic variables in init function
-  var parkName = "Highland Garden's Park";
-
-  var coordinate_x = 43.245557;
-  var coordinate_y = -79.8922284;
+  var parkName = $(".parkName").text();
+  var coordinate_x = $("#latitude").text();
+  var coordinate_y = $("#longitude").text();
 
   // Load maps
   parkMap(parkName, coordinate_x, coordinate_y);
 
   // Use jQuery text function to escape HTML
-  $(".parkName").text("Highland Garden's Park");
-  $("#latitude").text(coordinate_x);
-  $("#longitude").text(coordinate_y);
-  $("#addressCountry").text("Canada");
-  $("#addressRegion").text("ON");
-  $("#addressLocality").text("Hamilton");
-  $("#streetAddress").text("1 Hillcrest Avenue");
-  $("#postalCode").text("L8P 2X3");
+  // $(".parkName").text("Highland Garden's Park");
+  // $("#latitude").text(coordinate_x);
+  // $("#longitude").text(coordinate_y);
+  // $("#addressCountry").text("Canada");
+  // $("#addressRegion").text("ON");
+  // $("#addressLocality").text("Hamilton");
+  // $("#streetAddress").text("1 Hillcrest Avenue");
+  // $("#postalCode").text("L8P 2X3");
 }
 
 // LeafletJS and OpenStreetMap function
@@ -45,4 +47,15 @@ function parkMap(parkName, coordinate_x, coordinate_y) {
   L.marker([coordinate_x, coordinate_y])
     .addTo(map)
     .bindPopup(parkName);
+}
+
+// Hide new review div and cancel button
+function showNewReview() {
+  $(".newReview").show(1);
+  $("#hideButton").show(1);
+}
+// Show new review div and cancel button
+function hideNewReview() {
+  $(".newReview").hide(1);
+  $("#hideButton").hide(1);
 }
