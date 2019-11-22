@@ -1,13 +1,13 @@
 <?php
-if(isset($_POST['login-form'])){
+if(isset($_POST['login-submit'])){
     // Database conenction
-    require 'dbh.inc.php';
+    require '../../../mysqli_connect.php';
 
     $emailUsername = $_POST['email-username'];
     $password = $_POST['user-password'];
 
     // Empty field check
-    if(empty(emailUsername) || empty(password)){
+    if(empty($emailUsername) || empty($password)){
         header("Location: ../login.php?error=emptyfields&emailUsername=".$emailUsername);
         exit();
     }    
@@ -28,7 +28,7 @@ if(isset($_POST['login-form'])){
             if($row = mysqli_fetch_assoc($result)){
                 $passwordCheck = password_verify($password, $row['password']);
                 if($passwordCheck == false){
-                    header("Location: ../login.php?error=wrongpwd");
+                    header("Location: ../login.php?error=autherror");
                     exit();
                 }
                 else if($passwordCheck == true){
@@ -40,20 +40,18 @@ if(isset($_POST['login-form'])){
                     exit();
                 }
                 else{
-                    header("Location: ../login.php?error=wrongpwd");
+                    header("Location: ../login.php?error=autherror");
                     exit();
                 }
             }
             else{
-                header("Location: ../login.php?error=nouser");
+                header("Location: ../login.php?error=autherror");
                 exit();
             }
         }
-
     }
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-
 }
 // If the request coming from outside of the login page's form
 else{

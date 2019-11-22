@@ -1,4 +1,7 @@
 <?php 
+    require "head.php";
+?>
+<?php 
     require "header.php";
 ?>
 
@@ -44,7 +47,7 @@
           <p>Password:</p>
           <input
             type="password"
-            name="userPassword"
+            name="user-password"
             id="userPassword"
             placeholder="Password..."
             required
@@ -55,12 +58,12 @@
         <div>
         <?php
             // Login error
-            if(isset($_GET['error']) == "autherror"){
-                echo '<p class=error>Username/Email and/or Password are incorrect!</p>';
+            if(isset($_GET['error']) && $_GET['error'] == "autherror"){
+                echo '<p class="error">Username/Email and/or Password are incorrect!</p>';
             }
             // Successfully registered
-            else if(isset($_GET['registration']) == "success"){
-                echo '<p class=success>Sign up successful!</p>';
+            else if(isset($_GET['login']) && $_GET['login'] == "success"){
+                echo '<p class="success">Welcome '.$_SESSION['username'].'!</p>';
             }
         ?>
         </div>
@@ -70,6 +73,7 @@
           <input
             type="submit"
             value="Submit"
+            name="login-submit"
             class="submitButton"
             aria-pressed="false"
           />
