@@ -20,14 +20,8 @@
 
             <!-- Navbar and its linked buttons -->
             <nav class="gridContainer">
-                <!-- <form action="./result_sample.html" class="navButton">
-                    <input type="submit" value="Results" aria-pressed="false"/>
-                </form>
-                <form action="./individual_sample.html" class="navButton">
-                    <input type="submit" value="Individual" aria-pressed="false"/>
-                </form> -->
-                <form action="./individual_sample.php" class="navButton">
-                    <input type="submit" value="Random Park" aria-pressed="false"/>
+                <form action="./individual_sample.php" class="navButton">            <!-- RANDOM ID !!!!!!!!!!!!!!!!!! -->
+                    <input type="submit" value="Random Park" aria-pressed="false"/><!-- SELECT * FROM `park` ORDER BY ABS(`park_id` - 2) -->
                 </form>
                 <form action="./search.php" class="navButton">
                     <input type="submit" value="Search Parks" aria-pressed="false"/>
@@ -59,12 +53,12 @@
             <!-- Search bar and its button -->
             <div class="searchWithName">
                 <form 
-                    name="name-search" 
+                    name="name-search-form" 
                     action="includes/search.inc.php" 
                     method="post">
                     <input
                         type="search"
-                        name="search-park-name"
+                        name="park-name"
                         class="searchBox"
                         placeholder=" Enter a park name..."
                     />
@@ -80,10 +74,10 @@
             <!-- Search w/ rating dropdown and its button -->
             <div class="searchWithRate">
                 <form 
-                    name="rank-search" 
+                    name="rating-search" 
                     action="includes/search.inc.php" 
                     method="post">
-                    <select>
+                    <select name="park-rating">
                         <option value="" hidden selected>Select rating...</option>
                         <option value="10">10</option>
                         <option value="9">9</option>

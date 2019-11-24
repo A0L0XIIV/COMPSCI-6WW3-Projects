@@ -13,6 +13,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- Session variable for JavaScript -->
+    <!-- <script type="text/javascript">
+        var sessionUsername='<?php echo $_SESSION['username'];?>';
+    </script> -->
+
     <!-- Custon CSS and JS files -->
     <?php
         require "styles-and-scripts.php";
