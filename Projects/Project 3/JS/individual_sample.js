@@ -3,6 +3,7 @@ function init() {
   // Hide new review div and cancel button on init
   $(".newReview").hide(1);
   $("#hideButton").hide(1);
+  $("#showLoginError").hide(1);
   // Set dynamic variables in init function
   var parkName = $(".parkName").text();
   var coordinate_x = $("#latitude").text();
@@ -49,13 +50,26 @@ function parkMap(parkName, coordinate_x, coordinate_y) {
     .bindPopup(parkName);
 }
 
-// Hide new review div and cancel button
-function showNewReview() {
-  $(".newReview").show(1);
-  $("#hideButton").show(1);
-}
 // Show new review div and cancel button
+function showNewReview() {
+  // Get session username
+  let sessionUsername = $("#sessionUsername").val();
+  // Check if user logged in
+  if (sessionUsername !== "") {
+    $(".newReview").show(1);
+    $("#hideButton").show(1);
+    $("#showLoginError").hide(1);
+  } else {
+    $("#showLoginError").show(1);
+    // Not logged in --> Redirect to login page in 2 sec
+    setTimeout(function() {
+      window.location.href = "login.php";
+    }, 2000);
+  }
+}
+// Hide new review div and cancel button
 function hideNewReview() {
   $(".newReview").hide(1);
   $("#hideButton").hide(1);
+  $("#showLoginError").hide(1);
 }
