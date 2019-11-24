@@ -33,10 +33,10 @@ if(isset($_POST['login-submit'])){
                 }
                 else if($passwordCheck == true){
                     session_start();
-                    $_SESSION['userId'] = $row['id'];
+                    $_SESSION['userId'] = $row['user_id'];
                     $_SESSION['username'] = $row['username'];
 
-                    header("Location: ../login.php?login=success");
+                    header("Location: ../index.php?login=success");
                     exit();
                 }
                 else{

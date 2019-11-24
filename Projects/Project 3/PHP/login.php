@@ -56,16 +56,12 @@
         </div>
 
         <div>
-        <?php
-            // Login error
-            if(isset($_GET['error']) && $_GET['error'] == "autherror"){
-                echo '<p class="error">Username/Email and/or Password are incorrect!</p>';
-            }
-            // Successfully registered
-            else if(isset($_GET['login']) && $_GET['login'] == "success"){
-                echo '<p class="success">Welcome '.$_SESSION['username'].'!</p>';
-            }
-        ?>
+          <?php
+              // Login error
+              if(isset($_GET['error']) && $_GET['error'] == "autherror"){
+                  echo '<p class="error">Username/Email and/or Password are incorrect!</p>';
+              }
+          ?>
         </div>
 
           <!--Input for submitting the form, type=submit-->

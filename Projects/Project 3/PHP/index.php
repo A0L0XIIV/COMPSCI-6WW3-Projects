@@ -16,18 +16,21 @@
             </li>
         </ul>
     </div>
-
-    <h1>Welcome to the ParkRater</h1>
+    
+    <h1>Welcome to the ParkRater
+        <?php
+            // Successfully registered
+            if(isset($_GET['login']) && $_GET['login'] == "success"){
+                echo ' '.$_SESSION['username'].'!</p>';
+            }
+        ?>
+    </h1>
     <p>You can browse world wide parks in there.</p>
-    <p>Also if your park isn't in there, you can add it!</p>
-    <?php
-        if(isset($_SESSION['userId'])){
-            echo '<p>You are logged in!</p>';
-        }
-        else{
-            echo '<p>You are logged out!</p>';
-        }
-    ?> 
+    <p>Also if your park isn't in there, you can 
+        <a href="./submission.php">add</a> 
+        it!
+    </p>
+
 </main>
 
 <?php
