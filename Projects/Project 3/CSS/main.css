@@ -10,6 +10,8 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 /*Header background image and sizes*/
@@ -37,6 +39,7 @@ footer {
   text-align: center;
   padding: 0.5%;
   clear: both;
+  width: 100%;
 }
 
 /*Link decoration: no underline*/
@@ -261,15 +264,25 @@ select:hover {
 /* --- Breadcrumb navigation  --- */
 
 /* --- Error and success styles  --- */
-.error {
+.error,
+.notFound {
   font-size: 0.8em;
   color: red;
   margin: 1em;
+  text-align: center;
 }
 
 .success {
   font-size: 0.8em;
   color: green;
+  margin: 1em;
+}
+
+.notFound {
+  font-size: 2em;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgb(5, 155, 5);
+  background: rgb(54, 40, 0);
   margin: 1em;
 }
 /* --- Error and success styles  --- */
