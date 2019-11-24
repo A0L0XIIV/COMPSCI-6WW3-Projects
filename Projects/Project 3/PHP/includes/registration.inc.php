@@ -68,7 +68,7 @@ if(isset($_POST['register-submit'])){
             }
             else{
                 // Save user into DB
-                $sql = "INSERT INTO user (username, email, password, city, phone, visit_frequency) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO user (username, email, password, user_city, phone, visit_frequency) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
                     header("Location: ../registration.php?error=sqlerror");

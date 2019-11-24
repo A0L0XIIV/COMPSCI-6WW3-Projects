@@ -81,7 +81,7 @@ if(isset($_POST['park-submit'])){
     // Every fields OK
     else{
         // Check if park name is already in DB or not
-        $sql = "SELECT * FROM park WHERE name=?";// ? because sql injection
+        $sql = "SELECT * FROM park WHERE park_name=?";// ? because sql injection
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../submission.php?error=sqlerror");
@@ -99,7 +99,7 @@ if(isset($_POST['park-submit'])){
             }
             else{
                 // Save user into DB
-                $sql = "INSERT INTO park (name, description, latitude, longitude, country, region, city, address, postal_code) 
+                $sql = "INSERT INTO park (park_name, description, latitude, longitude, country, region, city, address, postal_code) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; // ADD IMAGE AND VIDEO!!!!!!!!!!!!!!!!!
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
