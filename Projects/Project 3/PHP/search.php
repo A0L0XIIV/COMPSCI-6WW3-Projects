@@ -20,16 +20,33 @@
         </ul>
       </div>
 
+      <!-- Search errors -->
+      <?php
+          // Empty search field
+          if(isset($_GET['error']) && $_GET['error'] == "emptyfield"){
+              echo '<p class="error">Please fill the search criteria.</p>';
+          }
+          // SQL error
+          else if(isset($_GET['error']) && $_GET['error'] == "sqlerror"){
+            echo '<p class="notFound">Oops. Something went wrong!</p>';
+            echo '<p class="notFound">We have some issues about SQL DB.</p>'; 
+          }
+          // No park found
+          else if(isset($_GET['error']) && $_GET['error'] == "noparkfound"){
+              echo '<p class="error">Sorry, we couldn\'t find any park.</p>';
+          }
+      ?>
+
       <!-- Search with park name part -->
       <div>
         <h4>Search with park name</h4>
         <form 
-        name="name-search" 
-        action="includes/search.inc.php" 
-        method="post">
+          name="name-search-form" 
+          action="includes/search.inc.php" 
+          method="post">
           <input
             type="search"
-            name="search-park-name"
+            name="park-name"
             class="searchBox"
             placeholder="Name of the park"
           />
@@ -51,10 +68,10 @@
       <div>
         <h4>Search with rating</h4>
         <form 
-        name="rank-search" 
-        action="includes/search.inc.php" 
-        method="post">
-          <select>
+          name="rating-search-form" 
+          action="includes/search.inc.php" 
+          method="post">
+          <select name="park-rating">
             <option value="" hidden selected>Rating</option>
             <option value="10">10</option>
             <option value="9">9</option>
@@ -85,19 +102,19 @@
       <div>
         <h4>Search with current location</h4>
         <form 
-        name="location-search" 
-        action="includes/search.inc.php" 
-        method="post">
+          name="location-search-form" 
+          action="includes/search.inc.php" 
+          method="post">
           <input
               type="number"
-              name="parkLatitude"
+              name="park-latitude"
               id="parkLatitude"
               placeholder="Latitude (00.0000000)"
               hidden
             />
           <input
               type="number"
-              name="parkLongitude"
+              name="park-longitude"
               id="parkLongitude"
               placeholder="Longitude (00.0000000)"
               hidden
