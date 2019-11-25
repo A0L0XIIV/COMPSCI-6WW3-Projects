@@ -57,7 +57,7 @@
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo '<p class="notFound">Oops. Something went wrong!</p>';
-                echo '<p class="notFound">We have some issues about SQL DB. Error '.mysqli_errno($conn).'</p>'; 
+                echo '<p class="notFound">We have some issues about SQL DB. Error no:'.mysqli_errno($conn).'</p>'; 
                 require "footer.php";
                 exit();
             }
@@ -83,7 +83,7 @@
                             $stmt_review = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt_review, $sql_review)){
                                 echo '<p class="notFound">Oops. Something went wrong!</p>';
-                                echo '<p class="notFound">We have some issues about SQL DB. Error '.mysqli_errno($conn).'</p>'; 
+                                echo '<p class="notFound">We have some issues about SQL DB. Error no: '.mysqli_errno($conn).'</p>'; 
                                 require "footer.php";
                                 exit();
                             }
@@ -116,9 +116,6 @@
             }
         }
     }
-    // else if(isset($_GET[])){
-    //     $parkId = $_GET['id'];
-    // }
     else{
         echo '<p class="notFound">Unauthorized access!</p><br/>';
         require "footer.php";
@@ -397,7 +394,7 @@
                 ></textarea>
                 <br />
                 <br />      
-                <input value=$parkId name="park-id" hidden/>
+                <input value="<?php echo $parkId; ?>" name="park-id" hidden/>
                 <input
                     type="submit"
                     value="Submit"
