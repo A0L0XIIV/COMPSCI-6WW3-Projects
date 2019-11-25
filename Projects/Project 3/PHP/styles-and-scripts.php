@@ -23,6 +23,7 @@ $scripts = [
 ];
 // Individual page titles
 $titles = [
+    'error.php' => 'Error - ',
     'index.php' => '',
     'individual_sample.php' => 'Park - ',
     'login.php' => 'Login - ',
