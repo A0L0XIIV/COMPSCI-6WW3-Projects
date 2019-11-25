@@ -11,16 +11,6 @@ function init() {
 
   // Load maps
   parkMap(parkName, coordinate_x, coordinate_y);
-
-  // Use jQuery text function to escape HTML
-  // $(".parkName").text("Highland Garden's Park");
-  // $("#latitude").text(coordinate_x);
-  // $("#longitude").text(coordinate_y);
-  // $("#addressCountry").text("Canada");
-  // $("#addressRegion").text("ON");
-  // $("#addressLocality").text("Hamilton");
-  // $("#streetAddress").text("1 Hillcrest Avenue");
-  // $("#postalCode").text("L8P 2X3");
 }
 
 // LeafletJS and OpenStreetMap function
