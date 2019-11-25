@@ -37,6 +37,7 @@
             title="Max length is 50."
             maxlength="50"
             placeholder="Username/Email..."
+            value="<?php if(isset($_REQUEST['emailUsername'])) echo $_REQUEST['emailUsername'];?>"
             required
           />
           <p id="usernameError" class="error"></p>

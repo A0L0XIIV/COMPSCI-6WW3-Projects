@@ -15,7 +15,7 @@
 
     <!-- Session variable for JavaScript -->
     <!-- <script type="text/javascript">
-        var sessionUsername='<?php echo $_SESSION['username'];?>';
+        var sessionUsername='<!?php echo $_SESSION['username'];?>';
     </script> -->
 
     <!-- Custon CSS and JS files -->
