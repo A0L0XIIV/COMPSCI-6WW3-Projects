@@ -168,6 +168,8 @@
                                         <!-- Basic information of the park -->
                                         <td class="resultTableInfo">
                                             <p>'.$parkDescription.'</p>
+                                            <span id="latitude" hidden>'.$parkLatitude.'</span>
+                                            <span id="longitude" hidden>'.$parkLongitude.'</span>
                                         </td>
                                         <td class="resultTableLink">
                                             <!-- Link to park\'s individual page -->

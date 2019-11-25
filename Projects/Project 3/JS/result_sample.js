@@ -1,10 +1,10 @@
 // Init function -> body calls it
 function init() {
   // Set dynamic variables in init function
-  var parkName = "Highland Garden's Park";
-
-  var latitude = 43.246;
-  var longitude = -79.891;
+  // Set dynamic variables in init function
+  var parkName = $(".parkName").text();
+  var latitude = $("#latitude").text();
+  var longitude = $("#longitude").text();
 
   // Load Tabular results' maps -> 4 results, 4 maps
   parkMap(parkName, latitude, longitude, "map1");
