@@ -37,11 +37,11 @@
 
 <!-- Get data from database -->
 <?php
-    if(isset($_POST['get-park'])){
+    if(isset($_GET['get-park'])){
         // Database conenction
         require '../../mysqli_connect.php';
 
-        $parkId = $_POST['id'];
+        $parkId = $_GET['id'];
         // Empty field check
         if(empty($parkId)){
             echo '<p class="notFound">Oops. Something went wrong!</p>'; 
@@ -53,11 +53,11 @@
         else{
             // Get Park data from database
             if($parkId == 'random'){
-                $sql = "SELECT park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
+                $sql = "SELECT park_id, park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
                         FROM park ORDER BY RAND() LIMIT 1";
             }
             else{
-                $sql = "SELECT park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
+                $sql = "SELECT park_id, park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
                         FROM park WHERE park_id=?";// ? because sql injection
             }
             $stmt = mysqli_stmt_init($conn);
@@ -74,7 +74,7 @@
                 // Execute the sql query
                 mysqli_stmt_execute($stmt);
                 // Bind result variables
-                mysqli_stmt_bind_result($stmt, $parkName, $parkDescription, $parkLatitude, $parkLongitude, $parkCountry,
+                mysqli_stmt_bind_result($stmt, $parkId, $parkName, $parkDescription, $parkLatitude, $parkLongitude, $parkCountry,
                                         $parkRegion, $parkCity, $parkAddress, $parkPostal, $parkImages, $parkVideo);
                 // Store results
                 if(mysqli_stmt_store_result($stmt)){
@@ -86,7 +86,7 @@
                             $sql_review = "SELECT review_id, content, rating, user.username FROM review 
                                     INNER JOIN park ON review.park_id=park.park_id
                                     INNER JOIN user ON review.user_id=user.user_id
-                                    WHERE park.park_id=?";// ? because sql injection
+                                    WHERE park.park_id=? ORDER BY review.date_created DESC";// ? because sql injection
                             $stmt_review = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt_review, $sql_review)){
                                 echo '<p class="notFound">Oops. Something went wrong!</p>';
@@ -394,12 +394,15 @@
             <hr>
             <form
                 name="review-form"
-                id="review-form"
-                action="includes/review.inc.php"
-                method="post"
+                id="reviewForm"
             >
                 <p>Your review about this park:</p>
-                <select name="review-rating">
+                <!--Hidden form inputs: parkId, parkName and review-sumbit-->
+                <input value="" name="review-submit" hidden/>
+                <input value="<?php echo $parkId; ?>" name="park-id" hidden/>
+                <input value="<?php echo $parkName; ?>" name="park-name" hidden/>
+
+                <select name="review-rating" id="reviewRating">
                     <option value="" hidden selected>Rating</option>
                     <option value="10">10</option>
                     <option value="9">9</option>
@@ -424,14 +427,13 @@
                     placeholder="Review content (max 550 words)"
                 ></textarea>
                 <br />
-                <br />      
-                <input value="<?php echo $parkId; ?>" name="park-id" hidden/>
+                <br />
                 <input
                     type="submit"
                     value="Submit"
-                    name="review-submit"
                     class="submitButton"
                     aria-pressed="false"
+                    onclick="newReviewHandler();"
                 />
             </form>
         </div>
@@ -439,11 +441,16 @@
 
         <!-- Reviews -->
         <ul>
+            <!-- New Review AJAX -->
+            <li id ="newReviewError">
+            </li>
+            <li id ="usersNewReview">
+            </li>
             <!-- Review PHP -->
             <?php                         
                 // Store results
                 if(mysqli_stmt_store_result($stmt_review)){
-                    // Check if DB returned any park
+                    // Check if DB returned any review
                     if(mysqli_stmt_num_rows($stmt_review) > 0){
                         // Fetch values
                         while (mysqli_stmt_fetch($stmt_review)) {
@@ -473,7 +480,7 @@
                     // No review found with park id
                     else{
                         echo '<li>
-                        <p class="success">This park does not have any reviews. You can add the first review!</p>
+                        <p class="success" id="hideWithNewReview">This park does not have any reviews. You can add the first review!</p>
                         </li>';
                     }
                 }
