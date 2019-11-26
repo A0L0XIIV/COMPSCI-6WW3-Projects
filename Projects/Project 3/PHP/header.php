@@ -22,9 +22,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <form action="./individual_sample.php" method="post" class="nav-item navButton">
+                            <form action="./individual_sample.php" method="get" class="nav-item navButton">
+                                <input type="submit" value="Random Park" name="get-park" aria-pressed="false"/>
                                 <input type="text" value="random" name="id" hidden />
-                                <input type="submit" value="Random Park" name="get-park" aria-pressed="false"/><!-- SELECT * FROM `park` ORDER BY ABS(`park_id` - 2) -->
                             </form>
                         </li>
                         <li class="nav-item active">

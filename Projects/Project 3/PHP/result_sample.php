@@ -173,19 +173,8 @@
                                         </td>
                                         <td class="resultTableLink">
                                             <!-- Link to park\'s individual page -->
+                                            <a href="./individual_sample.php?get-park&id='.$parkId.'">Detailed info</a>
                                             
-                                            <form  
-                                                action="individual_sample.php" 
-                                                method="post">
-                                                <input name="id" value='.$parkId.' hidden/>
-                                                <input
-                                                type="submit"
-                                                value="Detailed Info"
-                                                name="get-park"
-                                                class="searchButton"
-                                                aria-pressed="false"
-                                                />
-                                            </form>
                                         </td>
                                     </tr>';
                             }
