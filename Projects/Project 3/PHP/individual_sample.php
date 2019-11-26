@@ -52,8 +52,14 @@
         // Every fields OK
         else{
             // Get Park data from database
-            $sql = "SELECT park_name, description, latitude, longitude, country, region, city, address, postal_code, images, video 
-                    FROM park WHERE park_id=?";// ? because sql injection
+            if($parkId == 'random'){
+                $sql = "SELECT park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
+                        FROM park ORDER BY RAND() LIMIT 1";
+            }
+            else{
+                $sql = "SELECT park_name, description, latitude, longitude, country, region, city, address, postal_code, images_path, video_path 
+                        FROM park WHERE park_id=?";// ? because sql injection
+            }
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo '<p class="notFound">Oops. Something went wrong!</p>';
@@ -63,7 +69,8 @@
             }
             else{
                 // Bind park id into sql query
-                mysqli_stmt_bind_param($stmt, "i", $parkId);
+                if($parkId != 'random')
+                    mysqli_stmt_bind_param($stmt, "i", $parkId);
                 // Execute the sql query
                 mysqli_stmt_execute($stmt);
                 // Bind result variables
@@ -163,64 +170,77 @@
             <!-- Images of the park -->
             <div class="parkImages" role="img" aria-label="Park's Image">
                 <!-- Park Image Carousel (Bootstrap) -->
-                <div id="parkImageCarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-toggle="modal" data-target="#parkImageModal">
-                            <a href="#parkImageModalCarousel" data-slide-to="0">
-                                <img class="d-block w-100" src="../Images/ParkImages/HGP_1.jpg" alt="First slide">
-                            </a>
+                <?php
+                $lessImagePath = '../Park_Data/Images/'.$parkName.'/'.$parkName.'_image_';
+                if(file_exists($lessImagePath.'0.jpg')){
+                    echo '
+                    <div id="parkImageCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">';
+                                // Uploaded types are jpg, png and jpeg but here its static jpg!
+                                $i = 0; 
+                                while(file_exists($lessImagePath.$i.'.jpg')){
+                                    $imagePath = $lessImagePath.$i.'.jpg';
+                                    // Active carousel item
+                                    if($i == 0){
+                                        echo '<div class="carousel-item active" data-toggle="modal" data-target="#parkImageModal">';
+                                    } 
+                                    // Other items
+                                    else {
+                                        echo '<div class="carousel-item" data-toggle="modal" data-target="#parkImageModal">';
+                                    }
+                                    echo '<a href="#parkImageModalCarousel" data-slide-to="'.$i.'">
+                                                <img class="d-block w-100" src="'.$imagePath.'" alt="Image '.$i.'">
+                                            </a>
+                                        </div>';
+                                    $i++;
+                                }
+                    echo '
                         </div>
-                        <div class="carousel-item" data-toggle="modal" data-target="#parkImageModal">
-                            <a href="#parkImageModalCarousel" data-slide-to="1">
-                                <img class="d-block w-100" src="../Images/ParkImages/HGP_2.jpg" alt="Second slide">
-                            </a>
-                        </div>
-                        <div class="carousel-item" data-toggle="modal" data-target="#parkImageModal">
-                            <a href="#parkImageModalCarousel" data-slide-to="2">
-                                <img class="d-block w-100" src="../Images/ParkImages/HGP_3.jpg" alt="Third slide">
-                            </a>
-                        </div>
+                        <!-- Slider for next and previos images -->
+                        <a class="carousel-control-prev" href="#parkImageCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#parkImageCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <!-- Slider for next and previos images -->
-                    <a class="carousel-control-prev" href="#parkImageCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#parkImageCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
 
-                <!-- Park Image Carousel Modal (PopUp) (Bootstrap) -->
-                <div class="modal fade" id="parkImageModal">
-                    <!-- Modal size Extra Large for bigger images -->
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="parkName">Park Images</div>
-                                <button type="button" class="close" data-dismiss="modal" title="Close">
-                                    <i class="fa fa-window-close" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <!-- Without modal body, modal doesn't have any white edges. -->
-                            <div class="modal-body">
-                                <!-- Image Carousel -->
-                                <div id="parkImageModalCarousel" class="carousel slide" data-interval="false">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img class="d-block w-100" src="../Images/ParkImages/HGP_1.jpg" alt="First slide">
-                                            <div class="carousel-caption"></div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="../Images/ParkImages/HGP_2.jpg" alt="Second slide">
-                                            <div class="carousel-caption"></div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="../Images/ParkImages/HGP_3.jpg" alt="Third slide">
-                                            <div class="carousel-caption"></div>
-                                        </div>
-                                    </div>
+                    <!-- Park Image Carousel Modal (PopUp) (Bootstrap) -->
+                    <div class="modal fade" id="parkImageModal">
+                        <!-- Modal size Extra Large for bigger images -->
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="parkName">'.$parkName.' Images</div>
+                                    <button type="button" class="close" data-dismiss="modal" title="Close">
+                                        <i class="fa fa-window-close" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <!-- Without modal body, modal doesn\'t have any white edges. -->
+                                <div class="modal-body">
+                                    <!-- Image Carousel -->
+                                    <div id="parkImageModalCarousel" class="carousel slide" data-interval="false">
+                                        <div class="carousel-inner">';
+                                            // Uploaded types are jpg, png and jpeg but here its static jpg!
+                                            $j = 0; 
+                                            while(file_exists($lessImagePath.$j.'.jpg')){
+                                                $imagePath = $lessImagePath.$j.'.jpg';
+                                                // Active carousel item start div
+                                                if($j == 0){
+                                                    echo '<div class="carousel-item active" data-toggle="modal" data-target="#parkImageModal">';
+                                                } 
+                                                // Other carousel items start div
+                                                else {
+                                                    echo '<div class="carousel-item" data-toggle="modal" data-target="#parkImageModal">';
+                                                }
+                                                echo '<img class="d-block w-100" src="'.$imagePath.'" alt="Image '.$j.'">
+                                                        <div class="carousel-caption"></div>
+                                                    </div>';
+                                                $j++;
+                                            }
+                    echo '              </div>
                                     <!-- Slider for next and previos images -->
                                     <a class="carousel-control-prev" href="#parkImageModalCarousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -234,17 +254,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>';
+                }
+                else{
+                    echo'<div>
+                            <p class="error">This park has no image yet.</p>
+                        </div>';
+                }
+                ?>
 
             </div>
         </div>
 
         <div>
             <!-- Video of the park -->
-            <video width="480" height="360" controls>
-                <source src="../Videos/aFewMomentsLater.mp4" type="video/mp4">
-                Cannot play the park's video
-            </video>
+            <?php
+                // Uploaded types are mp4, avi and gif but here its static mp4! 
+                $videoPath = '../Park_Data/Videos/'.$parkName.'/'.$parkName.'_video.mp4';
+                if(file_exists($videoPath)){
+                    echo '<video width="480" height="360" controls>
+                            <source src="'.$videoPath.'" type="video/mp4">Cannot play the park\'s video</video>';
+                }
+            ?>
         </div>
 
         <hr>
