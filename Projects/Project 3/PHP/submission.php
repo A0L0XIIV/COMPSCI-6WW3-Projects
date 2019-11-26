@@ -25,12 +25,116 @@
         id="submissionForm"
         action="includes/submission.inc.php"
         method="post"
+        enctype="multipart/form-data"
       >
 
       <?php
-        // Successfully registered
-        if(isset($_GET['submission']) && $_GET['submission'] == "success"){
-            echo '<p class="success">Submission successful!</p>';
+        // Successfully added
+        if(isset($_GET['success']) && $_GET['success'] == "submission"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="success">Images and video uploaded successfully.</p>';
+        }
+        // Unauthorized access
+        else if(isset($_GET['error']) && $_GET['error'] == "unauthorized"){
+            echo '<p class="error">Unauthorized submission.</p>';
+            echo '<p class="error">Please only use the 
+            <a href="./submission.php">New park</a> 
+            page for park submission.</p>';
+        }
+        // Empty field error
+        else if(isset($_GET['error']) && $_GET['error'] == "emptyfields"){
+            echo '<p class="error">Please fill all required fields.</p>';
+        }
+        // Already exist error
+        else if(isset($_GET['error']) && $_GET['error'] == "parkexist"){
+            echo '<p class="error">This park is already in the ParkRater.</p>';
+        }
+        // Invalid park name error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidparkname"){
+            echo '<p class="error">This park name is invalid.</p>';
+            echo '<p class="error">Please use only letters, numbers and -&\' characters. Max letters is 50.</p>';
+        }
+        // Invalid latitude error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidlatitude"){
+            echo '<p class="error">This park latitude is invalid.</p>';
+            echo '<p class="error">Min: -90, Max:90, Decimal max:7, 00.0000000</p>';
+        }
+        // Invalid longitude error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidlongitude"){
+            echo '<p class="error">This park longitude is invalid.</p>';
+            echo '<p class="error">Min: -90, Max:90, Decimal max:7, 00.0000000</p>';
+        }
+        // Invalid country error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidcountry"){
+            echo '<p class="error">This park country name is invalid.</p>';
+            echo '<p class="error">Please just use letters and space character. Max length is 50.</p>';
+        }
+        // Invalid region error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidregion"){
+            echo '<p class="error">This park region name is invalid.</p>';
+            echo '<p class="error">Please only use letters, numbers and -&\' characters. Max length is 50.</p>';
+        }
+        // Invalid city error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidcity"){
+            echo '<p class="error">This park city name is invalid.</p>';
+            echo '<p class="error">Please only use letters, numbers and -&\' characters. Max length is 50.</p>';
+        }
+        // Invalid address error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidaddress"){
+            echo '<p class="error">This park address is invalid.</p>';
+            echo '<p class="error">Please only use letters, numbers and -&\' characters. Max length is 100.</p>';
+        }
+        // Invalid postal code error
+        else if(isset($_GET['error']) && $_GET['error'] == "invalidpostal"){
+            echo '<p class="error">This park postal code is invalid.</p>';
+            echo '<p class="error">Please only use letters, numbers and -&\' characters. Max length is 10.</p>';
+        }
+        // SQL error
+        else if(isset($_GET['error']) && $_GET['error'] == "sqlerror"){
+            echo '<p class="error">Oops. Something went wrong!</p>';
+            echo '<p class="error">We have some issues about storing results. Error '.mysqli_errno($conn).'</p>';
+        }
+        // Uploaded image exist error
+        else if(isset($_GET['error']) && $_GET['error'] == "imageexist"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, some of the images already exist.</p>';
+        }
+        // Image is too large error
+        else if(isset($_GET['error']) && $_GET['error'] == "toolargeimage"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, some of the images are too large to upload.</p>';
+        }
+        // Image type is not supported error
+        else if(isset($_GET['error']) && $_GET['error'] == "imagetype"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, some of the images\' format weren\'t supported.</p>';
+            echo '<p class="error">Only JPG, PNG & JPEG image formats are allowed.</p>';
+        }
+        // Image upload error
+        else if(isset($_GET['error']) && $_GET['error'] == "uploaderrorimg"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, some of the images\' upload failed.</p>';
+        }
+        // Uploaded video exist error
+        else if(isset($_GET['error']) && $_GET['error'] == "videoexist"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, video already exists.</p>';
+        }
+        // Video is too large error
+        else if(isset($_GET['error']) && $_GET['error'] == "toolargevideo"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, video is too large to upload.</p>';
+        }
+        // Video type is not supported error
+        else if(isset($_GET['error']) && $_GET['error'] == "videotype"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, video format wasn\'t supported.</p>';
+            echo '<p class="error">Only MP4, AVI & GIF video formats are allowed.</p>';
+        }
+        // Video upload error
+        else if(isset($_GET['error']) && $_GET['error'] == "videouploaderror"){
+            echo '<p class="success">Park successfully added into ParkRater!</p>';
+            echo '<p class="error">However, video upload failed.</p>';
         }
       ?>
 
@@ -124,7 +228,7 @@
             id="parkCountryInput"
             placeholder="Country"
             pattern="[a-zA-Z ]{2,}"
-            title="Please just use letters and space character."
+            title="Please just use letters and space character. Max length is 50."
             value="<?php if(isset($_REQUEST['parkCountry'])) echo $_REQUEST['parkCountry'];?>"
             maxlength="50"
             />
@@ -199,7 +303,7 @@
         <!--Input for park image, type=file, accept=image-->
         <div>
             <p>Image:</p>
-            <input type="file" accept="image/*" name="park-image" id="parkImage" />
+            <input type="file" accept="image/*" name="park-image[]" id="parkImage"  multiple />
         </div>
         <br />
 
