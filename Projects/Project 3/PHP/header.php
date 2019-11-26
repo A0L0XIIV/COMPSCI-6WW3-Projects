@@ -1,8 +1,8 @@
 </head>
 <body onload="init()">
-    <header class="flexContainer">
+    <header class="row">
         <!-- Site Logo w/ index.html link-->
-        <div class="headerFlexItemLogo" id="headerLogoDiv">
+        <div class="col-3 d-none d-sm-block" id="headerLogoDiv">
             <a href="./index.php">
                 <picture id="websiteLogo">
                     <source media="(min-width: 800px)" id="websiteLogoBig" srcset="../Images/Logos/Logo.png">
@@ -12,56 +12,74 @@
         </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="headerFlexItemNav" id="headerNavDiv">
-            <!-- Website name -->
-            <div class="headerSiteName" id="websiteName">
-                <a href="./index.php">ParkRater</a>
-            </div>
-
-            <!-- Navbar and its linked buttons -->
-            <nav class="gridContainer">
-                <form action="./individual_sample.php" class="navButton">            <!-- RANDOM ID !!!!!!!!!!!!!!!!!! -->
-                    <input type="submit" value="Random Park" aria-pressed="false"/><!-- SELECT * FROM `park` ORDER BY ABS(`park_id` - 2) -->
-                </form>
-                <form action="./search.php" class="navButton">
-                    <input type="submit" value="Search Parks" aria-pressed="false"/>
-                </form>
-                <form action="./submission.php" class="navButton">
-                    <input type="submit" value="New Park" aria-pressed="false"/>
-                </form>
-                <?php
-                    if(isset($_SESSION['userId'])){
-                        echo '<form action="includes/logout.inc.php" class="navButton">
-                        <input type="submit" value="Logout" aria-pressed="false"/>
-                    </form>';
-                    }
-                    else{
-                        echo '<form action="./registration.php" class="navButton">
-                        <input type="submit" value="Sign Up" aria-pressed="false"/>
-                    </form>
-                    <form action="./login.php" class="navButton">
-                        <input type="submit" value="Login" aria-pressed="false"/>
-                    </form>';
-                    }
-                ?> 
+        <div class="col-6" id="headerNavDiv">
+            <!-- Website name and Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" id="websiteName" href="./index.php">ParkRater</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <form action="./individual_sample.php" method="post" class="nav-item navButton">
+                                <input type="text" value="random" name="id" hidden />
+                                <input type="submit" value="Random Park" name="get-park" aria-pressed="false"/><!-- SELECT * FROM `park` ORDER BY ABS(`park_id` - 2) -->
+                            </form>
+                        </li>
+                        <li class="nav-item active">
+                            <form action="./search.php" class="nav-item navButton">
+                                <input type="submit" value="Search Parks" aria-pressed="false"/>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form action="./submission.php" class="nav-item navButton">
+                                <input type="submit" value="New Park" aria-pressed="false"/>
+                            </form>
+                        </li>
+                            <?php
+                                if(isset($_SESSION['userId'])){
+                                    echo '<li class="nav-item">
+                                            <form action="includes/logout.inc.php" class="nav-item navButton">
+                                                <input type="submit" value="Logout" aria-pressed="false"/>
+                                            </form>
+                                        </li>';
+                                }
+                                else{
+                                    echo '<li class="nav-item">
+                                            <form action="./registration.php" class="nav-item navButton">
+                                                <input type="submit" value="Sign Up" aria-pressed="false"/>
+                                            </form>
+                                        </li>
+                                        <li class="nav-item">
+                                            <form action="./login.php" class="nav-item navButton">
+                                                <input type="submit" value="Login" aria-pressed="false"/>
+                                            </form>
+                                        </li>';
+                                }
+                            ?>
+                        </ul> 
+                </div>
             </nav>
         </div>
 
         <!-- Search bars -->
-        <div class="headerFlexItemSearch gridContainer" id="headerSearchDiv" role="search">
-            <div></div>
+        <div class="col-3  d-none d-sm-block" id="headerSearchDiv" role="search">
             <!-- Search bar and its button -->
-            <div class="searchWithName">
-                <form 
-                    name="name-search-form" 
-                    action="includes/search.inc.php" 
-                    method="post">
+            <form 
+                class="row"
+                name="name-search-form" 
+                action="includes/search.inc.php" 
+                method="post">
+                <div class="col-8 pr-0">
                     <input
                         type="search"
                         name="park-name"
                         class="searchBox"
                         placeholder=" Enter a park name..."
                     />
+                </div>
+                <div class="col-4 pl-0">
                     <input
                         type="submit"
                         value="Search"
@@ -69,35 +87,7 @@
                         class="searchButton"
                         aria-pressed="false"
                     />
-                </form>
-            </div>
-            <!-- Search w/ rating dropdown and its button -->
-            <div class="searchWithRate">
-                <form 
-                    name="rating-search" 
-                    action="includes/search.inc.php" 
-                    method="post">
-                    <select name="park-rating">
-                        <option value="" hidden selected>Select rating...</option>
-                        <option value="10">10</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1">1</option>
-                    </select>
-                    <input
-                        type="submit"
-                        value="Search"
-                        name="rating-search-submit"
-                        class="searchButton"
-                        aria-pressed="false"
-                    />
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </header>
