@@ -39,7 +39,7 @@
 <?php
     if(isset($_GET['get-park'])){
         // Database conenction
-        require '../../mysqli_connect.php';
+        require '../../../mysqli_connect.php';
 
         $parkId = $_GET['id'];
         // Empty field check
@@ -161,14 +161,14 @@
             ?>
         </h1>
 
-        <div class="parkMapAndImages">
+        <div class="row mx-auto">
             <!-- Map of the park -->
-            <div class="parkMap">
+            <div class="mt-2 col-xs-12 col-sm-6">
                 <div id="map"></div>
             </div>
 
             <!-- Images of the park -->
-            <div class="parkImages" role="img" aria-label="Park's Image">
+            <div class="mt-2 col-xs-12 col-sm-6" role="img" aria-label="Park's Image">
                 <!-- Park Image Carousel (Bootstrap) -->
                 <?php
                 $lessImagePath = '../Park_Data/Images/'.$parkName.'/'.$parkName.'_image_';
@@ -266,7 +266,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="mt-2 col">
             <!-- Video of the park -->
             <?php
                 // Uploaded types are mp4, avi and gif but here its static mp4! 
@@ -280,10 +280,10 @@
 
         <hr>
 
-        <div class="parkPropertiesAndDescription">
-            <h2>Park Properties</h2>
+        <div class="row mx-0">
+            <h2 class="col-12">Park Properties</h2>
             <!-- Park properties -->
-            <div class="parkProperties">
+            <div class="col-4">
                 <!-- Coordinates of the park with schema geo coordinates microdata -->
                 <ul itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                     <li>
@@ -363,7 +363,7 @@
             </div>
 
             <!-- Description of the park -->
-            <div class="parkDescription">
+            <div class="col-8 text-justify">
                 <?php if(!empty($parkDescription)) 
                         echo $parkDescription; 
                     else 

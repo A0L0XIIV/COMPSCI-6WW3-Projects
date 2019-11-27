@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['login-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
 
     // Login form's variables
     $emailUsername = $_POST['email-username'];

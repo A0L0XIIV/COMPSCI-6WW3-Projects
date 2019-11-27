@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['review-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     session_start();
 
     $reviewRating = $_POST['review-rating'];

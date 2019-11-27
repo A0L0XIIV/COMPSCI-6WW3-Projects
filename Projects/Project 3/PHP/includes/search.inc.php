@@ -2,7 +2,7 @@
 // Search parks with park name
 if(isset($_POST['name-search-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     // Get park name form the search page with park-name
     $parkName = $_POST['park-name'];
 
@@ -39,7 +39,7 @@ if(isset($_POST['name-search-submit'])){
 // Search parks with park rank
 else if(isset($_POST['rating-search-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     // Get park rating form the search page with park-rating
     $parkRating = $_POST['park-rating'];
 
@@ -73,7 +73,7 @@ else if(isset($_POST['rating-search-submit'])){
 // Search parks with park location
 else if(isset($_POST['location-search-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     // Get park latitude and longitude form the search page with park-latitude and park-longitude
     $parkLatitude = $_POST['park-latitude'];
     $parkLongitude = $_POST['park-longitude'];
@@ -134,7 +134,7 @@ function sqlExeAndResult($stmt){
             // For passing multiple park ids --> comma between them and delete the last comma
             $parkIds = rtrim($parkIds, ", ");
             // Redirect to results page with the park ids
-            header("Location: ../result_sample.php?result=".$parkIds);
+            header("Location: ../result_sample.php?get-results&result=".$parkIds);
             exit();
         }
         // No park found with user's search criterias

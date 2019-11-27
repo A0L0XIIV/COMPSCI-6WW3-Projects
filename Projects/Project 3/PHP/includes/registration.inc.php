@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['register-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     // Get field values from post request
     $username = $_POST['user-name'];
     $email = $_POST['user-email'];

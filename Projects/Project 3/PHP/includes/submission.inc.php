@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['park-submit'])){
     // Database conenction
-    require '../../../mysqli_connect.php';
+    require '../../../../mysqli_connect.php';
     // Get field values from post request
     $parkName = $_POST['park-name'];
     $parkDescription = $_POST['park-description'];
@@ -11,7 +11,7 @@ if(isset($_POST['park-submit'])){
     $parkRegion = $_POST['park-region'];
     $parkCity = $_POST['park-city'];
     $parkAddress = $_POST['park-address'];
-    $parkPostal = $_POST['park-postal_code'];
+    $parkPostal = $_POST['park-postal-code'];
     $parkImagesPath = '../../Park_Data/Images/'.$parkName.'/';
     $parkVideosPath = '../../Park_Data/Videos/'.$parkName.'/';
     // Create Images and Video directories for this park
