@@ -146,8 +146,8 @@
             name="park-name"
             id="parkName"
             placeholder="Park name"
-            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
-            title="Only letters, numbers and -&' characters. Max letters is 50."
+            pattern="^([a-zA-Z0-9 ]+[-&'.]*)+$"
+            title="Only letters, numbers and -&'. characters. Max letters is 50."
             maxlength="50"
             value="<?php if(isset($_REQUEST['parkName'])) echo $_REQUEST['parkName'];?>"
             required
@@ -275,8 +275,8 @@
             name="park-address"
             id="parkAddressInput"
             placeholder="Address (Street and number)"
-            pattern="^([a-zA-Z0-9 ]+[-&']*)+$"
-            title="Please only use letters, numbers and -&' characters. Max length is 100."
+            pattern="^([a-zA-Z0-9 ]+[-&'.,]*)+$"
+            title="Please only use letters, numbers and -&'., characters. Max length is 100."
             value="<?php if(isset($_REQUEST['parkAddress'])) echo $_REQUEST['parkAddress'];?>"
             maxlength="100"
             />
@@ -288,7 +288,7 @@
             <p>Postal Code:</p>
             <input
             type="text"
-            name="park-postal"
+            name="park-postal-code"
             id="parkPostalCodeInput"
             placeholder="Postal Code"
             pattern="^([a-zA-Z0-9 ]+[-&']*)+$"

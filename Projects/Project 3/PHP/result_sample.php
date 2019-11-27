@@ -23,9 +23,9 @@
 
 <!-- Get data from database -->
 <?php
-    if(!isset($_GET['get-park'])){ // WHAT TO DO HERE??????????????????????????????????????!!!!!!!!!!!!!!!
+    if(isset($_GET['get-results'])){
         // Database conenction
-        require '../../mysqli_connect.php';
+        require '../../../mysqli_connect.php';
 
         $searchResult = $_GET['result'];
         // Empty field check
@@ -45,7 +45,7 @@
             $in = join(',', array_fill(0, $parkIdArraySize, '?'));
             // SQL query with array of park_ids. $in fills the area with #parkIdArraySize ? --> (?, ?, ?...)
             $sql = "SELECT park_id, park_name, description, latitude, longitude
-                    FROM park WHERE park_id IN (".$in.")";// ? because sql injection
+                    FROM park WHERE park_id IN (".$in.") ORDER BY park_name";// ? because sql injection
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo '<p class="notFound">Oops. Something went wrong!</p>';
@@ -59,29 +59,7 @@
                 mysqli_stmt_execute($stmt);
                 // Bind result variables
                 mysqli_stmt_bind_result($stmt, $parkId, $parkName, $parkDescription, $parkLatitude, $parkLongitude);
-                // Store results
-                // if(mysqli_stmt_store_result($stmt)){
-                //     // Check if DB returned any park
-                //     if(mysqli_stmt_num_rows($stmt) > 0){
-                //         // Fetch values
-                //         while (mysqli_stmt_fetch($stmt)) {
-                //             echo '<p class="notFound">'.$parkName.'</p>';
-                //         }
-                //         require "footer.php";
-                //         exit();
-                //     }
-                //     else{
-                //         echo '<p class="notFound">No park found!</p>';
-                //         require "footer.php";
-                //         exit();
-                //     }
-                // }
-                // else{
-                //     echo '<p class="notFound">Oops. Something went wrong!</p>';
-                //     echo '<p class="notFound">We have some issues about SQL DB.</p>'; 
-                //     require "footer.php";
-                //     exit();
-                // }
+               // Result printing operations handled below
             }
         }
     }
@@ -154,22 +132,25 @@
                     if(mysqli_stmt_store_result($stmt)){
                         // Check if DB returned any park
                         if(mysqli_stmt_num_rows($stmt) > 0){
+                            // i variable for map ids for map loading
+                            $i = 0;
                             // Fetch values
                             while (mysqli_stmt_fetch($stmt)) {
                                 echo '<tr>
                                         <!-- Name of the park -->
-                                        <th colspan="3">'.$parkName.'</th>
+                                        <th colspan="3" id="parkName'.$i.'">'.$parkName.'</th>
                                     </tr>
                                     <tr class="parkData">
                                         <!-- Map of the park -->
                                         <td class="resultTableMap">
-                                            <div id="parkMap" class="map"></div>
+                                            <div id="map'.$i.'" class="map"></div>
                                         </td>
                                         <!-- Basic information of the park -->
                                         <td class="resultTableInfo">
                                             <p>'.$parkDescription.'</p>
-                                            <span id="latitude" hidden>'.$parkLatitude.'</span>
-                                            <span id="longitude" hidden>'.$parkLongitude.'</span>
+                                            <span id="latitude'.$i.'" hidden>'.$parkLatitude.'</span>
+                                            <span id="longitude'.$i.'" hidden>'.$parkLongitude.'</span>
+                                            <span id="parkId'.$i.'" hidden>'.$parkId.'</span>
                                         </td>
                                         <td class="resultTableLink">
                                             <!-- Link to park\'s individual page -->
@@ -177,6 +158,7 @@
                                             
                                         </td>
                                     </tr>';
+                                    $i++;
                             }
                         }
                         // No park found with user's criteria
@@ -194,36 +176,6 @@
                         exit();
                     }
                 ?>
-
-                <!-- Result 1 -->
-                <tr>
-                    <!-- Name of the park -->
-                    <th colspan="3">Park 1</th>
-                </tr>
-                <tr class="parkData">
-                    <!-- Main image of the park -->
-                    <td class="resultTableMap">
-                    <div id="map1" class="map"></div>
-                    </td>
-                    <!-- Basic information of the park -->
-                    <td class="resultTableInfo">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                        nec orci augue. In at quam lacus. Proin in erat a neque tempus
-                        pharetra. In ante nibh, luctus quis risus vitae, molestie
-                        porta justo. Fusce leo neque, tincidunt nec justo in, egestas
-                        mollis arcu. Aliquam erat volutpat. In pharetra commodo augue
-                        non commodo. Nullam ultrices, tortor ac imperdiet tempor, quam
-                        mi placerat enim, viverra porta erat urna nec arcu. Maecenas
-                        auctor nulla nec maximus convallis. Nunc lacinia risus in diam
-                        interdum feugiat. Vivamus vehicula nisi ut ornare semper.
-                    </p>
-                    </td>
-                    <td class="resultTableLink">
-                    <!-- Link to park's individual page -->
-                    <a href="./individual_sample.html">Detailed info</a>
-                    </td>
-                </tr>
             </table>
         </div>
 
@@ -235,6 +187,7 @@
             aria-labelledby="map-results-tab"
         >
             <div id="mapResultsMap" class="map"></div>
+            <br />
         </div>
     </div>
 </main>

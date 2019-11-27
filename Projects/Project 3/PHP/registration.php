@@ -22,7 +22,7 @@
 
       <form
         name="register-form"
-        id="register-form"
+        id="registerForm"
         action="includes/registration.inc.php"
         method="post"
         onsubmit="return validateForm()"
