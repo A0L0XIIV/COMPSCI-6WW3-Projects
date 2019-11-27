@@ -132,14 +132,19 @@ input:required {
 .navButton {
   background: rgb(5, 155, 5);
   color: #ffffff;
-  border: none;
+  border-bottom: solid 2px rgb(5, 155, 5);
+  margin-left: 5px;
+  padding: 0;
 }
 
 /*Nav button input font and sizes*/
 .navButton > input {
   font-size: 0.95em;
+  font-weight: bold;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 5px;
 }
 
 /*Nav button hover color*/
@@ -147,6 +152,11 @@ input:required {
   background: #ff7b00;
   color: rgb(54, 40, 0);
   border-bottom: solid 2px rgb(54, 40, 0);
+}
+
+/*Toggler background color*/
+.navbar-toggler {
+  background-color: rgb(54, 40, 0);
 }
 /* --- Navigation Bar Buttons --- */
 
@@ -212,7 +222,7 @@ select:hover {
 /*Source and img tags height restriction*/
 #websiteLogo source,
 #websiteLogo img {
-  height: 100%;
+  height: 4em;
 }
 
 /*Site name centered*/
@@ -221,6 +231,7 @@ select:hover {
   color: rgb(5, 185, 5);
   text-shadow: 3px 3px rgb(54, 40, 0);
   font-size: 1.2em;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -228,16 +239,6 @@ select:hover {
 #websiteName:hover {
   color: #ff7b00;
   text-shadow: 0 0 3px #000000;
-}
-
-/*Site name link decoration*/
-#websiteName a {
-  text-decoration: none;
-  color: rgb(5, 185, 5);
-  text-shadow: 3px 3px rgb(54, 40, 0);
-  height: 100%;
-  font-size: 2em;
-  margin: 0;
 }
 /* --- Logo & Name  --- */
 
@@ -324,7 +325,7 @@ nav.gridContainer {
 /* ----- SCREEN SIZE BASED OPERATIONS  ----- */
 
 /* Mobile Devices */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 575px) {
   body {
     font-size: 1rem;
     /* background-image: url("../Images/Backgrounds/bgSmall.jpg"); */
@@ -349,6 +350,18 @@ nav.gridContainer {
   .headerFlexItemSearch {
     flex-grow: 0;
     display: none;
+  }
+
+  /*Navigation Button colors and border*/
+  .navButton {
+    background: rgb(54, 40, 0);
+    color: #ffffff;
+    border-bottom: solid 2px rgb(5, 155, 5);
+    margin-left: 0;
+  }
+  /*Nav button input font and sizes*/
+  .navButton > input {
+    background: rgb(54, 40, 0);
   }
 
   /*For full width navbar*/
@@ -385,7 +398,7 @@ nav.gridContainer {
 }
 
 /* Tablets */
-@media only screen and (min-width: 501px) and (max-width: 1025px) {
+@media only screen and (min-width: 576px) and (max-width: 991px) {
   body {
     font-size: 1rem;
     /* background-image: url("../Images/Backgrounds/bgSmall.jpg"); */
@@ -428,7 +441,7 @@ nav.gridContainer {
 }
 
 /* Lower Res Desktop - HD*/
-@media only screen and (min-width: 1026px) and (max-width: 1300px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
     font-size: 1.5rem;
     /*Medium background image*/
@@ -446,5 +459,5 @@ nav.gridContainer {
 }
 
 /* High Res Desktop - FullHD+*/
-@media only screen and (min-width: 1301px) {
+@media only screen and (min-width: 1200px) {
 }
