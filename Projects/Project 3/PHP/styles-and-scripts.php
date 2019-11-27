@@ -1,13 +1,12 @@
 <?php
 // CSS and JS files path
-$cssDir = "../CSS/";
-$jsDir = "../JS/";
+$cssDir = "../CSS";
+$jsDir = "../JS";
 
 // Individual stylesheets
 $styles = [
     'index.php' => 'index.css',
     'individual_sample.php' => 'individual_sample.css',
-    'login.php' => 'login.css',
     'registration.php' => 'registration.css',
     'result_sample.php' => 'result_sample.css',
     'search.php' => 'search.css',
