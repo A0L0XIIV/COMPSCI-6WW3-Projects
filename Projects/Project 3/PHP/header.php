@@ -12,12 +12,13 @@
         </div>
 
         <!-- Center div of the header: Name of the website and navbar -->
-        <div class="col-6" id="headerNavDiv">
+        <div class="col-sm-6 col-xs-push container" id="headerNavDiv">
             <!-- Website name and Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-xl navbar-dark mx-auto">
                 <a class="navbar-brand" id="websiteName" href="./index.php">ParkRater</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
+                    <span style="color:rgb(25, 155, 25);">Menu</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
@@ -64,7 +65,7 @@
         </div>
 
         <!-- Search bars -->
-        <div class="col-3  d-none d-sm-block" id="headerSearchDiv" role="search">
+        <div class="col-3  d-none d-lg-block" id="headerSearchDiv" role="search">
             <!-- Search bar and its button -->
             <form 
                 class="row"
