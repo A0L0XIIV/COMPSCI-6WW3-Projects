@@ -30,12 +30,22 @@ h2 {
   .map {
     min-height: 60vw;
   }
+  /*Map Results size*/
+  #mapResultsMap {
+    width: 95%;
+    min-height: 120vw;
+  }
 }
 /* Tablet Phones */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /*Map  size*/
   .map {
     min-height: 50vw;
+  }
+  /*Map Results size*/
+  #mapResultsMap {
+    width: 95%;
+    min-height: 120vw;
   }
 }
 
@@ -45,6 +55,11 @@ h2 {
   .map {
     min-height: 20vw;
   }
+  /*Map Results size*/
+  #mapResultsMap {
+    width: 95%;
+    min-height: 100vw;
+  }
 }
 
 /* Lower Res Desktop - HD*/
@@ -52,5 +67,10 @@ h2 {
   /*Map  size*/
   .map {
     min-height: 18vw;
+  }
+  /*Map Results size*/
+  #mapResultsMap {
+    width: 95%;
+    min-height: 80vw;
   }
 }

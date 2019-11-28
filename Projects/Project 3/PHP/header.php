@@ -18,7 +18,7 @@
                 <a class="navbar-brand" id="websiteName" href="./index.php">ParkRater</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    <span style="color:rgb(25, 155, 25);">Menu</span>
+                    <span style="color:#ffffff;">Menu</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
