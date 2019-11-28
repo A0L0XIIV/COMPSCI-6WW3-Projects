@@ -172,14 +172,24 @@
                 <!-- Park Image Carousel (Bootstrap) -->
                 <?php
                 $lessImagePath = '../Park_Data/Images/'.$parkName.'/'.$parkName.'_image_';
-                if(file_exists($lessImagePath.'0.jpg')){
+                if(file_exists($lessImagePath.'0.jpg')
+                    || file_exists($lessImagePath.'0.png')
+                    || file_exists($lessImagePath.'0.jpeg')){
                     echo '
                     <div id="parkImageCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">';
-                                // Uploaded types are jpg, png and jpeg but here its static jpg!
+                                // Uploaded types are jpg, png and jpeg
                                 $i = 0; 
-                                while(file_exists($lessImagePath.$i.'.jpg')){
-                                    $imagePath = $lessImagePath.$i.'.jpg';
+                                while(file_exists($lessImagePath.$i.'.jpg')
+                                    || file_exists($lessImagePath.$i.'.png')
+                                    || file_exists($lessImagePath.$i.'.jpeg')){
+                                    // Find images' format
+                                    if(file_exists($lessImagePath.$i.'.jpg'))
+                                        $imagePath = $lessImagePath.$i.'.jpg';
+                                    else if(file_exists($lessImagePath.$i.'.png'))
+                                        $imagePath = $lessImagePath.$i.'.png';
+                                    else if(file_exists($lessImagePath.$i.'.jpeg'))
+                                        $imagePath = $lessImagePath.$i.'.jpeg';
                                     // Active carousel item
                                     if($i == 0){
                                         echo '<div class="carousel-item active" data-toggle="modal" data-target="#parkImageModal">';
@@ -223,10 +233,18 @@
                                     <!-- Image Carousel -->
                                     <div id="parkImageModalCarousel" class="carousel slide" data-interval="false">
                                         <div class="carousel-inner">';
-                                            // Uploaded types are jpg, png and jpeg but here its static jpg!
+                                            // Uploaded types are jpg, png and jpeg
                                             $j = 0; 
-                                            while(file_exists($lessImagePath.$j.'.jpg')){
-                                                $imagePath = $lessImagePath.$j.'.jpg';
+                                            while(file_exists($lessImagePath.$j.'.jpg')
+                                                || file_exists($lessImagePath.$j.'.png')
+                                                || file_exists($lessImagePath.$j.'.jpeg')){
+                                                // Find images' format
+                                                if(file_exists($lessImagePath.$j.'.jpg'))
+                                                    $imagePath = $lessImagePath.$j.'.jpg';
+                                                else if(file_exists($lessImagePath.$j.'.png'))
+                                                    $imagePath = $lessImagePath.$j.'.png';
+                                                else if(file_exists($lessImagePath.$j.'.jpeg'))
+                                                    $imagePath = $lessImagePath.$j.'.jpeg';
                                                 // Active carousel item start div
                                                 if($j == 0){
                                                     echo '<div class="carousel-item active" data-toggle="modal" data-target="#parkImageModal">';
@@ -269,11 +287,22 @@
         <div class="mt-2 col">
             <!-- Video of the park -->
             <?php
-                // Uploaded types are mp4, avi and gif but here its static mp4! 
-                $videoPath = '../Park_Data/Videos/'.$parkName.'/'.$parkName.'_video.mp4';
-                if(file_exists($videoPath)){
+                // Uploaded types are mp4, webm and ogg 
+                $videoPathMP4 = '../Park_Data/Videos/'.$parkName.'/'.$parkName.'_video.mp4';
+                $videoPathWebM = '../Park_Data/Videos/'.$parkName.'/'.$parkName.'_video.webm';
+                $videoPathOGG = '../Park_Data/Videos/'.$parkName.'/'.$parkName.'_video.ogg';
+                // Check if video exist
+                if(file_exists($videoPathMP4)){
                     echo '<video width="480" height="360" controls>
-                            <source src="'.$videoPath.'" type="video/mp4">Cannot play the park\'s video</video>';
+                            <source src="'.$videoPathMP4.'" type="video/mp4">Cannot play the park\'s video</video>';
+                }
+                else if(file_exists($videoPathWebM)){
+                    echo '<video width="480" height="360" controls>
+                            <source src="'.$videoPathWebM.'" type="video/webm">Cannot play the park\'s video</video>';
+                }
+                else if(file_exists($videoPathOGG)){
+                    echo '<video width="480" height="360" controls>
+                            <source src="'.$videoPathOGG.'" type="video/ogg">Cannot play the park\'s video</video>';
                 }
             ?>
         </div>

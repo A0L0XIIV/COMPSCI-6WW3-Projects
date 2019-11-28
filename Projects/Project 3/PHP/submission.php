@@ -129,7 +129,7 @@
         else if(isset($_GET['error']) && $_GET['error'] == "videotype"){
             echo '<p class="success">Park successfully added into ParkRater!</p>';
             echo '<p class="error">However, video format wasn\'t supported.</p>';
-            echo '<p class="error">Only MP4, AVI & GIF video formats are allowed.</p>';
+            echo '<p class="error">Only MP4, WebM & OGG video formats are allowed.</p>';
         }
         // Video upload error
         else if(isset($_GET['error']) && $_GET['error'] == "videouploaderror"){

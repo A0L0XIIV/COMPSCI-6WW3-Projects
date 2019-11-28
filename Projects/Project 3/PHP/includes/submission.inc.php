@@ -172,7 +172,7 @@ if(isset($_POST['park-submit'])){
                         exit();
                     }
                     // Check video format
-                    else if($videoFormat != "mp4" && $videoFormat != "avi" && $videoFormat != "gif" ) {
+                    else if($videoFormat != "mp4" && $videoFormat != "webm" && $videoFormat != "ogg" ) {
                         header("Location: ../submission.php?error=videotype");
                         exit();
                     }

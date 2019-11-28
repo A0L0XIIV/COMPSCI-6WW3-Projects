@@ -170,9 +170,13 @@ function validateForm() {
       validatePhone() &&
       termsAndPrivacyCheck()
     ) {
-      alert("Form is valid!");
+      return true;
     } else {
-      alert("Form is NOT valid!");
+      if (event.preventDefault) {
+        event.preventDefault();
+      } else {
+        event.returnValue = false; // for IE as dont support preventDefault;
+      }
     }
   }
 }
