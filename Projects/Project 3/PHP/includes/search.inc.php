@@ -77,20 +77,20 @@ else if(isset($_POST['location-search-submit'])){
     // Get park latitude and longitude form the search page with park-latitude and park-longitude
     $parkLatitude = $_POST['park-latitude'];
     $parkLongitude = $_POST['park-longitude'];
-    $maxParkLatitude = $parkLatitude + 0.01;
-    $minParkLatitude = $parkLatitude - 0.01;
-    $maxParkLongitude = $parkLongitude + 0.01;
-    $minParkLongitude = $parkLongitude - 0.01;
+    $maxParkLatitude = $parkLatitude + 0.02;
+    $minParkLatitude = $parkLatitude - 0.02;
+    $maxParkLongitude = $parkLongitude + 0.02;
+    $minParkLongitude = $parkLongitude - 0.02;
 
     // Empty field check
-    if(empty($parkLocation)){
+    if(empty($parkLatitude) || empty($parkLongitude)){
         header("Location: ../search.php?error=emptyfield");
         exit();
-    }    
+    }
     // Not empty
     else{
-        // Search between 0.01 latitude and longitude
-        $sql = "SELECT * FROM park WHERE ?>latitude>? AND ?>longitude>?";
+        // Search between 0.02 latitude and longitude
+        $sql = "SELECT park_id FROM park WHERE ? > latitude AND latitude > ? AND ? > longitude AND longitude > ?";
         $stmt = mysqli_stmt_init($conn);
         // Prepare the DB for query
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -99,7 +99,7 @@ else if(isset($_POST['location-search-submit'])){
         }
         else{
             // Bind param into sql statement
-            mysqli_stmt_bind_param($stmt, "iiii", $maxParkLatitude, $minParkLatitude, $maxParkLongitude, $minParkLongitude);
+            mysqli_stmt_bind_param($stmt, "dddd", $maxParkLatitude, $minParkLatitude, $maxParkLongitude, $minParkLongitude);
             // Call sql execution and result handling function 
             sqlExeAndResult($stmt);
         }

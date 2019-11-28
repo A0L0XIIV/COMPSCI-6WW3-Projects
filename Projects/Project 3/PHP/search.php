@@ -49,6 +49,7 @@
             name="park-name"
             class="searchBox"
             placeholder="Name of the park"
+            required
           />
           <br />
           <br />
@@ -102,30 +103,60 @@
       <div>
         <h4>Search with current location</h4>
         <form 
-          name="location-search-form" 
+          name="location-search-form"
+          id="locationSearchForm" 
           action="includes/search.inc.php" 
-          method="post">
-          <input
-              type="number"
-              name="park-latitude"
-              id="parkLatitude"
-              placeholder="Latitude (00.0000000)"
-              hidden
+          method="post"
+          >
+          <div>
+              <input
+              type="submit"
+              value="Get location"
+              class="searchButton"
+              aria-pressed="false"
+              onclick="getLocation()"
+              />
+              <p id="locationError" class="error"></p>
+          </div>
+          <div>
+            <p>Latitude:</p>
+            <input
+            type="number"
+            step="00.0000001"
+            min="-90"
+            max="90"
+            name="park-latitude"
+            id="parkLatitude"
+            placeholder="Latitude (00.0000000)"
+            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            title="Min: -90, Max:90, Decimal max:7, 00.0000000"
+            value="<?php if(isset($_REQUEST['parkLatitude'])) echo $_REQUEST['parkLatitude'];?>"
+            required
             />
-          <input
-              type="number"
-              name="park-longitude"
-              id="parkLongitude"
-              placeholder="Longitude (00.0000000)"
-              hidden
+          </div>
+          <div>
+            <p>Longitude:</p>
+            <input
+            type="number"
+            step="0.0000001"
+            min="-180"
+            max="180"
+            name="park-longitude"
+            id="parkLongitude"
+            placeholder="Longitude (00.0000000)"
+            pattern="^([0-9]{1,2}\.[0-9]{3,7})$"
+            title="Min: -180, Max:180, Decimal max:7, 00.0000000"
+            value="<?php if(isset($_REQUEST['parkLongitude'])) echo $_REQUEST['parkLongitude'];?>"
+            required
             />
+          </div>
+          <br />
           <input
             type="submit"
-            value="Search by location"
+            value="Search with location"
             name="location-search-submit"
             class="searchButton"
             aria-pressed="false"
-            onclick="getLocation()"
           />
         </form>
         <p id="locationError" class="error"></p>
