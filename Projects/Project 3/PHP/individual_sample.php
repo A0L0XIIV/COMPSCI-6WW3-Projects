@@ -258,7 +258,7 @@
                 }
                 else{
                     echo'<div>
-                            <p class="error">This park has no image yet.</p>
+                            <p class="error">This park doesn\'t have any image yet.</p>
                         </div>';
                 }
                 ?>

@@ -125,7 +125,7 @@
             role="tabpanel"
             aria-labelledby="tabular-results-tab"
         >
-            <table>
+            <div class="row mx-auto" id="tabularResults">
                 <!-- PHP Result -->
                 <?php
                     // Store results
@@ -136,28 +136,28 @@
                             $i = 0;
                             // Fetch values
                             while (mysqli_stmt_fetch($stmt)) {
-                                echo '<tr>
+                                echo '<div class="col-12">
+                                        <hr />
                                         <!-- Name of the park -->
-                                        <th colspan="3" id="parkName'.$i.'">'.$parkName.'</th>
-                                    </tr>
-                                    <tr class="parkData">
-                                        <!-- Map of the park -->
-                                        <td class="resultTableMap">
-                                            <div id="map'.$i.'" class="map"></div>
-                                        </td>
-                                        <!-- Basic information of the park -->
-                                        <td class="resultTableInfo">
-                                            <p>'.$parkDescription.'</p>
-                                            <span id="latitude'.$i.'" hidden>'.$parkLatitude.'</span>
-                                            <span id="longitude'.$i.'" hidden>'.$parkLongitude.'</span>
-                                            <span id="parkId'.$i.'" hidden>'.$parkId.'</span>
-                                        </td>
-                                        <td class="resultTableLink">
-                                            <!-- Link to park\'s individual page -->
-                                            <a href="./individual_sample.php?get-park&id='.$parkId.'">Detailed info</a>
-                                            
-                                        </td>
-                                    </tr>';
+                                        <h2 id="parkName'.$i.'">'.$parkName.'</h2>
+                                        <hr />
+                                    </div>
+                                    <!-- Map of the park -->
+                                    <div class="col-md-3 col-sm-12 pb-2">
+                                        <div id="map'.$i.'" class="map"></div>
+                                    </div>
+                                    <!-- Basic information of the park -->
+                                    <div class="text-justify col-md-7 col-sm-10 col-xs-12 pb-2">
+                                        <p>'.$parkDescription.'</p>
+                                        <span id="latitude'.$i.'" hidden>'.$parkLatitude.'</span>
+                                        <span id="longitude'.$i.'" hidden>'.$parkLongitude.'</span>
+                                        <span id="parkId'.$i.'" hidden>'.$parkId.'</span>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-12 align-middle">
+                                        <!-- Link to park\'s individual page -->
+                                        <a href="./individual_sample.php?get-park&id='.$parkId.'">Detailed info</a>
+                                        
+                                    </div>';
                                     $i++;
                             }
                         }
@@ -176,7 +176,7 @@
                         exit();
                     }
                 ?>
-            </table>
+            </div>
         </div>
 
         <!-- Map Results -->
